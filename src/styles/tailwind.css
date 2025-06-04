@@ -1,0 +1,423 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #f5c21e;
+    --primary-foreground: #121722;
+    --primary-light: #ffdd57;
+    --primary-dark: #b18f0a;
+
+    /* Secondary Colors */
+    --secondary-background: #ffffff;
+    --secondary-foreground: #333333;
+    --secondary-light: #f7f7f7;
+    --secondary-dark: #222222;
+
+    /* Accent Colors */
+    --accent-color: #ff5733;
+    --accent-foreground: #ffffff;
+    --accent-light: #ff8268;
+    --accent-dark: #cc4722;
+
+    /* Border Colors */
+    --border-primary: #cccccc;
+    --border-secondary: #999999;
+    --border-light: #e0e0e0;
+    --border-dark: #666666;
+
+    /* ReinEx Brand Colors */
+    --reinex-blue: #4d8fa7;
+    --reinex-blue-light: #508fa8;
+    --reinex-navy: #13263e;
+    --reinex-blue-alpha: #4d8fa756;
+    --reinex-blue-bg: #4d8fa789;
+    --reinex-blue-light-bg: #4d8fa76d;
+
+    /* FAQ Colors */
+    --faq-background: #ffffff;
+    --faq-text: #000000;
+    --faq-border: #e5e7eb;
+
+    /* About Page Colors */
+    --about-text-overlay: #4d8fa770;
+    --about-service-bg: #4d8fa784;
+    --about-content-bg: #f7fbfc;
+    --about-gradient-start: #0e2e03;
+    --about-gradient-mid: #0e2e037f;
+    --about-gradient-end: #0e2e0300;
+
+    /* Homepage specific colors */
+    --homepage-service-overlay: rgba(80, 143, 168, 0.6);
+    --homepage-stats-gradient-start: #508fa8;
+    --homepage-stats-gradient-end: #4d8fa7;
+    --homepage-feature-bg: rgba(77, 143, 167, 0.34);
+    --homepage-booking-modal-bg: #b1dbeb;
+
+    /* Window cleaning specific colors */
+    --window-form-bg: rgba(255, 255, 255, 0.1);
+    --window-overlay-dark: rgba(0, 0, 0, 0.3);
+    --window-feature-bg: #4d8fa756;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-yellow {
+    background-color: var(--primary-background);
+  }
+
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+
+  .bg-secondary-white {
+    background-color: var(--secondary-background);
+  }
+
+  .bg-secondary-light {
+    background-color: var(--secondary-light);
+  }
+
+  .bg-secondary-dark {
+    background-color: var(--secondary-dark);
+  }
+
+  .bg-accent {
+    background-color: var(--accent-color);
+  }
+
+  .bg-accent-light {
+    background-color: var(--accent-light);
+  }
+
+  .bg-accent-dark {
+    background-color: var(--accent-dark);
+  }
+
+  /* ReinEx Brand Utilities */
+  .bg-reinex-blue {
+    background-color: var(--reinex-blue);
+  }
+
+  .bg-reinex-blue-light {
+    background-color: var(--reinex-blue-light);
+  }
+
+  .bg-reinex-navy {
+    background-color: var(--reinex-navy);
+  }
+
+  .bg-reinex-blue-alpha {
+    background-color: var(--reinex-blue-alpha);
+  }
+
+  .bg-reinex-blue-bg {
+    background-color: var(--reinex-blue-bg);
+  }
+
+  .bg-reinex-blue-light-bg {
+    background-color: var(--reinex-blue-light-bg);
+  }
+
+  /* FAQ Utilities */
+  .bg-faq {
+    background-color: var(--faq-background);
+  }
+
+  .text-faq {
+    color: var(--faq-text);
+  }
+
+  .border-faq {
+    border-color: var(--faq-border);
+  }
+
+  /* About Page Utilities */
+  .bg-about-service {
+    background-color: var(--about-service-bg);
+  }
+
+  .bg-about-content {
+    background-color: var(--about-content-bg);
+  }
+
+  .text-about-overlay {
+    color: var(--about-text-overlay);
+  }
+
+  .bg-gradient-about-overlay {
+    background: linear-gradient(90deg, var(--about-gradient-start) 0%, var(--about-gradient-mid) 50%, var(--about-gradient-end) 100%);
+  }
+
+  /* Homepage Utilities */
+  .bg-homepage-service-overlay {
+    background-color: var(--homepage-service-overlay);
+  }
+
+  .bg-homepage-stats-gradient {
+    background: linear-gradient(135deg, var(--homepage-stats-gradient-start) 0%, var(--homepage-stats-gradient-end) 100%);
+  }
+
+  .bg-homepage-feature {
+    background-color: var(--homepage-feature-bg);
+  }
+
+  .bg-homepage-booking-modal {
+    background-color: var(--homepage-booking-modal-bg);
+  }
+
+  /* Window cleaning utilities */
+  .bg-window-form {
+    background-color: var(--window-form-bg);
+  }
+
+  .bg-window-overlay {
+    background-color: var(--window-overlay-dark);
+  }
+
+  .bg-window-feature {
+    background-color: var(--window-feature-bg);
+  }
+
+  /* Text Color Utilities */
+  .text-primary-black {
+    color: var(--primary-foreground);
+  }
+
+  .text-secondary-gray {
+    color: var(--secondary-foreground);
+  }
+
+  .text-accent-white {
+    color: var(--accent-foreground);
+  }
+
+  .text-reinex-blue {
+    color: var(--reinex-blue);
+  }
+
+  .text-reinex-navy {
+    color: var(--reinex-navy);
+  }
+
+  /* Border Color Utilities */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+
+  .border-light {
+    border-color: var(--border-light);
+  }
+
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+
+  .border-reinex-blue {
+    border-color: var(--reinex-blue);
+  }
+
+  /* Custom gradient utilities */
+  .bg-gradient-reinex {
+    background: linear-gradient(135deg, #4d8fa7 0%, #508fa8 100%);
+  }
+
+  .bg-gradient-navy {
+    background: linear-gradient(135deg, #13263e 0%, #13263e 100%);
+  }
+
+  .bg-gradient-reinex-service {
+    background: linear-gradient(180deg, rgba(80, 143, 168, 0.6) 0%, rgba(77, 143, 167, 0.6) 100%);
+  }
+
+  .bg-gradient-reinex-blue-white {
+    background: linear-gradient(135deg, #4d8fa7 0%, #ffffff 100%);
+  }
+
+  .bg-gradient-window-form {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  }
+
+  /* FAQ specific utilities */
+  .accordion-transition {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .faq-text-style {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    color: #000000;
+  }
+
+  /* About page specific utilities */
+  .about-hero-text {
+    font-size: 250px;
+    font-weight: 700;
+    line-height: 305px;
+    text-transform: uppercase;
+    color: var(--about-text-overlay);
+  }
+
+  .about-title-text {
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 79px;
+    color: var(--reinex-navy);
+  }
+
+  .about-description-text {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 53px;
+    color: #000000;
+  }
+
+  .about-mission-title {
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 57px;
+    color: #000000;
+  }
+
+  .about-mission-text {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #000000;
+  }
+
+  /* Homepage specific utilities */
+  .homepage-hero-title {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 64px;
+    color: #508fa8;
+  }
+
+  .homepage-section-title {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 56px;
+    color: #508fa8;
+  }
+
+  .homepage-feature-title {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 84px;
+    color: #1f1f1f;
+  }
+
+  .homepage-stats-number {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+    color: #ffffff;
+  }
+
+  .homepage-service-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    color: #ffffff;
+  }
+
+  .homepage-review-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #8a8a8a;
+  }
+
+  .homepage-booking-title {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    color: #212121;
+  }
+
+  .homepage-booking-description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(33, 33, 33, 0.6);
+  }
+
+  /* Window cleaning specific utilities */
+  .window-hero-title {
+    font-size: 77px;
+    font-weight: 600;
+    line-height: 89px;
+    color: #ffffff;
+  }
+
+  .window-section-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 68px;
+    color: #13263e;
+  }
+
+  .window-service-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #13263e;
+  }
+
+  .window-feature-title {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 84px;
+    color: #13263e;
+  }
+
+  .window-feature-text {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 33px;
+    color: #13263e;
+  }
+
+  .window-feature-number {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43px;
+    color: #13263e;
+  }
+
+  .window-form-label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #13263e;
+  }
+
+  .window-cta-text {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    color: #ffffff;
+  }
+
+  .window-contact-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    color: #4d8fa7;
+  }
+}
