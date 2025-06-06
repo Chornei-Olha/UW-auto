@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
       <Header />
       {/* Hero Section */}
       <section className="container px-5 lg:px-10 relative min-h-screen bg-white overflow-hidden mt-10">
-        <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block">
+        <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-4">
           <span className="text-lg font-semibold text-[#4d8fa7]">
             Reinheit trifft Verantwortung.
           </span>
@@ -45,14 +45,20 @@ const HomePage: React.FC = () => {
           ReinEx – Ihre vertrauenswürdige Reinigungsfirma mit System, Plan und Verantwortung
         </h1>
 
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-row gap-8 h-[582px]">
           <div>
             {' '}
             <div className="flex flex-row gap-8">
               {' '}
-              <div>
+              <div className="h-full flex items-center">
                 {' '}
-                <Image src="/images/hero-left.png" alt="Google" width={244} height={323} />
+                <Image
+                  src="/images/hero-left.png"
+                  alt="Google"
+                  width={244}
+                  height={523}
+                  className="h-full w-auto object-contain"
+                />
               </div>
               <div className="flex flex-col gap-10">
                 {' '}
@@ -70,7 +76,7 @@ const HomePage: React.FC = () => {
                 </div>
                 <div className="align-left">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] rounded-lg p-8 text-white relative">
+                    <div className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] rounded-lg p-4 text-white relative">
                       <div className="flex justify-between items-start">
                         <div>
                           <h3 className="text-4xl font-semibold mb-2">+12,000</h3>
@@ -85,7 +91,7 @@ const HomePage: React.FC = () => {
                         />
                       </div>
                     </div>
-                    <div className="bg-[#508fa8] rounded-lg p-8 text-white relative">
+                    <div className="bg-[#508fa8] rounded-lg p-4 text-white relative">
                       <div className="flex justify-between items-start">
                         <div>
                           <h3 className="text-4xl font-semibold mb-2">9,500+</h3>
@@ -104,7 +110,7 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="max-w-7xl mx-auto px-4">
+            <div className="mx-auto">
               <h2 className="text-2xl font-semibold text-[#508fa8] mt-[74px] mb-6">
                 Willkommen bei ReinEx Ihr Partner für Reinheit!
               </h2>
@@ -142,14 +148,14 @@ const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="h-full">
             {' '}
             <Image
               src="/images/hero-right.png"
               alt="Google"
               width={414}
               height={582}
-              className="h-full object-contain"
+              className="w-auto object-contain"
             />
           </div>
         </div>

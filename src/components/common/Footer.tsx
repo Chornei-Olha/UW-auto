@@ -6,154 +6,156 @@ import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#13263e] text-white pb-[35px] min-h-[347px]">
-      {/* Contact Section */}
-      <div className="absolute left-1/2 -translate-x-1/2 -top-1/2 container px-5 lg:px-10 bg-[#4d8fa7] py-12 rounded-[500px] ">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
-          <div>
-            <h2 className="text-center text-2xl lg:text-5xl font-semibold text-white">
-              Weitere Informationen oder Hilfe?
-            </h2>
-          </div>
-          <div>
-            <button className="bg-white text-[#4d8fa7] px-[70px] py-[10px] lg:px-[95px] lg:py-[20px] rounded-[500px] font-bold text-xl hover:shadow-lg transition-all">
-              Kontakt
-            </button>
+    <footer className="bg-[#13263e] text-white pb-[35px] min-h-[347px] mt-[85px]">
+      <div className="relative">
+        {' '}
+        {/* Contact Section */}
+        <div className="absolute left-1/2 -translate-x-1/2 -top-1/4 container px-5 lg:px-10 bg-[#4d8fa7] py-11 rounded-[500px] ">
+          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+            <div>
+              <h2 className="text-center text-2xl lg:text-5xl font-semibold text-white">
+                Weitere Informationen oder Hilfe?
+              </h2>
+            </div>
+            <div>
+              <button className="bg-white text-[#4d8fa7] px-[70px] py-[10px] lg:px-[95px] lg:py-[20px] rounded-[500px] font-bold text-xl hover:shadow-lg transition-all">
+                Kontakt
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="container px-5 lg:px-10 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  pt-[70px]">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-            <Image
-              src="/images/img_reinex_name.png"
-              alt="ReinEx Logo"
-              width={153}
-              height={51}
-              className="mb-6"
-            />
-            <p className="text-[#e8e8e8] text-base leading-5 mb-10">
-              24/7 Kundensupport – Wir sind jederzeit für Sie da!
-            </p>
-            <div className="flex space-x-4">
+        {/* Main Footer Content */}
+        <div className="container px-5 lg:px-10 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-[120px]">
+            {/* Company Info */}
+            <div className="lg:col-span-1">
               <Image
-                src="/images/img_flatcoloriconsgoogle.svg"
-                alt="Google"
-                width={27}
-                height={27}
+                src="/images/img_reinex_name.png"
+                alt="ReinEx Logo"
+                width={153}
+                height={51}
+                className="mb-6"
               />
-              <Image src="/images/img_vector.svg" alt="Facebook" width={24} height={24} />
-              <Image src="/images/img_logostwitter.svg" alt="Twitter" width={21} height={25} />
-              <Image
-                src="/images/img_vector_white_a700.svg"
-                alt="LinkedIn"
-                width={24}
-                height={24}
-              />
+              <p className="text-[#e8e8e8] text-base leading-5 mb-10">
+                24/7 Kundensupport – Wir sind jederzeit für Sie da!
+              </p>
+              <div className="flex space-x-4">
+                <Image
+                  src="/images/img_flatcoloriconsgoogle.svg"
+                  alt="Google"
+                  width={27}
+                  height={27}
+                />
+                <Image src="/images/img_vector.svg" alt="Facebook" width={24} height={24} />
+                <Image src="/images/img_logostwitter.svg" alt="Twitter" width={21} height={25} />
+                <Image
+                  src="/images/img_vector_white_a700.svg"
+                  alt="LinkedIn"
+                  width={24}
+                  height={24}
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Contact Info */}
-          <div className="lg:col-span-1">
-            <div className="text-[#ffffff] text-sm leading-6">
-              <p className="mb-2">24/7 Kundensupport – Wir sind jederzeit für Sie da!</p>
-              <p className="mb-2 underline">+ 491734983416</p>
-              <p className="mb-2 underline">info@reinigungex.com</p>
-              <p>Dresden 01257</p>
+            {/* Contact Info */}
+            <div className="lg:col-span-1">
+              <div className="text-[#ffffff] text-sm leading-6">
+                <p className="mb-2">24/7 Kundensupport – Wir sind jederzeit für Sie da!</p>
+                <p className="mb-2 underline">+ 491734983416</p>
+                <p className="mb-2 underline">info@reinigungex.com</p>
+                <p>Dresden 01257</p>
+              </div>
             </div>
-          </div>
 
-          {/* Navigation */}
-          <div className="lg:col-span-1">
-            <h3 className="text-2xl font-semibold text-[#e8e8e8] mb-6">Navigation</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <Image
-                  src="/images/img_vector_2.svg"
-                  alt="Arrow"
-                  width={6}
-                  height={4}
-                  className="mr-3"
-                />
-                <Link
-                  href="/services"
-                  className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
-                >
-                  Dienstleistungen
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <Image
-                  src="/images/img_vector_2.svg"
-                  alt="Arrow"
-                  width={6}
-                  height={4}
-                  className="mr-3"
-                />
-                <Link
-                  href="/about"
-                  className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
-                >
-                  Über uns
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <Image
-                  src="/images/img_vector_2.svg"
-                  alt="Arrow"
-                  width={6}
-                  height={4}
-                  className="mr-3"
-                />
-                <Link
-                  href="/faq"
-                  className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
-                >
-                  FAQs
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <Image
-                  src="/images/img_vector_2.svg"
-                  alt="Arrow"
-                  width={6}
-                  height={4}
-                  className="mr-3"
-                />
-                <Link
-                  href="/contact"
-                  className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
-                >
-                  Kontakt
-                </Link>
-              </li>
-            </ul>
-          </div>
+            {/* Navigation */}
+            <div className="lg:col-span-1">
+              <h3 className="text-2xl font-semibold text-[#e8e8e8] mb-6">Navigation</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <Image
+                    src="/images/img_vector_2.svg"
+                    alt="Arrow"
+                    width={6}
+                    height={4}
+                    className="mr-3"
+                  />
+                  <Link
+                    href="/services"
+                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                  >
+                    Dienstleistungen
+                  </Link>
+                </li>
+                <li className="flex items-center">
+                  <Image
+                    src="/images/img_vector_2.svg"
+                    alt="Arrow"
+                    width={6}
+                    height={4}
+                    className="mr-3"
+                  />
+                  <Link
+                    href="/about"
+                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                  >
+                    Über uns
+                  </Link>
+                </li>
+                <li className="flex items-center">
+                  <Image
+                    src="/images/img_vector_2.svg"
+                    alt="Arrow"
+                    width={6}
+                    height={4}
+                    className="mr-3"
+                  />
+                  <Link
+                    href="/faq"
+                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                  >
+                    FAQs
+                  </Link>
+                </li>
+                <li className="flex items-center">
+                  <Image
+                    src="/images/img_vector_2.svg"
+                    alt="Arrow"
+                    width={6}
+                    height={4}
+                    className="mr-3"
+                  />
+                  <Link
+                    href="/contact"
+                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                  >
+                    Kontakt
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Legal */}
-          <div className="lg:col-span-1">
-            <h3 className="text-lg font-semibold text-white mb-6">Impressum / Datenschutz</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/impressum"
-                  className="text-white text-sm hover:text-[#e8e8e8] transition-colors"
-                >
-                  Impressum
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/datenschutz"
-                  className="text-white text-sm hover:text-[#e8e8e8] transition-colors"
-                >
-                  Datenschutz
-                </Link>
-              </li>
-            </ul>
+            {/* Legal */}
+            <div className="lg:col-span-1">
+              <h3 className="text-lg font-semibold text-white mb-6">Impressum / Datenschutz</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/impressum"
+                    className="text-white text-sm hover:text-[#e8e8e8] transition-colors"
+                  >
+                    Impressum
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/datenschutz"
+                    className="text-white text-sm hover:text-[#e8e8e8] transition-colors"
+                  >
+                    Datenschutz
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
