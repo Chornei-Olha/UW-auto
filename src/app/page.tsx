@@ -576,7 +576,7 @@ const HomePage: React.FC = () => {
             <div className="relative w-full">
               {/* Background Image */}
               <Image
-                src="/images/background.png"
+                src="/images/bgr.png"
                 alt="Cleaning professional"
                 width={364}
                 height={500}
