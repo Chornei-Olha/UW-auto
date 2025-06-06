@@ -9,9 +9,9 @@ export default function HomePage() {
   const { selectedDate, selectedTime, timeSlots, handleDateSelect, handleTimeSelect } =
     useBookingSelection();
   return (
-    <section className="container px-5 lg:px-10 inset-0 bg-white flex items-center justify-center z-50 mt-[90px] mb-[200px] lg:mb-[170px]">
-      <div className="bg-[#B1DCEB] rounded-[36px] px-5 lg:px-[80px] py-5 lg:py-9 max-w-4xl w-full overflow-y-auto">
-        <div className="bg-white bg-opacity-20 rounded-[60px] p-5 lg:p-11 backdrop-blur-sm border border-white">
+    <section className="container px-1 lg:px-10 inset-0 bg-white flex items-center justify-center z-50 mt-[90px] mb-[200px] lg:mb-[170px]">
+      <div className="bg-[#B1DCEB] rounded-[36px] px-1 lg:px-[80px] py-5 lg:py-9 max-w-4xl w-full overflow-y-auto">
+        <div className="bg-white bg-opacity-20 rounded-[60px] p-1 lg:p-11 backdrop-blur-sm border border-white">
           <div className="bg-white rounded-[38px] p-6">
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Service buchen</h2>
             <p className="text-gray-600 mb-8">

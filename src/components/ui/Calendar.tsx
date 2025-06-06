@@ -69,14 +69,14 @@ const Calendar: React.FC<CalendarProps> = ({ onDateSelect, className = '' }) => 
       </div>
 
       {/* Calendar grid */}
-      <div className="grid grid-cols-7 gap-1">
+      <div className="grid grid-cols-7 gap-4">
         {days.map((date, index) => (
           <div key={index} className="aspect-square">
             {date ? (
               <button
                 onClick={() => handleDateClick(date)}
                 disabled={!isDateAvailable(date)}
-                className={`w-7 lg:w-10 h-7 lg:h-10 rounded-full flex items-center justify-center text-xs lg:text-base font-medium transition-colors ${
+                className={`w-10 lg:w-10 h-10 lg:h-10 rounded-full flex items-center justify-center text-sm lg:text-base font-medium transition-colors ${
                   isDateSelected(date)
                     ? 'bg-[#4d899e] text-white'
                     : isDateAvailable(date)
