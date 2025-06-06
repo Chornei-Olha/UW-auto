@@ -35,194 +35,124 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            {/* Left Content */}
-            <div className="order-1 lg:order-1 space-y-8">
-              <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block">
-                <span className="text-lg font-semibold text-[#4d8fa7]">
-                  Reinheit trifft Verantwortung.
-                </span>
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-semibold text-[#508fa8] leading-tight">
-                ReinEx – Ihre vertrauenswürdige Reinigungsfirma mit System, Plan und Verantwortung
-              </h1>
-              <p className="text-base text-[#8a8a8a] leading-relaxed">
-                Büroreinigung und Gewerbereinigung in Dresden – zuverlässig, strukturiert und
-                diskret.
-              </p>
-              <Button
-                onClick={handleBookingClick}
-                className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-12 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all"
-              >
-                Jetzt kostenloses Angebot anfordern
-              </Button>
-            </div>
-            {/* Right Content - Image */}
-            <div className="order-2 lg:order-2 relative">
-              <Image
-                src="/images/img_image_323x244.png"
-                alt="Professional cleaning service"
-                width={323}
-                height={244}
-                className="rounded-[30px] w-full h-auto object-cover"
-              />
-            </div>
-          </div>
+      <section className="container px-5 lg:px-10 relative min-h-screen bg-white overflow-hidden mt-10">
+        <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block">
+          <span className="text-lg font-semibold text-[#4d8fa7]">
+            Reinheit trifft Verantwortung.
+          </span>
         </div>
-      </section>
-      {/* Statistics Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] rounded-lg p-8 text-white relative">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-4xl font-semibold mb-2">+12,000</h3>
-                  <p className="text-lg font-semibold mb-2">Lore ipsum</p>
-                  <p className="text-sm text-[#e8e8e8]">Вписати цифрти)</p>
-                </div>
-                <Image
-                  src="/images/img_icon_white_a700_46x46.svg"
-                  alt="Icon"
-                  width={46}
-                  height={46}
-                />
-              </div>
-            </div>
-            <div className="bg-[#508fa8] rounded-lg p-8 text-white relative">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-4xl font-semibold mb-2">9,500+</h3>
-                  <p className="text-lg font-semibold mb-2">Lore ipsum</p>
-                  <p className="text-sm text-[#e8e8e8]">Вписати цифри</p>
-                </div>
-                <Image src="/images/img_icon_white_a700.svg" alt="Icon" width={46} height={46} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Welcome Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-semibold text-[#508fa8] mb-6">
-            Willkommen bei ReinEx Ihr Partner für Reinheit!
-          </h2>
-          <p className="text-base text-[#8a8a8a] leading-relaxed mb-8">
-            Unsere Mission ist es, Lebens- und Arbeitsräume sauberer, gesünder und angenehmer zu
-            gestalten. Dabei setzen wir auf modernste Technologien und umweltfreundliche
-            Reinigungsmittel.
-          </p>
-          {/* Social Media Icons */}
-          <div className="flex space-x-4">
-            <Image
-              src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
-              alt="Google"
-              width={29}
-              height={29}
-            />
-            <Image
-              src="/images/img_vector_blue_gray_500.svg"
-              alt="Facebook"
-              width={25}
-              height={25}
-            />
-            <Image
-              src="/images/img_logostwitter_blue_gray_500.svg"
-              alt="Twitter"
-              width={22}
-              height={26}
-            />
-            <Image
-              src="/images/img_vector_blue_gray_500_25x25.svg"
-              alt="LinkedIn"
-              width={25}
-              height={25}
-            />
-          </div>
-        </div>
-      </section>
+        <h1 className="text-5xl lg:text-6xl font-semibold text-[#508fa8] leading-tight mb-4">
+          ReinEx – Ihre vertrauenswürdige Reinigungsfirma mit System, Plan und Verantwortung
+        </h1>
 
-      {/* Services Section */}
-      <section className="container px-5 lg:px-10 bg-white">
-        <div className="mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-11">
-            <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-8">
+          <div>
+            {' '}
+            <div className="flex flex-row gap-8">
+              {' '}
               <div>
                 {' '}
-                <Image
-                  src="/images/img_image_1_434x267.png"
-                  alt="Cleaning service 1"
-                  width={267}
-                  height={434}
-                  className="w-full h-auto object-cover"
-                />
+                <Image src="/images/hero-left.png" alt="Google" width={244} height={323} />
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-10">
                 {' '}
-                <Image
-                  src="/images/img_image_2_260x267.png"
-                  alt="Cleaning service 3"
-                  width={267}
-                  height={260}
-                  className="w-full h-auto object-cover"
-                />
-                <Image
-                  src="/images/img_image_150x267.png"
-                  alt="Cleaning service 2"
-                  width={260}
-                  height={150}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block w-fit mb-5">
-                <span className="text-lg font-semibold text-[#4d8fa7]">
-                  Connecting Homes with Trusted Hands
-                </span>
-              </div>
-              <h2 className="text-5xl font-semibold text-[#508fa8] mb-5 leading-tight">
-                Professionalität in jedem Detail
-              </h2>
-              <p className="text-base text-[#8a8a8a] leading-relaxed mb-20">
-                Unsere Mitarbeiter sind sorgfältig ausgewählt und speziell geschult. Dank unserer
-                Erfahrung in der Reinigungsbranche garantieren wir Qualität und Zuverlässigkeit bei
-                jeder Reinigung.
-              </p>
-              <div className="flex flex-row">
-                <div>
-                  <ul>
-                    <li>✓ Individuelle Reinigungslösungen für jedes Zuhause</li>
-                    <li>✓ Pünktlich, diskret & zuverlässig</li>
-                    <li>✓ 100% Zufriedenheitsgarantie bei jeder Buchung</li>
-                  </ul>
+                <div className="mx-auto space-y-8">
+                  <p className="text-base text-[#8a8a8a] leading-relaxed">
+                    Büroreinigung und Gewerbereinigung in Dresden – zuverlässig, strukturiert und
+                    diskret.
+                  </p>
+                  <Button
+                    onClick={handleBookingClick}
+                    className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-12 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all"
+                  >
+                    Jetzt kostenloses Angebot anfordern
+                  </Button>
+                </div>
+                <div className="align-left">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] rounded-lg p-8 text-white relative">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-4xl font-semibold mb-2">+12,000</h3>
+                          <p className="text-lg font-semibold mb-2">Lore ipsum</p>
+                          <p className="text-sm text-[#e8e8e8]">Вписати цифрти)</p>
+                        </div>
+                        <Image
+                          src="/images/img_icon_white_a700_46x46.svg"
+                          alt="Icon"
+                          width={46}
+                          height={46}
+                        />
+                      </div>
+                    </div>
+                    <div className="bg-[#508fa8] rounded-lg p-8 text-white relative">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-4xl font-semibold mb-2">9,500+</h3>
+                          <p className="text-lg font-semibold mb-2">Lore ipsum</p>
+                          <p className="text-sm text-[#e8e8e8]">Вписати цифри</p>
+                        </div>
+                        <Image
+                          src="/images/img_icon_white_a700.svg"
+                          alt="Icon"
+                          width={46}
+                          height={46}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* Experience Section */}
-          <div className="flex items-center justify-between bg-white mt-10">
-            <div className="flex flex-row">
-              {' '}
-              <div className="bg-gradient-to-r from-[#4d8fa7] to-white rounded-lg w-3 h-12 mr-5"></div>
-              <h2 className="text-2xl font-semibold text-[#1f1f1f]">
-                Mit ReinEx wird Reinheit zu einer neuen Erfahrung!
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-2xl font-semibold text-[#508fa8] mt-[74px] mb-6">
+                Willkommen bei ReinEx Ihr Partner für Reinheit!
               </h2>
-            </div>
-            <div>
-              {' '}
-              <Button
-                onClick={handleBookingClick}
-                className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-8 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all"
-              >
-                Jetzt buchen
-              </Button>
+              <p className="text-base text-[#8a8a8a] leading-relaxed mb-8">
+                Unsere Mission ist es, Lebens- und Arbeitsräume sauberer, gesünder und angenehmer zu
+                gestalten. Dabei setzen wir auf modernste Technologien und umweltfreundliche
+                Reinigungsmittel.
+              </p>
+              {/* Social Media Icons */}
+              <div className="flex space-x-4">
+                <Image
+                  src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
+                  alt="Google"
+                  width={29}
+                  height={29}
+                />
+                <Image
+                  src="/images/img_vector_blue_gray_500.svg"
+                  alt="Facebook"
+                  width={25}
+                  height={25}
+                />
+                <Image
+                  src="/images/img_logostwitter_blue_gray_500.svg"
+                  alt="Twitter"
+                  width={22}
+                  height={26}
+                />
+                <Image
+                  src="/images/img_vector_blue_gray_500_25x25.svg"
+                  alt="LinkedIn"
+                  width={25}
+                  height={25}
+                />
+              </div>
             </div>
           </div>
-        </div>{' '}
+          <div>
+            {' '}
+            <Image
+              src="/images/hero-right.png"
+              alt="Google"
+              width={414}
+              height={582}
+              className="h-full object-contain"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Services Grid Section */}
@@ -343,9 +273,6 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* <div className="flex flex-col justify-end relative h-full overflow-hidden">
-          </div> */}
       </section>
 
       {/* Why Choose Us Section */}
