@@ -3,23 +3,17 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Calendar from '@/components/ui/Calendar';
-export default function HomePage() {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(null);
-  const timeSlots = ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30'];
+import { useBookingSelection } from '@/hooks/useBookingSelection';
 
-  const handleDateSelect = (date) => {
-    setSelectedDate(date);
-  };
-  const handleTimeSelect = (time) => {
-    setSelectedTime(time);
-  };
+export default function HomePage() {
+  const { selectedDate, selectedTime, timeSlots, handleDateSelect, handleTimeSelect } =
+    useBookingSelection();
   return (
-    <section className="container px-5 lg:px-10 inset-0 bg-white flex items-center justify-center z-50 mt-[90px] mb-[170px]">
-      <div className="bg-[#B1DCEB] rounded-[36px] px-[80px] py-9 max-w-4xl w-full overflow-y-auto">
-        <div className="bg-white bg-opacity-20 rounded-[60px] p-11 backdrop-blur-sm border border-white">
+    <section className="container px-5 lg:px-10 inset-0 bg-white flex items-center justify-center z-50 mt-[90px] mb-[200px] lg:mb-[170px]">
+      <div className="bg-[#B1DCEB] rounded-[36px] px-5 lg:px-[80px] py-5 lg:py-9 max-w-4xl w-full overflow-y-auto">
+        <div className="bg-white bg-opacity-20 rounded-[60px] p-5 lg:p-11 backdrop-blur-sm border border-white">
           <div className="bg-white rounded-[38px] p-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Service buchen</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Service buchen</h2>
             <p className="text-gray-600 mb-8">
               Hier befinden sich die verfügbaren Termine. Jetzt ein passendes Datum und Uhrzeit
               finden und buchen.
@@ -27,8 +21,10 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left Side - Service Details */}
               <div>
-                <h3 className="text-2xl font-medium text-gray-900 mb-6">Servicedetails</h3>
-                <div className="space-y-2 text-gray-700">
+                <h3 className="text-xl lg:text-2xl font-medium text-gray-900 mb-6">
+                  Servicedetails
+                </h3>
+                <div className="space-y-1 lg:space-y-2 text-gray-700">
                   <p>Büroreinigung</p>
                   <p>22. Mai 2025 um 10:30</p>
                   <p>Beim Kunden</p>
@@ -38,12 +34,7 @@ export default function HomePage() {
                   <p>Auf Anfrage</p>
                 </div>
                 <div className="mt-8">
-                  <Image
-                    src="/images/img_frame_2.png"
-                    alt="Service Frame"
-                    width={119}
-                    height={32}
-                  />
+                  <Image src="/images/people.svg" alt="Service Frame" width={119} height={32} />
                 </div>
               </div>
               {/* Right Side - Calendar and Time Selection */}
@@ -61,7 +52,7 @@ export default function HomePage() {
                 />
                 {selectedDate && (
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                    <h4 className="text-base lg:text-lg font-semibold text-gray-900 mb-4">
                       Verfügbarkeit für{' '}
                       {selectedDate.toLocaleDateString('de-DE', {
                         weekday: 'long',
@@ -74,7 +65,7 @@ export default function HomePage() {
                         <button
                           key={time}
                           onClick={() => handleTimeSelect(time)}
-                          className={`p-4 text-left border border-gray-200 rounded hover:bg-gray-50 ${
+                          className={`p-2 lg:p-4 text-left border border-gray-200 rounded hover:bg-gray-50 ${
                             selectedTime === time ? 'bg-blue-50 border-blue-300' : ''
                           }`}
                         >

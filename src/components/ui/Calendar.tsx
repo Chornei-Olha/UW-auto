@@ -4,18 +4,16 @@ import React, { useState } from 'react';
 
 interface CalendarProps {
   onDateSelect: (date: Date) => void;
+  selectedDate?: Date | null;
   className?: string;
 }
 
-const Calendar: React.FC<CalendarProps> = ({
-  onDateSelect,
-  className = ''
-}) => {
+const Calendar: React.FC<CalendarProps> = ({ onDateSelect, className = '' }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const daysOfWeek = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
-  
+
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -23,19 +21,19 @@ const Calendar: React.FC<CalendarProps> = ({
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
     const startingDayOfWeek = (firstDay.getDay() + 6) % 7; // Adjust for Monday start
-    
+
     const days = [];
-    
+
     // Add empty cells for days before the first day of the month
     for (let i = 0; i < startingDayOfWeek; i++) {
       days.push(null);
     }
-    
+
     // Add days of the month
     for (let day = 1; day <= daysInMonth; day++) {
       days.push(new Date(year, month, day));
     }
-    
+
     return days;
   };
 
@@ -78,18 +76,18 @@ const Calendar: React.FC<CalendarProps> = ({
               <button
                 onClick={() => handleDateClick(date)}
                 disabled={!isDateAvailable(date)}
-                className={`w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-colors ${
+                className={`w-7 lg:w-10 h-7 lg:h-10 rounded-full flex items-center justify-center text-xs lg:text-base font-medium transition-colors ${
                   isDateSelected(date)
                     ? 'bg-[#4d899e] text-white'
                     : isDateAvailable(date)
-                    ? 'bg-[#4d899e] text-white hover:bg-[#3a7a8f]'
-                    : 'text-[#21212166] cursor-not-allowed'
+                      ? 'bg-[#4d899e] text-white hover:bg-[#3a7a8f]'
+                      : 'text-[#21212166] cursor-not-allowed'
                 }`}
               >
                 {date.getDate()}
               </button>
             ) : (
-              <div className="w-12 h-12"></div>
+              <div className="w-10 h-10"></div>
             )}
           </div>
         ))}

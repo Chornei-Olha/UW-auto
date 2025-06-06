@@ -37,45 +37,46 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <section className="container px-5 lg:px-10 relative min-h-screen bg-white overflow-hidden mt-10">
         <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-4">
-          <span className="text-lg font-semibold text-[#4d8fa7]">
+          <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7]">
             Reinheit trifft Verantwortung.
           </span>
         </div>
-        <h1 className="text-5xl lg:text-6xl font-semibold text-[#508fa8] leading-tight mb-4">
+        <h1 className="text-4xl lg:text-6xl font-semibold text-[#508fa8] leading-tight mb-4">
           ReinEx – Ihre vertrauenswürdige Reinigungsfirma mit System, Plan und Verantwortung
         </h1>
 
-        <div className="flex flex-row gap-8 h-[582px]">
+        <div className="flex flex-col md:flex-row gap-8 md:h-[582px]">
+          {/* Левая часть */}
           <div>
-            {' '}
-            <div className="flex flex-row gap-8">
-              {' '}
-              <div className="h-full flex items-center">
-                {' '}
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Левая картинка */}
+              <div className="flex justify-center md:h-full">
                 <Image
                   src="/images/hero-left.png"
                   alt="Google"
                   width={244}
                   height={523}
-                  className="h-full w-auto object-contain"
+                  className="h-[300px] md:h-full w-auto object-contain"
                 />
               </div>
+
+              {/* Центральный контент */}
               <div className="flex flex-col gap-10">
-                {' '}
-                <div className="mx-auto space-y-8">
-                  <p className="text-base text-[#8a8a8a] leading-relaxed">
+                <div className="mx-auto md:mx-0 space-y-8 px-4 md:px-0">
+                  <p className="text-base text-[#8a8a8a] leading-relaxed text-center md:text-left">
                     Büroreinigung und Gewerbereinigung in Dresden – zuverlässig, strukturiert und
                     diskret.
                   </p>
                   <Button
                     onClick={handleBookingClick}
-                    className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-12 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all"
+                    className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-8 py-3 rounded-full font-semibold text-lg hover:shadow-lg transition-all"
                   >
                     Jetzt kostenloses Angebot anfordern
                   </Button>
                 </div>
-                <div className="align-left">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div className="align-left px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] rounded-lg p-4 text-white relative">
                       <div className="flex justify-between items-start">
                         <div>
@@ -110,8 +111,10 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mx-auto">
-              <h2 className="text-2xl font-semibold text-[#508fa8] mt-[74px] mb-6">
+
+            {/* Нижний текст */}
+            <div className="mx-auto md:mx-0 text-center md:text-left px-4 md:px-0">
+              <h2 className="text-2xl font-semibold text-[#508fa8] mt-10 md:mt-[74px] mb-6">
                 Willkommen bei ReinEx Ihr Partner für Reinheit!
               </h2>
               <p className="text-base text-[#8a8a8a] leading-relaxed mb-8">
@@ -120,7 +123,7 @@ const HomePage: React.FC = () => {
                 Reinigungsmittel.
               </p>
               {/* Social Media Icons */}
-              <div className="flex space-x-4">
+              <div className="flex justify-center md:justify-start space-x-4">
                 <Image
                   src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
                   alt="Google"
@@ -148,14 +151,26 @@ const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="h-full">
-            {' '}
+
+          {/* Правая картинка */}
+          <div className="hidden md:block h-full">
             <Image
               src="/images/hero-right.png"
               alt="Google"
               width={414}
               height={582}
               className="w-auto object-contain"
+            />
+          </div>
+
+          {/* Правая картинка на мобильной версии */}
+          <div className="flex justify-center md:hidden mt-8">
+            <Image
+              src="/images/hero-right.png"
+              alt="Google"
+              width={414}
+              height={582}
+              className="w-auto h-[300px] object-contain"
             />
           </div>
         </div>
@@ -165,25 +180,25 @@ const HomePage: React.FC = () => {
       <section className="container px-5 lg:px-10 bg-white mt-[100px]">
         <div className="mx-auto">
           <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-8">
-            <span className="text-lg font-semibold text-[#4d8fa7]">
+            <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7]">
               Qualität, die man sieht. Verantwortung, die man spürt.
             </span>
           </div>
-          <h2 className="text-5xl font-semibold text-[#508fa8] mb-8 leading-tight">
+          <h2 className="text-3xl lg:text-5xl font-semibold text-[#508fa8] mb-8 leading-tight">
             Ihr Raum ist unser Anliegen. Reinigen Sie ihn, als ob Sie ihn selbst reinigen würden.
           </h2>
 
           <div className="flex flex-col lg:flex-row gap-10 items-stretch">
             {/* Services Grid */}
             <div className="flex flex-col md:max-w-[70%] gap-6">
-              <p className="text-base text-[#8a8a8a] leading-relaxed">
+              <p className="text-sm lg:text-base text-[#8a8a8a] leading-relaxed">
                 Wir bieten eine breite Palette professioneller Reinigungsdienste für Haushalte,
                 Büros und Unternehmen. Von der täglichen Reinigung bis zur Tiefendesinfektion -
                 wählen Sie die Dienstleistung, die Ihren Bedürfnissen entspricht. Qualität,
                 Pünktlichkeit und Liebe zum Detail sind unser Standard.
               </p>
               {/* Office Cleaning */}
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-col lg:flex-row gap-4">
                 <div className="relative rounded-3xl overflow-hidden h-[199px]">
                   <Image
                     src="/images/cleaning1.png"
@@ -252,7 +267,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
               </div>{' '}
-              <p className="text-base text-[#8a8a8a] leading-relaxed">
+              <p className="text-sm lg:text-base text-[#8a8a8a] leading-relaxed">
                 Jeder Raum erzählt eine Geschichte – wir sorgen dafür, dass sie sauber beginnt. Mit
                 modernster Ausrüstung und einem geschulten Team garantieren wir Ergebnisse, die man
                 nicht nur sieht, sondern auch spürt.
@@ -284,60 +299,60 @@ const HomePage: React.FC = () => {
       {/* Why Choose Us Section */}
       <section className="container px-5 lg:px-10 bg-white mt-[60px]">
         <div className="mx-auto">
-          <h2 className="text-6xl font-semibold text-[#508fa8] mb-16 text-center">
+          <h2 className="text-3xl lg:text-5xl font-semibold text-[#508fa8] mb-16 text-center">
             Warum uns wählen?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
             {/* Feature 1 */}
-            <div className="bg-[#4d8fa756] rounded-3xl p-8 relative flex flex-col h-full">
-              <div className="text-left mb-4">
-                <span className="text-4xl font-medium text-[#13263e]">01</span>
+            <div className="bg-[#4d8fa756] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">01</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-4 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
                 Professionalität in jedem Detail
               </h3>
-              <p className="text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
                 Unsere Mitarbeiter sind sorgfältig ausgewählt und speziell geschult. Dank unserer
                 Erfahrung in der Reinigungsbranche garantieren wir Qualität und Zuverlässigkeit bei
                 jeder Reinigung.
               </p>
             </div>
             {/* Feature 2 */}
-            <div className="bg-[#4d8fa756] rounded-3xl p-8 relative flex flex-col h-full">
-              <div className="text-left mb-4">
-                <span className="text-4xl font-medium text-[#13263e]">02</span>
+            <div className="bg-[#4d8fa756] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">02</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-4 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
                 Flexibilität und individuelle Lösungen
               </h3>
-              <p className="text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
                 Unsere Reinigungsdienste passen sich Ihren Bedürfnissen an. Sie können den Zeitpunkt
                 und Umfang der Reinigung frei wählen und so einen Service erhalten, der perfekt zu
                 Ihnen passt.
               </p>
             </div>
             {/* Feature 3 */}
-            <div className="bg-[#4d8fa756] rounded-3xl p-8 relative flex flex-col h-full">
-              <div className="text-left mb-4">
-                <span className="text-4xl font-medium text-[#13263e]">03</span>
+            <div className="bg-[#4d8fa756] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">03</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-4 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
                 Umweltfreundliche Produkte
               </h3>
-              <p className="text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="texgt-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
                 Wir verwenden ausschließlich umweltfreundliche Reinigungsmittel, die weder
                 gesundheitsschädlich noch umweltschädlich sind.
               </p>
             </div>
             {/* Feature 4 */}
-            <div className="bg-[#4d8fa756] rounded-3xl p-8 relative flex flex-col h-full">
-              <div className="text-left mb-4">
-                <span className="text-4xl font-medium text-[#13263e]">04</span>
+            <div className="bg-[#4d8fa756] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">04</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-4 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
                 Schnelligkeit und faire Preise
               </h3>
-              <p className="text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
                 Dank unseres effizienten Teams bieten wir schnelle und hochwertige Reinigungsdienste
                 zu wettbewerbsfähigen Preisen an. Wir schätzen Ihre Zeit und Ihren Komfort.
               </p>
@@ -362,15 +377,32 @@ const HomePage: React.FC = () => {
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+
           {/* Контент */}
-          <div className="relative z-10 mx-auto px-4 my-[120px] text-center">
-            <h2 className="text-5xl font-semibold text-white mb-8 leading-tight">
+          <div
+            className="relative z-10 mx-auto px-4 my-[120px] text-center
+                    max-sm:my-10 max-sm:px-4
+                    "
+          >
+            <h2
+              className="text-5xl font-semibold text-white mb-8 leading-tight
+                     max-sm:text-3xl max-sm:mb-6
+                     "
+            >
               Kostenlose Probereinigung
             </h2>
-            <p className="text-2xl font-medium text-white mb-12">
+            <p
+              className="text-2xl font-medium text-white mb-12
+                    max-sm:text-base max-sm:mb-8
+                    "
+            >
               Spüren Sie die Reinheit - testen Sie es kostenlos und unverbindlich!
             </p>
-            <Button className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-12 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all inline-flex items-center">
+            <Button
+              className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-12 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all inline-flex items-center
+                   max-sm:px-6 max-sm:py-3 max-sm:text-base
+                  "
+            >
               Kostenlos testen
               <Image
                 src="/images/img_mop.svg"
@@ -386,39 +418,66 @@ const HomePage: React.FC = () => {
 
       {/* Customer Reviews Section */}
       <section className="container px-5 lg:px-10 bg-white mt-[95px]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_364px] gap-8">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-[1fr_364px] gap-8
+                  max-sm:grid-cols-1 max-sm:gap-6
+                  "
+        >
           <div>
-            {' '}
-            <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-8">
-              <span className="text-lg font-semibold text-[#4d8fa7]">
+            <div
+              className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-8
+                      max-sm:px-4 max-sm:py-1 max-sm:mb-6
+                      "
+            >
+              <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7] max-sm:text-xs">
                 From Quick Fixes to Full-Service Home Care
               </span>
             </div>
-            <h2 className="text-5xl font-semibold text-[#1f1f1f] mb-8 leading-tight">
+            <h2
+              className="text-3xl lg:text-5xl font-semibold text-[#1f1f1f] mb-8 leading-tight
+                     max-sm:text-2xl max-sm:mb-6
+                     "
+            >
               Bewertungen unserer Kunden
             </h2>
-            <p className="text-base text-[#8a8a8a] leading-relaxed mb-12">
+            <p
+              className="text-sm lg:text-base text-[#8a8a8a] leading-relaxed mb-12
+                    max-sm:text-sm max-sm:mb-8
+                    "
+            >
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
               dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
               nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
               quis, sem. Nulla consequat massa quis enim.
             </p>
-            <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_1fr] gap-3 items-stretch mt-[100px]">
+            <div
+              className="grid grid-cols-1 lg:grid-cols-[250px_1fr_1fr] gap-3 items-stretch mt-[100px]
+                      max-sm:grid-cols-1 max-sm:mt-10 max-sm:gap-4
+                      "
+            >
               {/* Customer Image */}
-              <div className="lg:col-span-1 h-full flex justify-center items-center">
+              <div
+                className="lg:col-span-1 h-full flex justify-center items-center
+                        max-sm:mb-6
+                        "
+              >
                 <Image
                   src="/images/yellow.png"
                   alt="Happy customer"
                   width={250}
                   height={350}
-                  className="rounded-lg w-[250px] h-full object-cover"
+                  className="rounded-lg w-[250px] h-full object-cover max-sm:w-full max-sm:h-auto"
                 />
               </div>
               {/* Reviews Grid */}
-              <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div
+                className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-3
+                        max-sm:grid-cols-1 max-sm:gap-6
+                        "
+              >
                 {/* Review 1 */}
                 <div className="bg-white border border-[#e8e8e8] rounded-3xl p-6 flex-col justify-between h-full">
-                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed">
+                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed max-sm:text-sm">
                     Professionelle und zuverlässige Reinigung. Unkomplizierte Kommunikation und....
                   </p>
                   <div className="flex items-center space-x-4">
@@ -430,15 +489,19 @@ const HomePage: React.FC = () => {
                       className="rounded-full"
                     />
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-[#1f1f1f]">Michael Smith</h4>
-                      <p className="text-sm font-medium text-[#4d8fa7]">Apartment Owner</p>
+                      <h4 className="text-lg font-semibold text-[#1f1f1f] max-sm:text-base">
+                        Michael Smith
+                      </h4>
+                      <p className="text-sm font-medium text-[#4d8fa7] max-sm:text-xs">
+                        Apartment Owner
+                      </p>
                     </div>
                     <RatingBar rating={1} />
                   </div>
                 </div>
                 {/* Review 2 */}
                 <div className="bg-white border border-[#e8e8e8] rounded-3xl p-6 flex flex-col justify-between h-full">
-                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed">
+                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed max-sm:text-sm">
                     Ich war zufrieden mit der Reinigung. Die Fenster waren top.
                   </p>
                   <div className="flex items-center space-x-4">
@@ -450,15 +513,17 @@ const HomePage: React.FC = () => {
                       className="rounded-full"
                     />
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-[#1f1f1f]">Nur Azzahra</h4>
-                      <p className="text-sm font-medium text-[#4d8fa7]">Busy Mom</p>
+                      <h4 className="text-lg font-semibold text-[#1f1f1f] max-sm:text-base">
+                        Nur Azzahra
+                      </h4>
+                      <p className="text-sm font-medium text-[#4d8fa7] max-sm:text-xs">Busy Mom</p>
                     </div>
                     <RatingBar rating={0} />
                   </div>
                 </div>
                 {/* Review 3 */}
                 <div className="bg-white border border-[#e8e8e8] rounded-3xl p-6 flex-col justify-between h-full">
-                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed">
+                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed max-sm:text-sm">
                     Ich habe gestern meine erste Reinigung bekommen und bin positiv sehr
                     überrascht....
                   </p>
@@ -471,15 +536,17 @@ const HomePage: React.FC = () => {
                       className="rounded-full"
                     />
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-[#1f1f1f]">Sarah Lia</h4>
-                      <p className="text-sm font-medium text-[#4d8fa7]">Busy Mom</p>
+                      <h4 className="text-lg font-semibold text-[#1f1f1f] max-sm:text-base">
+                        Sarah Lia
+                      </h4>
+                      <p className="text-sm font-medium text-[#4d8fa7] max-sm:text-xs">Busy Mom</p>
                     </div>
                     <RatingBar rating={0} />
                   </div>
                 </div>
                 {/* Review 4 */}
                 <div className="bg-white border border-[#e8e8e8] rounded-3xl p-6 flex flex-col justify-between h-full">
-                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed">
+                  <p className="text-base text-[#8a8a8a] mb-6 leading-relaxed max-sm:text-sm">
                     Vielen Dank für die Zusammenarbeit, sehr professionelles Team und ....
                   </p>
                   <div className="flex items-center space-x-4">
@@ -491,17 +558,21 @@ const HomePage: React.FC = () => {
                       className="rounded-full"
                     />
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-[#1f1f1f]">Daniel Jr</h4>
-                      <p className="text-sm font-medium text-[#4d8fa7]">Freelancer</p>
+                      <h4 className="text-lg font-semibold text-[#1f1f1f] max-sm:text-base">
+                        Daniel Jr
+                      </h4>
+                      <p className="text-sm font-medium text-[#4d8fa7] max-sm:text-xs">
+                        Freelancer
+                      </p>
                     </div>
                     <RatingBar rating={1} />
                   </div>
                 </div>
-              </div>{' '}
+              </div>
             </div>
           </div>
           {/* Decorative Elements */}
-          <div className="flex flex-col justify-end relative h-full overflow-hidden">
+          <div className="flex flex-col justify-end relative h-full overflow-hidden max-sm:hidden">
             <div className="relative w-full">
               {/* Background Image */}
               <Image
@@ -524,6 +595,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Booking Modal */}
       {isBookingModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">

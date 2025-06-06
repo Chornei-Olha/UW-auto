@@ -1,13 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="container px-5 lg:px-10 bg-white shadow-sm mt-[35px] py-4">
+    <header className="container px-5 lg:px-10 bg-white shadow-sm mt-[35px] py-4 relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -22,7 +24,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
@@ -62,8 +64,8 @@ const Header: React.FC = () => {
           </Link>
         </nav>
 
-        {/* CTA Button */}
-        <div className="flex items-center">
+        {/* CTA Button (always visible) */}
+        <div className="hidden md:flex items-center">
           <Button
             variant="primary"
             className="bg-gradient-to-r from-[#4d8fa7] to-[#508fa8] text-white px-6 py-3 rounded-[500px] font-semibold text-lg hover:shadow-lg transition-all"
@@ -71,7 +73,70 @@ const Header: React.FC = () => {
             Jetzt buchen
           </Button>
         </div>
+
+        {/* Mobile Burger Icon */}
+        <div className="md:hidden flex items-center">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <Image
+              src="/images/icon-burger.gif"
+              alt="Menu"
+              width={28}
+              height={28}
+              className="text-[#508FA8]"
+            />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md rounded-b-xl mt-2 py-4 px-6">
+          <nav className="flex flex-col space-y-4">
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-lg font-semibold text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              href="/services"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            >
+              Dienstleistungen
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            >
+              Über uns
+            </Link>
+            <Link
+              href="/faq"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            >
+              FAQs
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            >
+              Kontakt
+            </Link>
+            <Button
+              variant="primary"
+              className="bg-gradient-to-r from-[#4d8fa7] to-[#508fa8] text-white px-6 py-3 rounded-[500px] font-semibold text-lg hover:shadow-lg transition-all w-full"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Jetzt buchen
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

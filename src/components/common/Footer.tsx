@@ -6,19 +6,19 @@ import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#13263e] text-white pb-[35px] min-h-[347px] mt-[85px]">
+    <footer className="bg-[#13263e] text-white pb-[35px] min-h-[347px] lg:mt-[85px]">
       <div className="relative">
         {' '}
         {/* Contact Section */}
-        <div className="absolute left-1/2 -translate-x-1/2 -top-1/4 container px-5 lg:px-10 bg-[#4d8fa7] py-11 rounded-[500px] ">
+        <div className="absolute left-1/2 -translate-x-1/2 -top-1/4 container px-3 lg:px-10 bg-[#4d8fa7] py-9 rounded-[50px] lg:rounded-[500px] ">
           <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
             <div>
-              <h2 className="text-center text-2xl lg:text-5xl font-semibold text-white">
+              <h2 className="text-center text-xl lg:text-5xl font-semibold text-white">
                 Weitere Informationen oder Hilfe?
               </h2>
             </div>
             <div>
-              <button className="bg-white text-[#4d8fa7] px-[70px] py-[10px] lg:px-[95px] lg:py-[20px] rounded-[500px] font-bold text-xl hover:shadow-lg transition-all">
+              <button className="bg-white text-[#4d8fa7] px-[70px] py-[10px] lg:px-[95px] lg:py-[20px] rounded-[500px] font-bold text-lg lg:text-xl hover:shadow-lg transition-all">
                 Kontakt
               </button>
             </div>
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         </div>
         {/* Main Footer Content */}
         <div className="container px-5 lg:px-10 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-[120px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-[30px] lg:pt-[120px]">
             {/* Company Info */}
             <div className="lg:col-span-1">
               <Image
@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
 
             {/* Navigation */}
             <div className="lg:col-span-1">
-              <h3 className="text-2xl font-semibold text-[#e8e8e8] mb-6">Navigation</h3>
-              <ul className="space-y-4">
+              <h3 className="text-xl lg:text-2xl font-semibold text-[#e8e8e8] mb-6">Navigation</h3>
+              <ul className="space-y-2 lg:space-y-4">
                 <li className="flex items-center">
                   <Image
                     src="/images/img_vector_2.svg"
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                   />
                   <Link
                     href="/services"
-                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                    className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
                     Dienstleistungen
                   </Link>
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
                   />
                   <Link
                     href="/about"
-                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                    className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
                     Über uns
                   </Link>
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
                   />
                   <Link
                     href="/faq"
-                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                    className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
                     FAQs
                   </Link>
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
                   />
                   <Link
                     href="/contact"
-                    className="text-[#e8e8e8] text-sm hover:text-white transition-colors"
+                    className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
                     Kontakt
                   </Link>
@@ -136,12 +136,14 @@ const Footer: React.FC = () => {
 
             {/* Legal */}
             <div className="lg:col-span-1">
-              <h3 className="text-lg font-semibold text-white mb-6">Impressum / Datenschutz</h3>
-              <ul className="space-y-2">
+              <h3 className="text-base lg:text-lg font-semibold text-white mb-6">
+                Impressum / Datenschutz
+              </h3>
+              <ul className="space-y-2 lg:space-y-4">
                 <li>
                   <Link
                     href="/impressum"
-                    className="text-white text-sm hover:text-[#e8e8e8] transition-colors"
+                    className="text-white text-xs lg:text-sm hover:text-[#e8e8e8] transition-colors"
                   >
                     Impressum
                   </Link>
@@ -149,7 +151,7 @@ const Footer: React.FC = () => {
                 <li>
                   <Link
                     href="/datenschutz"
-                    className="text-white text-sm hover:text-[#e8e8e8] transition-colors"
+                    className="text-white text-xs lg:text-sm hover:text-[#e8e8e8] transition-colors"
                   >
                     Datenschutz
                   </Link>
