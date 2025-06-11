@@ -12,7 +12,7 @@ export default function AboutPage(): JSX.Element {
       {/* Hero Section with Background Text */}
       <section className="relative overflow-hidden">
         {/* Large Background Text */}
-        <h2 className="text-[250px] font-bold text-[#4d8fa770] uppercase tracking-wider leading-[305px] select-none text-center">
+        <h2 className="text-6xl md:text-[150px] lg:text-[250px] font-bold text-[#4d8fa770] uppercase tracking-wider leading-[305px] select-none text-center">
           UBER UNS
         </h2>
         {/* Content Container */}
@@ -98,7 +98,7 @@ export default function AboutPage(): JSX.Element {
               Mit ReinEx wird Reinheit zu einer neuen Erfahrung!
             </p>
           </div>
-          <div className="bg-[#4d8fa784] grid grid-cols-2 lg:grid-cols-4 px-8 py-20 gap-5 mt-20">
+          <div className="bg-[#4d8fa784] grid grid-cols-1 lg:grid-cols-4 px-8 py-20 gap-5 mt-20">
             {/* Office Cleaning */}
             <div className="flex flex-col text-center">
               <div>
