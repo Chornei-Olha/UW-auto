@@ -335,6 +335,67 @@ const VacationRentalCleaningPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us Section */}
+      <section className="container px-5 lg:px-10 bg-white mt-[60px]">
+        <div className="mx-auto">
+          <h2 className="text-3xl lg:text-5xl font-semibold text-[#13263E] mb-16 text-center">
+            Was wir tun?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-center">
+            {/* Feature 1 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Staubsaugen{' '}
+              </p>
+            </div>
+            {/* Feature 2 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3"></div>
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Möbelreinigung{' '}
+              </p>
+            </div>
+            {/* Feature 3 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Sanitäranlagen reinigen {' '}
+              </p>
+            </div>
+            {/* Feature 4 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Glastüren und Spiegelreinigung{' '}
+              </p>
+            </div>
+            {/* Feature 5 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Küchenreinigung{' '}
+              </p>
+            </div>
+            {/* Feature 6 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Müllentsorgung{' '}
+              </p>
+            </div>
+            {/* Feature 7 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Bodenreinigung{' '}
+              </p>
+            </div>
+            {/* Feature 8 */}
+            <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
+              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+                Individuelle Reinigungswünsche{' '}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="container px-5 lg:px-10 mt-20">
         <div className="max-w-6xl mx-auto">
@@ -397,102 +458,6 @@ const VacationRentalCleaningPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="container px-5 lg:px-10 bg-white mt-[80px] lg:mt-[145px mb-[200px] lg:mb-[145px">
-        <div>
-          <h3 className="text-4xl font-semibold text-[#13263e] text-center mb-8">
-            Lassen Sie Ihre Ferienwohnung glänzen! Erfahren Sie jetzt den Preis für die perfekte
-            Reinigung.
-          </h3>
-          <form onSubmit={handleSubmit} className="space-y-6 text-center">
-            {/* Центрируем контейнер */}
-            <div className="flex flex-col md:flex-row items-center text-left gap-10">
-              <div className="w-full md:w-2/3">
-                <InputField
-                  label="Name*"
-                  value={formData.name}
-                  onChange={(value) => handleInputChange('name', value)}
-                  required
-                />
-              </div>
-              <div className="w-full md:w-2/3">
-                <InputField
-                  label="Telefonnummer*"
-                  value={formData.phone}
-                  onChange={(value) => handleInputChange('phone', value)}
-                  type="tel"
-                  required
-                />
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 mx-auto text-left">
-              <InputField
-                label="E-Mail*"
-                value={formData.email}
-                onChange={(value) => handleInputChange('email', value)}
-                type="email"
-                required
-              />
-            </div>
-            <Button
-              type="submit"
-              className="bg-[#4A91AC] text-white px-[100px] py-2 rounded-full font-semibold  mb-[200px] lg:mb-20"
-            >
-              Jetzt Anfrage senden
-            </Button>
-          </form>
-        </div>
-      </section>
-      {/* <section>
-        <form className="mx-auto">
-          <div className="flex flex-col md:flex-row gap-4 mb-7">
-            <div className="flex-1">
-              <label htmlFor="name" className="block font-semibold text-sm mb-1">
-                Name*
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full border border-gray-700 rounded-md p-2"
-                required
-              />
-            </div>
-            <div className="flex-1">
-              <label htmlFor="phone" className="block font-semibold text-sm mb-1">
-                Telefonnummer*
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                className="w-full border border-gray-700 rounded-md p-2"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center">
-            <div className="mb-7 w-full lg:w-1/2">
-              <label htmlFor="email" className="block font-semibold text-sm mb-1 text-left">
-                E-Mail*
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full border border-gray-700 rounded-md p-2 text-center "
-                required
-              />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              type="submit"
-              className="bg-[#4A91AC] text-white px-[100px] py-2 rounded-full font-semibold  mb-[200px] lg:mb-20"
-            >
-              Jetzt Anfrage senden
-            </button>
-          </div>
-        </form>
-      </section> */}
       <Footer />
     </div>
   );
