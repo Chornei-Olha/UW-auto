@@ -9,12 +9,12 @@ const WindowCleaningPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: ''
+    email: '',
   });
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
   const handleSubmit = (e: React.FormEvent) => {
@@ -26,89 +26,45 @@ const WindowCleaningPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/img_5175.png"
-            alt="Window cleaning service"
-            width={421}
-            height={1440}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-30 rounded-b-[36px]"></div>
-        </div>
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            {/* Left Content - Hero Text */}
-            <div className="text-white space-y-8">
-              <h1 className="text-5xl lg:text-7xl font-semibold leading-tight">
-                Strahlend saubere Fenster für Ihr Zuhause oder Büro
-              </h1>
-            </div>
-            {/* Right Content - Contact Form */}
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-8 space-y-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <InputField
-                    label="Name*"
-                    value={formData.name}
-                    onChange={(value) => handleInputChange('name', value)}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <InputField
-                    label="Telefonnummer*"
-                    value={formData.phone}
-                    onChange={(value) => handleInputChange('phone', value)}
-                    type="tel"
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <InputField
-                    label="E-Mail*"
-                    value={formData.email}
-                    onChange={(value) => handleInputChange('email', value)}
-                    type="email"
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  variant="primary"
-                  className="w-full bg-gradient-to-r from-[#4d8fa7] to-[#508fa8] text-white py-4 rounded-3xl font-bold text-lg hover:shadow-lg transition-all"
-                >
-                  Jetzt Anfrage senden
-                </Button>
-              </form>
-            </div>
+      <section
+        className="relative min-h-[421px] overflow-hidden bg-cover bg-bottom"
+        style={{ backgroundImage: "url('/images/img_5175.png')" }}
+      >
+        {/* Черный оверлей */}
+        <div
+          className="absolute inset-0 bg-black bg-opacity-30"
+          style={{
+            borderBottomLeftRadius: '50px',
+            borderBottomRightRadius: '50px',
+          }}
+        ></div>
+
+        {/* Контент */}
+        <div className="relative z-20 h-full flex">
+          <div className="container px-5 lg:px-10 flex items-end h-full">
+            <h1 className="text-4xl lg:text-7xl font-semibold leading-tight text-white mt-[100px]">
+              Strahlend saubere Fenster für Ihr Zuhause oder Büro
+            </h1>
           </div>
         </div>
       </section>
+
       {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-[#13263e] mb-8">
-              Was wir tun?
-            </h2>
+      <section className="container px-5 lg:px-10 bg-white mt-[40px] lg:mt-[78px]">
+        <div className="mx-auto">
+          <div className="text-center">
+            <h2 className="text-4xl lg:text-6xl font-bold text-[#13263e]">Was wir tun?</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mt-[34px]">
             {/* Left Services */}
-            <div className="space-y-8">
-              <div className="bg-[#4d8fa756] p-6 rounded-3xl">
-                <h3 className="text-2xl lg:text-3xl font-semibold text-[#13263e] mb-4">
+            <div className="space-y-8 lg:col-start-1 lg:row-start-1">
+              <div className="bg-transparent">
+                <h3 className="text-xl lg:text-3xl font-semibold text-[#13263e] mb-4">
                   Reinigung der Fensterscheiben innen und außen
                 </h3>
               </div>
-              <div className="bg-[#4d8fa756] p-6 rounded-3xl">
-                <h3 className="text-2xl lg:text-3xl font-semibold text-[#13263e] mb-4">
+              <div className="bg-transparent">
+                <h3 className="text-xl lg:text-3xl font-semibold text-[#13263e] mb-4">
                   Reinigung der Fensterbänke
                 </h3>
               </div>
@@ -120,18 +76,18 @@ const WindowCleaningPage: React.FC = () => {
                 alt="Professional window cleaning"
                 width={507}
                 height={599}
-                className="rounded-3xl object-cover"
+                className="object-cover"
               />
             </div>
             {/* Right Services */}
-            <div className="space-y-8 lg:col-start-2 lg:row-start-1">
-              <div className="bg-[#4d8fa756] p-6 rounded-3xl text-right">
-                <h3 className="text-2xl lg:text-3xl font-semibold text-[#13263e] mb-4">
+            <div className="space-y-8 lg:col-start-3 lg:row-start-1">
+              <div className="bg-transparent">
+                <h3 className="text-xl lg:text-3xl font-semibold text-[#13263e] mb-4">
                   Reinigung der Fensterrahmen innen und außen
                 </h3>
               </div>
-              <div className="bg-[#4d8fa756] p-6 rounded-3xl text-right">
-                <h3 className="text-2xl lg:text-3xl font-semibold text-[#13263e] mb-4">
+              <div className="bg-transparent">
+                <h3 className="text-xl lg:text-3xl font-semibold text-[#13263e] mb-4">
                   Entfernung von hartnäckigem Schmutz
                 </h3>
               </div>
@@ -139,97 +95,103 @@ const WindowCleaningPage: React.FC = () => {
           </div>
         </div>
       </section>
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-semibold text-[#13263e] mb-8">
-              Warum uns wählen?
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature Card 1 */}
-            <div className="relative">
-              <Image
-                src="/images/img_vector_7.svg"
-                alt="Feature background"
-                width={249}
-                height={282}
-                className="w-full h-auto rounded-3xl"
-              />
-              <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                <div className="text-right">
-                  <span className="text-4xl font-medium text-[#13263e]">01</span>
-                </div>
-                <div>
-                  <p className="text-xl font-medium text-[#13263e] leading-relaxed">
-                    Gründliche Reinigung für eine saubere und komfortable Atmosphäre
-                  </p>
-                </div>
+
+      <section className="container px-5 lg:px-10 bg-white mt-[60px]">
+        <div className="mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-semibold text-black mb-16 text-center">
+            Warum uns wählen?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+            {/* Feature 1 */}
+            <div className="bg-[#E5EEF9] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">01</span>
               </div>
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
+                Gründliche Reinigung für eine saubere und komfortable Atmosphäre{' '}
+              </h3>
             </div>
-            {/* Feature Card 2 */}
-            <div className="relative">
-              <Image
-                src="/images/img_vector_8.svg"
-                alt="Feature background"
-                width={249}
-                height={282}
-                className="w-full h-auto rounded-3xl"
-              />
-              <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                <div className="text-right">
-                  <span className="text-4xl font-medium text-[#13263e]">02</span>
-                </div>
-                <div>
-                  <p className="text-xl font-medium text-[#111111] leading-relaxed">
-                    Flexible Einsatzzeiten, die sich Ihrem Arbeitsplan anpassen
-                  </p>
-                </div>
+            {/* Feature 2 */}
+            <div className="bg-[#E5EEF9] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">02</span>
               </div>
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
+                Flexible Einsatzzeiten, die sich Ihrem Arbeitsplan anpassen{' '}
+              </h3>
             </div>
-            {/* Feature Card 3 */}
-            <div className="relative">
-              <Image
-                src="/images/img_vector_7.svg"
-                alt="Feature background"
-                width={249}
-                height={282}
-                className="w-full h-auto rounded-3xl"
-              />
-              <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                <div className="text-right">
-                  <span className="text-4xl font-medium text-[#13263e]">03</span>
-                </div>
-                <div>
-                  <p className="text-xl font-medium text-[#13263e] leading-relaxed">
-                    Professionelles und diskretes Reinigungsteam
-                  </p>
-                </div>
+            {/* Feature 3 */}
+            <div className="bg-[#E5EEF9] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">03</span>
               </div>
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
+                Professionelles und diskretes Reinigungsteam{' '}
+              </h3>
             </div>
-            {/* Feature Card 4 */}
-            <div className="relative">
-              <Image
-                src="/images/img_vector_7.svg"
-                alt="Feature background"
-                width={242}
-                height={282}
-                className="w-full h-auto rounded-3xl"
-              />
-              <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                <div className="text-right">
-                  <span className="text-4xl font-medium text-[#13263e]">05</span>
-                </div>
-                <div>
-                  <p className="text-xl font-medium text-[#13263e] leading-relaxed">
-                    Transparente Preise und individuelle Angebote
-                  </p>
-                </div>
+            {/* Feature 4 */}
+            <div className="bg-[#E5EEF9] rounded-3xl p-3 lg:p-8 relative flex flex-col h-full">
+              <div className="text-left mb-3">
+                <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">04</span>
               </div>
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
+                Transparente Preise und individuelle Angebote{' '}
+              </h3>
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="container px-5 lg:px-10 bg-white mt-[80px] lg:mt-[145px]">
+        <form className="mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 mb-7">
+            <div className="flex-1">
+              <label htmlFor="name" className="block font-semibold text-sm mb-1">
+                Name*
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="w-full border border-gray-700 rounded-md p-2"
+                required
+              />
+            </div>
+            <div className="flex-1">
+              <label htmlFor="phone" className="block font-semibold text-sm mb-1">
+                Telefonnummer*
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                className="w-full border border-gray-700 rounded-md p-2"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-center items-center">
+            <div className="mb-7 w-full lg:w-1/2">
+              <label htmlFor="email" className="block font-semibold text-sm mb-1 text-left">
+                E-Mail*
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full border border-gray-700 rounded-md p-2"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-[#4A91AC] text-white px-[100px] py-2 rounded-full font-semibold  mb-[200px] lg:mb-20"
+            >
+              Jetzt Anfrage senden
+            </button>
+          </div>
+        </form>
       </section>
       <Footer />
     </div>

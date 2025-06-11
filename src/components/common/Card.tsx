@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
   number,
   variant = 'feature',
   className = '',
-  children
+  children,
 }) => {
   const getCardStyles = () => {
     switch (variant) {
@@ -38,11 +38,11 @@ const Card: React.FC<CardProps> = ({
   return (
     <div className={`${getCardStyles()} ${className}`}>
       {number && variant === 'feature' && (
-        <div className="text-right mb-4">
-          <span className="text-4xl font-medium text-[#13263e]">{number}</span>
+        <div className="text-left mb-4">
+          <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">{number}</span>
         </div>
       )}
-      
+
       {icon && (
         <div className="mb-4">
           <Image src={icon} alt={title} width={60} height={60} />
@@ -50,20 +50,28 @@ const Card: React.FC<CardProps> = ({
       )}
 
       <div>
-        <h3 className={`font-medium mb-3 ${
-          variant === 'service' ? 'text-xl text-white' : 
-          variant === 'feature' ? 'text-2xl text-[#13263e]' : 
-          'text-xl text-gray-900'
-        }`}>
+        <h3
+          className={`font-medium mb-3 ${
+            variant === 'service'
+              ? 'text-xl text-white'
+              : variant === 'feature'
+                ? 'text-xl text-[#13263e]'
+                : 'text-xl text-gray-900'
+          }`}
+        >
           {title}
         </h3>
-        
+
         {description && (
-          <p className={`leading-relaxed ${
-            variant === 'service' ? 'text-white text-sm' : 
-            variant === 'feature' ? 'text-[#13263e] text-base' : 
-            'text-gray-600 text-sm'
-          }`}>
+          <p
+            className={`leading-relaxed ${
+              variant === 'service'
+                ? 'text-white text-sm'
+                : variant === 'feature'
+                  ? 'text-[#13263e] text-base'
+                  : 'text-gray-600 text-sm'
+            }`}
+          >
             {description}
           </p>
         )}

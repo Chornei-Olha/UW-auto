@@ -176,6 +176,92 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Professional Service Section */}
+      <section className="container px-5 lg:px-10 mt-16">
+        <div className="mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content - Images */}
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <Image
+                  src="/images/img_image_1_434x267.png"
+                  alt="Cleaning Service 1"
+                  width={434}
+                  height={267}
+                />
+                <div className="space-y-4">
+                  <Image
+                    src="/images/img_image_2_260x267.png"
+                    alt="Cleaning Service 2"
+                    width={260}
+                    height={267}
+                  />
+                  <div className="relative">
+                    <Image
+                      src="/images/img_image_150x267.png"
+                      alt="Cleaning Service 3"
+                      width={260}
+                      height={267}
+                    />
+                  </div>
+                </div>
+              </div>{' '}
+            </div>
+            {/* Right Content */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-6 py-2 bg-white border-2 border-[#4D8FA7] rounded-full">
+                <span className="text-sm lg:text-lg font-semibold text-[#4D8FA7]">
+                  Connecting Homes with Trusted Hands
+                </span>
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-semibold text-[#508FA8] leading-tight">
+                Professionalität in jedem Detail
+              </h2>
+              <p className="text-base text-[#8A8A8A]">
+                Unsere Mitarbeiter sind sorgfältig ausgewählt und speziell geschult. Dank unserer
+                Erfahrung in der Reinigungsbranche garantieren wir Qualität und Zuverlässigkeit bei
+                jeder Reinigung.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <span className="text-base lg:text-lg font-semibold text-gray-900">
+                    ✔️ Individuelle Reinigungslösungen für jedes Zuhause
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-base lg:text-lg font-semibold text-gray-900">
+                    ✔️ Pünktlich, diskret & zuverlässig
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-base lg:text-lg font-semibold text-gray-900">
+                    ✔️ 100% Zufriedenheitsgarantie bei jeder Buchung
+                  </span>
+                </div>
+              </div>
+              <Button
+                variant="primary"
+                className="bg-gradient-to-r from-[#508FA8] to-[#4D8FA7] text-white px-8 py-4 rounded-3xl text-2xl font-semibold hover:from-blue-600 hover:to-blue-700"
+              >
+                Jetzt buchen
+              </Button>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="flex flex-row space-x-6">
+              {' '}
+              <div className="absolute w-3 h-11 bg-gradient-to-r from-[#4D8FA7] to-white rounded-lg"></div>
+              <div>
+                {' '}
+                <p className="text-xl lg:text-2xl font-semibold text-[#1F1F1F]">
+                  Mit ReinEx wird Reinheit zu einer neuen Erfahrung!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid Section */}
       <section className="container px-5 lg:px-10 bg-white mt-[100px]">
         <div className="mx-auto">
@@ -308,10 +394,10 @@ const HomePage: React.FC = () => {
               <div className="text-left mb-3">
                 <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">01</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
                 Professionalität in jedem Detail
               </h3>
-              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed">
                 Unsere Mitarbeiter sind sorgfältig ausgewählt und speziell geschult. Dank unserer
                 Erfahrung in der Reinigungsbranche garantieren wir Qualität und Zuverlässigkeit bei
                 jeder Reinigung.
@@ -322,10 +408,10 @@ const HomePage: React.FC = () => {
               <div className="text-left mb-3">
                 <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">02</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
                 Flexibilität und individuelle Lösungen
               </h3>
-              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed">
                 Unsere Reinigungsdienste passen sich Ihren Bedürfnissen an. Sie können den Zeitpunkt
                 und Umfang der Reinigung frei wählen und so einen Service erhalten, der perfekt zu
                 Ihnen passt.
@@ -336,10 +422,10 @@ const HomePage: React.FC = () => {
               <div className="text-left mb-3">
                 <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">03</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
                 Umweltfreundliche Produkte
               </h3>
-              <p className="texgt-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed">
                 Wir verwenden ausschließlich umweltfreundliche Reinigungsmittel, die weder
                 gesundheitsschädlich noch umweltschädlich sind.
               </p>
@@ -349,10 +435,10 @@ const HomePage: React.FC = () => {
               <div className="text-left mb-3">
                 <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">04</span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px]">
+              <h3 className="text-xl lg:text-2xl font-medium text-[#13263e] mb-3 min-h-[72px] lg:min-h-[100px]">
                 Schnelligkeit und faire Preise
               </h3>
-              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed mt-auto">
+              <p className="text-sm lg:text-base text-[#13263e] leading-relaxed">
                 Dank unseres effizienten Teams bieten wir schnelle und hochwertige Reinigungsdienste
                 zu wettbewerbsfähigen Preisen an. Wir schätzen Ihre Zeit und Ihren Komfort.
               </p>
