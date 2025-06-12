@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#13263e] text-white pb-[35px] min-h-[347px] lg:mt-[85px]">
+    <footer id="footer" className="bg-[#13263e] text-white pb-[35px] min-h-[347px] lg:mt-[85px]">
       <div className="relative">
         {' '}
         {/* Contact Section */}
@@ -61,8 +61,12 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-1">
               <div className="text-[#ffffff] text-sm leading-6">
                 <p className="mb-2">24/7 Kundensupport – Wir sind jederzeit für Sie da!</p>
-                <p className="mb-2 underline">+ 491734983416</p>
-                <p className="mb-2 underline">info@reinigungex.com</p>
+                <p className="mb-2 underline">
+                  <a href="tel:+491734983416">+49 173 4983416</a>
+                </p>
+                <p className="mb-2 underline">
+                  <a href="mailto:info@reinigungex.com">info@reinigungex.com</a>
+                </p>
                 <p>Dresden 01257</p>
               </div>
             </div>
@@ -83,7 +87,7 @@ const Footer: React.FC = () => {
                     href="/office-cleaning"
                     className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
-                    1
+                    Büroreinigung
                   </Link>
                 </li>
                 <li className="flex items-center">
@@ -98,7 +102,7 @@ const Footer: React.FC = () => {
                     href="/vacation-rental-cleaning"
                     className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
-                    2
+                    Ferienwohnungsreinigung
                   </Link>
                 </li>
                 <li className="flex items-center">
@@ -113,7 +117,7 @@ const Footer: React.FC = () => {
                     href="/window-cleaning"
                     className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
-                    3
+                    Fensterreinigung
                   </Link>
                 </li>
                 <li className="flex items-center">
@@ -144,21 +148,6 @@ const Footer: React.FC = () => {
                     className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
                   >
                     FAQs
-                  </Link>
-                </li>
-                <li className="flex items-center">
-                  <Image
-                    src="/images/img_vector_2.svg"
-                    alt="Arrow"
-                    width={6}
-                    height={4}
-                    className="mr-3"
-                  />
-                  <Link
-                    href="/contact"
-                    className="text-[#e8e8e8] text-xs lg:text-sm hover:text-white transition-colors"
-                  >
-                    Kontakt
                   </Link>
                 </li>
               </ul>

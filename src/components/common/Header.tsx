@@ -4,9 +4,17 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import { usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false); // Закрыть меню при выборе пункта
+  };
 
   return (
     <header className="container px-5 lg:px-10 bg-white shadow-sm mt-[35px] py-4 relative z-50">
@@ -28,37 +36,85 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
-            className="text-lg font-semibold text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            className={`text-lg transition-colors ${
+              pathname === '/'
+                ? 'text-[#244754] font-semibold'
+                : 'text-[#508FA8] hover:text-[#244754]'
+            }`}
           >
             Home
           </Link>
-          <div className="relative group">
-            <button className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors flex items-center">
+          <div className="relative">
+            {/* Кнопка-заголовок */}
+            <button
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="text-lg text-[#508FA8] hover:text-[#244754] transition-colors flex items-center"
+            >
               Dienstleistungen
               <Image
                 src="/images/img_polygon_10.svg"
                 alt="Dropdown"
                 width={10}
                 height={10}
-                className="ml-2"
+                className={`ml-2 transition-transform ${isOpen ? 'rotate-180' : ''}`}
               />
             </button>
+
+            {/* Выпадающее меню */}
+            {isOpen && (
+              <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-md z-10 min-w-[220px]">
+                <Link
+                  href="/office-cleaning"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-2 text-sm text-[#244754] hover:bg-gray-200"
+                >
+                  Büroreinigung
+                </Link>
+                <Link
+                  href="/vacation-rental-cleaning"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-2 text-sm text-[#244754] hover:bg-gray-200"
+                >
+                  Ferienwohnungsreinigung
+                </Link>
+                <Link
+                  href="/window-cleaning"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-2 text-sm text-[#244754] hover:bg-gray-200"
+                >
+                  Fensterreinigung
+                </Link>
+              </div>
+            )}
           </div>
+
           <Link
             href="/about"
-            className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            className={`text-lg transition-colors ${
+              pathname === '/about'
+                ? 'text-[#244754] font-semibold'
+                : 'text-[#508FA8] hover:text-[#244754]'
+            }`}
           >
             Über uns
           </Link>
           <Link
             href="/faq"
-            className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            className={`text-lg transition-colors ${
+              pathname === '/faq'
+                ? 'text-[#244754] font-semibold'
+                : 'text-[#508FA8] hover:text-[#244754]'
+            }`}
           >
             FAQs
           </Link>
           <Link
-            href="/contact"
-            className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+            href="#footer"
+            className={`text-lg transition-colors ${
+              pathname === '#footer'
+                ? 'text-[#244754] font-semibold'
+                : 'text-[#508FA8] hover:text-[#244754]'
+            }`}
           >
             Kontakt
           </Link>
@@ -99,13 +155,56 @@ const Header: React.FC = () => {
             >
               Home
             </Link>
-            <Link
-              href="/services"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
-            >
-              Dienstleistungen
-            </Link>
+            {/* Dienstleistungen Dropdown (Mobile) */}
+            <div>
+              <button
+                onClick={() => setIsMobileDropdownOpen((prev) => !prev)}
+                className="flex justify-between items-center w-full text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
+              >
+                Dienstleistungen
+                <span
+                  className={`transform transition-transform ${isMobileDropdownOpen ? 'rotate-180' : ''}`}
+                >
+                  ▼
+                </span>
+              </button>
+
+              {isMobileDropdownOpen && (
+                <div className="mt-2 ml-4 space-y-2">
+                  <Link
+                    href="/office-cleaning"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsMobileDropdownOpen(false);
+                    }}
+                    className="block text-sm text-[#244754] hover:text-[#4d8fa7]"
+                  >
+                    Büroreinigung
+                  </Link>
+                  <Link
+                    href="/vacation-rental-cleaning"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsMobileDropdownOpen(false);
+                    }}
+                    className="block text-sm text-[#244754] hover:text-[#4d8fa7]"
+                  >
+                    Ferienwohnungsreinigung
+                  </Link>
+                  <Link
+                    href="/window-cleaning"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsMobileDropdownOpen(false);
+                    }}
+                    className="block text-sm text-[#244754] hover:text-[#4d8fa7]"
+                  >
+                    Fensterreinigung
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link
               href="/about"
               onClick={() => setIsMenuOpen(false)}
@@ -121,7 +220,7 @@ const Header: React.FC = () => {
               FAQs
             </Link>
             <Link
-              href="/contact"
+              href="#footer"
               onClick={() => setIsMenuOpen(false)}
               className="text-lg text-[#508FA8] hover:text-[#4d8fa7] transition-colors"
             >
