@@ -38,10 +38,10 @@ const VacationRentalCleaningPage: React.FC = () => {
           <div className="absolute inset-0 bg-black bg-opacity-40 rounded-b-[36px]"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-full">
             {/* Left Content */}
-            <div className="text-white space-y-8">
-              <h1 className="text-5xl lg:text-7xl font-semibold pt-[50px]">
+            <div className="text-white space-y-8 lg:col-span-2">
+              <h1 className="text-5xl lg:text-7xl font-semibold pt-[50px] lg:pt-0">
                 Mehr Buchungen, weniger Stress!
               </h1>
               <p className="text-2xl lg:text-4xl font-medium">
@@ -49,8 +49,8 @@ const VacationRentalCleaningPage: React.FC = () => {
               </p>
             </div>
             {/* Right Form */}
-            <div className="flex justify-end">
-              <div className="p-2 rounded-lg w-full max-w-md space-y-6">
+            <div className="flex justify-end lg:col-span-1">
+              <div className="w-full max-w-md space-y-6">
                 <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
                   <div>
                     <label className="block text-white text-base font-bold mb-2">Name*</label>
@@ -271,13 +271,8 @@ const VacationRentalCleaningPage: React.FC = () => {
                 title="Über 100 betreute Ferienwohnungen in Dresden"
                 className="relative min-h-[300px] lg:min-h-[400px]"
               >
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/img_clip_path_group_blue_gray_500.svg"
-                    alt="Building icon"
-                    width={110}
-                    height={110}
-                  />
+                <div className="flex justify-center pt-8">
+                  <Image src="/images/icon1.svg" alt="Building icon" width={110} height={110} />
                 </div>
               </Card>
             </div>
@@ -289,12 +284,7 @@ const VacationRentalCleaningPage: React.FC = () => {
                 className="relative min-h-[300px] lg:min-h-[400px]"
               >
                 <div className="flex justify-center">
-                  <Image
-                    src="/images/img_clip_path_group_black_900_90x73.svg"
-                    alt="Guarantee icon"
-                    width={110}
-                    height={110}
-                  />
+                  <Image src="/images/icon2.svg" alt="Guarantee icon" width={110} height={110} />
                 </div>
               </Card>
             </div>
@@ -305,13 +295,8 @@ const VacationRentalCleaningPage: React.FC = () => {
                 title="7 Tage die Woche verfügbar, auch an Feiertagen"
                 className="relative min-h-[300px] lg:min-h-[400px]"
               >
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/img_clip_path_group_black_900_110x110.svg"
-                    alt="24/7 icon"
-                    width={110}
-                    height={110}
-                  />
+                <div className="flex justify-center  pt-10">
+                  <Image src="/images/icon3.svg" alt="24/7 icon" width={110} height={110} />
                 </div>
               </Card>
             </div>
@@ -322,13 +307,8 @@ const VacationRentalCleaningPage: React.FC = () => {
                 title="Geprüftes Personal & Versicherungsschutz für Ihr Eigentum"
                 className="relative min-h-[300px] lg:min-h-[400px]"
               >
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/img_vector_blue_gray_500_37x38.svg"
-                    alt="Security icon"
-                    width={110}
-                    height={110}
-                  />
+                <div className="flex justify-center pt-12">
+                  <Image src="/images/icon4.svg" alt="Security icon" width={110} height={110} />
                 </div>
               </Card>
             </div>

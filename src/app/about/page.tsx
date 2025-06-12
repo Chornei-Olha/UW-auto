@@ -12,9 +12,9 @@ export default function AboutPage(): JSX.Element {
       {/* Hero Section with Background Text */}
       <section className="relative overflow-hidden">
         {/* Large Background Text */}
-        <h2 className="text-6xl md:text-[150px] lg:text-[250px] font-bold text-[#4d8fa770] uppercase tracking-wider leading-[305px] select-none text-center">
+        <h1 className="text-6xl md:text-[150px] lg:text-[250px] font-bold text-[#4d8fa770] uppercase tracking-wider leading-[305px] select-none text-center">
           UBER UNS
-        </h2>
+        </h1>
         {/* Content Container */}
         <div className="relative z-10 mx-auto px-3 py-16 text-center">
           <div className="absolute space-y-8 -top-[130px] left-1/2 transform -translate-x-1/2">
