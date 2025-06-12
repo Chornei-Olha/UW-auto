@@ -142,7 +142,7 @@ const WindowCleaningPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="container px-5 lg:px-10 bg-white mt-[80px] lg:mt-[145px]">
+      <section className="container px-5 lg:px-10 py-10 mb-[200px] lg:mb-[170px]">
         <form className="mx-auto">
           <div className="flex flex-col md:flex-row gap-4 mb-7">
             <div className="flex-1">

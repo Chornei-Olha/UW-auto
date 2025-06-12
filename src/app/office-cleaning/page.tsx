@@ -255,7 +255,7 @@ const VacationRentalCleaningPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="container px-5 lg:px-10 mt-20 mb-[200px] lg:mb-[130px] flex justify-center">
+      <section className="container px-5 lg:px-10 py-10 mb-[200px] lg:mb-[170px] flex justify-center">
         <div className="bg-[#B7D3DC] rounded-3xl text-center px-6 py-[85px] w-full">
           <h2 className="text-2xl md:text-5xl font-semibold text-gray-900">
             Kostenlose Probereinigung

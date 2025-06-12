@@ -377,7 +377,7 @@ const VacationRentalCleaningPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="container px-5 lg:px-10 bg-white mt-[80px] lg:mt-[145px mb-[200px] lg:mb-[145px">
+      <section className="container px-5 lg:px-10 py-10 mb-[200px] lg:mb-[170px]">
         <div>
           <h3 className="text-4xl font-semibold text-[#13263e] text-center mb-8">
             Lassen Sie Ihre Ferienwohnung glänzen! Erfahren Sie jetzt den Preis für die perfekte
