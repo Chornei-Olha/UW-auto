@@ -12,22 +12,22 @@ export default function AboutPage(): JSX.Element {
       {/* Hero Section with Background Text */}
       <section className="relative overflow-hidden">
         {/* Large Background Text */}
-        <h1 className="text-6xl md:text-[150px] lg:text-[250px] font-bold text-[#4d8fa770] uppercase tracking-wider leading-[305px] select-none text-center">
+        <h1 className="text-7xl md:text-[150px] lg:text-[250px] font-bold text-[#4d8fa770] uppercase tracking-wider leading-[100px] md:leading-[305px] select-none text-center">
           UBER UNS
         </h1>
         {/* Content Container */}
-        <div className="relative z-10 mx-auto px-3 py-16 text-center">
-          <div className="absolute space-y-8 -top-[130px] left-1/2 transform -translate-x-1/2">
-            <h2 className="text-4xl lg:text-7xl font-semibold text-[#13263e] leading-tight">
+        <div className="relative z-10 mx-auto px-3 py-[100px] text-center">
+          <div className="absolute space-y-3 md:space-y-8 -top-[50px] md:-top-[130px] left-1/2 transform -translate-x-1/2">
+            <h2 className="text-3xl lg:text-7xl font-semibold text-[#13263e] leading-none">
               Willkommen bei ReinEx
             </h2>
-            <h2 className="text-4xl lg:text-7xl font-semibold text-[#13263e] leading-tight">
+            <h2 className="text-3xl lg:text-7xl font-semibold text-[#13263e] leading-none">
               Ihr Partner für Reinheit!
             </h2>
           </div>
         </div>
       </section>
-      <section className="container px-5 lg:px-10 py-5">
+      <section className="container py-10">
         <div className="mx-auto">
           <div className="relative">
             <div className="absolute inset-0 z-10"></div>
@@ -36,7 +36,7 @@ export default function AboutPage(): JSX.Element {
               alt="Professional cleaning team"
               width={1373}
               height={628}
-              className="rounded-[20px] w-full h-auto object-cover"
+              className="w-fill h-auto object-cover"
             />
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function AboutPage(): JSX.Element {
       {/* Description Section */}
       <section className="container px-5 lg:px-10 py-5">
         <div className="mx-auto text-center">
-          <p className="text-lg lg:text-3xl text-black max-w-6xl text-left lg:text-center">
+          <p className="text-lg lg:text-3xl text-black text-left lg:text-center">
             ReinEx steht für professionelle Reinigungsdienstleistungen, die Sauberkeit und Qualität
             auf höchstem Niveau garantieren. Wir sind Ihr verlässlicher Partner, wenn es um
             Büroreinigung, Fensterreinigung, Polstermöbelpflege und Industriereinigung geht.
@@ -70,7 +70,7 @@ export default function AboutPage(): JSX.Element {
       {/* Mission Section */}
       <section className="container px-5 lg:px-10 py-7">
         <div className="mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-medium text-black mb-8">Unsere Mission</h2>
+          <h2 className="text-3xl lg:text-5xl font-medium text-black mb-8">Unsere Mission</h2>
           <p className="text-lg lg:text-3xl font-medium text-black leading-7 max-w-5xl mx-auto">
             Unsere Mission ist es, Lebens- und Arbeitsräume sauberer, gesünder und angenehmer zu
             gestalten. Dabei setzen wir auf modernste Technologien und umweltfreundliche
@@ -79,7 +79,7 @@ export default function AboutPage(): JSX.Element {
         </div>
       </section>
       {/* Company Details Section */}
-      <section className="bg-[#F7FBFC]">
+      <section className="bg-[#F7FBFC]  mb-[100px] lg:mb-[170px]">
         <div className="container px-5 lg:px-10 py-5 pb-40">
           <div className="space-y-6 max-w-5xl ml-0">
             <p className="text-xl text-black leading-6">

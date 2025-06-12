@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         {' '}
         {/* Contact Section */}
         <div className="absolute left-1/2 -translate-x-1/2 -top-1/4 container px-5 lg:px-10 bg-[#4d8fa7] py-9 rounded-[50px] lg:rounded-[500px] ">
-          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
             <div>
               <h2 className="text-center text-xl lg:text-5xl font-semibold text-white">
                 Weitere Informationen oder Hilfe?

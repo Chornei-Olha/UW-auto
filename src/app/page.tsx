@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="container px-5 lg:px-10 relative min-h-screen bg-white overflow-hidden mt-10">
+      <section className="container px-5 lg:px-10 relative min-h-screen bg-white overflow-hidden py-10">
         <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-4">
           <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7]">
             Reinheit trifft Verantwortung.
@@ -56,14 +56,14 @@ const HomePage: React.FC = () => {
                   alt="Google"
                   width={244}
                   height={523}
-                  className="h-[300px] md:h-full w-auto object-contain"
+                  className="h-[400px] md:h-full w-auto object-contain"
                 />
               </div>
 
               {/* Центральный контент */}
               <div className="flex flex-col gap-10">
                 <div className="mx-auto md:mx-0 space-y-8 px-4 md:px-0">
-                  <p className="text-base text-[#8a8a8a] leading-relaxed text-center md:text-left">
+                  <p className="text-base text-[#8a8a8a] leading-relaxed text-left lg:text-center md:text-left">
                     Büroreinigung und Gewerbereinigung in Dresden – zuverlässig, strukturiert und
                     diskret.
                   </p>
@@ -82,7 +82,7 @@ const HomePage: React.FC = () => {
                         <div>
                           <h3 className="text-4xl font-semibold mb-2">+12,000</h3>
                           <p className="text-lg font-semibold mb-2">Lore ipsum</p>
-                          <p className="text-sm text-[#e8e8e8]">Вписати цифрти)</p>
+                          <p className="text-sm text-[#e8e8e8]">Вписати цифри</p>
                         </div>
                         <Image
                           src="/images/img_icon_white_a700_46x46.svg"
@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Нижний текст */}
-            <div className="mx-auto md:mx-0 text-center md:text-left px-4 md:px-0">
+            <div className="mx-auto md:mx-0 text-left px-4 md:px-0">
               <h2 className="text-2xl font-semibold text-[#508fa8] mt-10 md:mt-[74px] mb-6">
                 Willkommen bei ReinEx Ihr Partner für Reinheit!
               </h2>
@@ -170,14 +170,14 @@ const HomePage: React.FC = () => {
               alt="Google"
               width={414}
               height={582}
-              className="w-auto h-[300px] object-contain"
+              className="w-full h-[auto] object-contain"
             />
           </div>
         </div>
       </section>
 
       {/* Professional Service Section */}
-      <section className="container px-5 lg:px-10 mt-16">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content - Images */}
@@ -263,7 +263,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Services Grid Section */}
-      <section className="container px-5 lg:px-10 bg-white mt-[100px]">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
           <div className="border border-[#4d8fa7] rounded-[19px] px-6 py-2 inline-block mb-8">
             <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7]">
@@ -277,7 +277,7 @@ const HomePage: React.FC = () => {
           <div className="flex flex-col lg:flex-row gap-10 items-stretch">
             {/* Services Grid */}
             <div className="flex flex-col md:max-w-[70%] gap-6">
-              <p className="text-sm lg:text-base text-[#8a8a8a] leading-relaxed">
+              <p className="text-base text-[#8a8a8a] leading-relaxed">
                 Wir bieten eine breite Palette professioneller Reinigungsdienste für Haushalte,
                 Büros und Unternehmen. Von der täglichen Reinigung bis zur Tiefendesinfektion -
                 wählen Sie die Dienstleistung, die Ihren Bedürfnissen entspricht. Qualität,
@@ -353,7 +353,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
               </div>{' '}
-              <p className="text-sm lg:text-base text-[#8a8a8a] leading-relaxed">
+              <p className="text-base text-[#8a8a8a] leading-relaxed">
                 Jeder Raum erzählt eine Geschichte – wir sorgen dafür, dass sie sauber beginnt. Mit
                 modernster Ausrüstung und einem geschulten Team garantieren wir Ergebnisse, die man
                 nicht nur sieht, sondern auch spürt.
@@ -383,7 +383,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="container px-5 lg:px-10 bg-white mt-[60px]">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
           <h2 className="text-3xl lg:text-5xl font-semibold text-[#508fa8] mb-16 text-center">
             Warum uns wählen?
@@ -448,7 +448,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Free Trial Section */}
-      <section className="overflow-hidden mt-[104px]">
+      <section className="overflow-hidden py-10">
         <div
           className="
       container px-5 lg:px-10
@@ -503,7 +503,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Customer Reviews Section */}
-      <section className="container px-5 lg:px-10 bg-white mt-[95px]">
+      <section className="container px-5 lg:px-10 py-10">
         <div
           className="grid grid-cols-1 lg:grid-cols-[1fr_364px] gap-8
                   max-sm:grid-cols-1 max-sm:gap-6
@@ -515,7 +515,7 @@ const HomePage: React.FC = () => {
                       max-sm:px-4 max-sm:py-1 max-sm:mb-6
                       "
             >
-              <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7] max-sm:text-xs">
+              <span className="text-sm lg:text-lg font-semibold text-[#4d8fa7]">
                 From Quick Fixes to Full-Service Home Care
               </span>
             </div>
@@ -526,11 +526,7 @@ const HomePage: React.FC = () => {
             >
               Bewertungen unserer Kunden
             </h2>
-            <p
-              className="text-sm lg:text-base text-[#8a8a8a] leading-relaxed mb-12
-                    max-sm:text-sm max-sm:mb-8
-                    "
-            >
+            <p className="text-base text-[#8a8a8a] leading-relaxed mb-12 ">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
               dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
               nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
@@ -686,8 +682,8 @@ const HomePage: React.FC = () => {
       {isBookingModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-[#b1dbeb] rounded-[36px] p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="bg-white bg-opacity-20 rounded-[60px] p-8 backdrop-blur-sm">
-              <div className="bg-white rounded-[38px] p-8">
+            <div className="bg-white bg-opacity-20 rounded-[36px] p-8 backdrop-blur-sm">
+              <div className="bg-white rounded-[36px] p-8">
                 <div className="flex justify-between items-start mb-8">
                   <h2 className="text-3xl font-bold text-[#212121]">Service buchen</h2>
                   <button
