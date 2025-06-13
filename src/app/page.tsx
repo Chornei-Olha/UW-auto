@@ -14,8 +14,12 @@ const HomePage: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string>('');
   const handleBookingClick = () => {
-    setIsBookingModalOpen(true);
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
+
   const handleCloseModal = () => {
     setIsBookingModalOpen(false);
   };
@@ -179,7 +183,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Professional Service Section */}
       <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
@@ -267,7 +270,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Services Grid Section */}
       <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
@@ -387,7 +389,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us Section */}
       <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
@@ -452,7 +453,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Free Trial Section */}
       <section className="overflow-hidden py-10">
         <div
@@ -509,7 +509,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Customer Reviews Section */}
       <section className="container px-5 lg:px-10 py-10">
         <div
@@ -685,7 +684,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Booking Modal */}
       {isBookingModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -800,7 +798,9 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       )}
-      <Booking />
+      <div id="booking">
+        <Booking />
+      </div>{' '}
       <Footer />
     </div>
   );
