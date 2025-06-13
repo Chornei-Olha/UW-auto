@@ -16,7 +16,7 @@ export default function AboutPage(): JSX.Element {
           UBER UNS
         </h1>
         {/* Content Container */}
-        <div className="relative z-10 mx-auto px-3 py-[100px] text-center">
+        <div className="relative z-10 mx-auto px-3 pt-[100px] text-center">
           <div className="absolute space-y-3 md:space-y-8 -top-[50px] md:-top-[130px] left-1/2 transform -translate-x-1/2">
             <h2 className="text-3xl lg:text-7xl font-semibold text-[#13263e] leading-none">
               Willkommen bei ReinEx
