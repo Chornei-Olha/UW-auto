@@ -88,12 +88,12 @@ const HomePage: React.FC = () => {
                     <div className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] rounded-lg p-4 text-white relative">
                       <div className="flex justify-between items-start">
                         <div>
-                          <h3 className="text-4xl font-semibold mb-2">+12,000</h3>
-                          <p className="text-lg font-semibold mb-2">Lore ipsum</p>
-                          <p className="text-sm text-[#e8e8e8]">Вписати цифри</p>
+                          <h3 className="text-4xl font-semibold mb-2">98,4 %</h3>
+                          <p className="text-lg font-semibold mb-2">Kunden empfehlen uns weiter</p>
+                          {/* <p className="text-sm text-[#e8e8e8]">Вписати цифри</p> */}
                         </div>
                         <Image
-                          src="/images/img_icon_white_a700_46x46.svg"
+                          src="/images/img_icon_white_a700.svg"
                           alt="Icon"
                           width={46}
                           height={46}
@@ -103,12 +103,14 @@ const HomePage: React.FC = () => {
                     <div className="bg-[#508fa8] rounded-lg p-4 text-white relative">
                       <div className="flex justify-between items-start">
                         <div>
-                          <h3 className="text-4xl font-semibold mb-2">9,500+</h3>
-                          <p className="text-lg font-semibold mb-2">Lore ipsum</p>
-                          <p className="text-sm text-[#e8e8e8]">Вписати цифри</p>
+                          <h3 className="text-4xl font-semibold mb-2">1.000+</h3>
+                          <p className="text-lg font-semibold mb-2">
+                            Gereinigte Einheiten in Dresden und Umgebung
+                          </p>
+                          {/* <p className="text-sm text-[#e8e8e8]">Вписати цифри</p> */}
                         </div>
                         <Image
-                          src="/images/img_icon_white_a700.svg"
+                          src="/images/img_icon_white_a700_46x46.svg"
                           alt="Icon"
                           width={46}
                           height={46}
