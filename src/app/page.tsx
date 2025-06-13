@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
               {/* Центральный контент */}
               <div className="flex flex-col gap-10">
                 <div className="mx-auto md:mx-0 space-y-8 px-4 md:px-0">
-                  <p className="text-base text-[#8a8a8a] leading-relaxed text-left lg:text-center md:text-left">
+                  <p className="text-base text-[#8a8a8a] leading-relaxed text-left">
                     Büroreinigung und Gewerbereinigung in Dresden – zuverlässig, strukturiert und
                     diskret.
                   </p>
