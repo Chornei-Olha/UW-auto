@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({
     <div className={`${getCardStyles()} ${className}`}>
       {number && variant === 'feature' && (
         <div className="text-left mb-4">
-          <span className="text-3xl lg:text-4xl font-medium text-[#13263e]">{number}</span>
+          <span className="text-2xl lg:text-4xl font-medium text-[#13263e]">{number}</span>
         </div>
       )}
 
@@ -53,7 +53,7 @@ const Card: React.FC<CardProps> = ({
         <h3
           className={`font-medium mb-3 ${
             variant === 'service'
-              ? 'text-xl text-white'
+              ? 'text-lg text-white'
               : variant === 'feature'
                 ? 'text-xl text-[#13263e]'
                 : 'text-xl text-gray-900'

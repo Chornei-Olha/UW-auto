@@ -6,6 +6,36 @@ import Footer from '@/components/common/Footer';
 import Card from '@/components/common/Card';
 import Button from '@/components/ui/Button';
 import InputField from '@/components/ui/InputField';
+
+const steps = [
+  {
+    id: 1,
+    title: 'Termin und Besichtigung vereinbaren',
+    quote: `“Kontaktieren Sie Uns Und Vereinbaren\nSie Einen Termin Zur\nObjektbesichtigung”`,
+    leftImage: '/images/img_battles_image_2.png',
+    rightImage: '/images/img_battles_image_1.png',
+    bottomLeft: 'Sauberes Büro',
+    bottomRight: 'Leistungsfähiges Team',
+  },
+  {
+    id: 2,
+    title: 'Individuelles Angebot erhalten',
+    quote: `“Basierend auf Ihrem Bedarf erstellen wir ein maßgeschneidertes Angebot.”`,
+    leftImage: '/images/img_battles_image_2.png',
+    rightImage: '/images/img_battles_image_1.png',
+    bottomLeft: 'Sauberes Büro',
+    bottomRight: 'Leistungsfähiges Team',
+  },
+  {
+    id: 3,
+    title: 'Professionelle Reinigung durchführen',
+    quote: `“Unser Team übernimmt die Reinigung termingerecht und gründlich.”`,
+    leftImage: '/images/img_battles_image_2.png',
+    rightImage: '/images/img_battles_image_1.png',
+    bottomLeft: 'Sauberes Büro',
+    bottomRight: 'Leistungsfähiges Team',
+  },
+];
 const VacationRentalCleaningPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +53,19 @@ const VacationRentalCleaningPage: React.FC = () => {
     alert('Anfrage erfolgreich gesendet! Wir werden uns bald bei Ihnen melden.');
     setFormData({ name: '', phone: '', email: '' });
   };
+
+  const [current, setCurrent] = useState(0);
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev === 0 ? steps.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev === steps.length - 1 ? 0 : prev + 1));
+  };
+
+  const step = steps[current];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -33,9 +76,9 @@ const VacationRentalCleaningPage: React.FC = () => {
             src="/images/img_5175.png"
             alt="Vacation rental cleaning"
             fill
-            className="object-cover rounded-b-[36px]"
+            className="object-cover lg:rounded-b-[36px]"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 rounded-b-[36px]"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-40 lg:rounded-b-[36px]"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-full">
@@ -51,7 +94,7 @@ const VacationRentalCleaningPage: React.FC = () => {
             {/* Right Form */}
             <div className="flex justify-end lg:col-span-1">
               <div className="w-full max-w-md space-y-6">
-                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6 mb-10">
                   <div>
                     <label className="block text-white text-base font-bold mb-2">Name*</label>
                     <input
@@ -97,11 +140,11 @@ const VacationRentalCleaningPage: React.FC = () => {
         </div>
       </section>
       {/* Problems Section */}
-      <section className="container px-5 lg:px-10 mt-20">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
-          <h2 className="text-2xl lg:text-4xl font-bold text-black mb-16 leading-tight">
+          <h3 className="text-2xl lg:text-4xl font-bold text-black  text-center mb-16 leading-tight">
             Warum brauchen Ferienwohnungsbesitzer eine professionelle Reinigung?
-          </h2>
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <div className="bg-[#f1f9f4] p-6 rounded-lg h-123">
               <p className="text-sm lg:text-base text-[#1e1e1e] leading-relaxed">
@@ -152,7 +195,7 @@ const VacationRentalCleaningPage: React.FC = () => {
         </div>
       </section>
       {/* Pricing Section */}
-      <section className="container px-5 lg:px-10 mt-20">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="mx-auto">
           <h2 className="text-3xl lg:text-4xl font-semibold text-[#13263e] text-center mb-8">
             Transparente Preisgestaltung
@@ -257,9 +300,9 @@ const VacationRentalCleaningPage: React.FC = () => {
         </div>
       </section>
       {/* Why Choose Us Section */}
-      <section className="container px-5 lg:px-10 mt-20">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="=mx-auto">
-          <h2 className="text-4xl lg:text-5xl text-center font-semibold text-[#13263e] mb-16">
+          <h2 className="text-3xl lg:text-5xl text-center font-semibold text-[#13263e] mb-16">
             Warum uns wählen?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -269,10 +312,10 @@ const VacationRentalCleaningPage: React.FC = () => {
                 variant="feature"
                 number="01"
                 title="Über 100 betreute Ferienwohnungen in Dresden"
-                className="relative min-h-[300px] lg:min-h-[400px]"
+                className="relative min-h-[260px] lg:min-h-[350px]"
               >
                 <div className="flex justify-center pt-8">
-                  <Image src="/images/icon1.svg" alt="Building icon" width={110} height={110} />
+                  <Image src="/images/icon1.svg" alt="Building icon" width={80} height={80} />
                 </div>
               </Card>
             </div>
@@ -281,10 +324,10 @@ const VacationRentalCleaningPage: React.FC = () => {
                 variant="feature"
                 number="02"
                 title="Zufriedenheitsgarantie: kostenlose Nachreinigung falls nötig"
-                className="relative min-h-[300px] lg:min-h-[400px]"
+                className="relative min-h-[260px] lg:min-h-[350px]"
               >
                 <div className="flex justify-center">
-                  <Image src="/images/icon2.svg" alt="Guarantee icon" width={110} height={110} />
+                  <Image src="/images/icon2.svg" alt="Guarantee icon" width={80} height={80} />
                 </div>
               </Card>
             </div>
@@ -293,10 +336,10 @@ const VacationRentalCleaningPage: React.FC = () => {
                 variant="feature"
                 number="03"
                 title="7 Tage die Woche verfügbar, auch an Feiertagen"
-                className="relative min-h-[300px] lg:min-h-[400px]"
+                className="relative min-h-[260px] lg:min-h-[350px]"
               >
                 <div className="flex justify-center  pt-10">
-                  <Image src="/images/icon3.svg" alt="24/7 icon" width={110} height={110} />
+                  <Image src="/images/icon3.svg" alt="24/7 icon" width={80} height={80} />
                 </div>
               </Card>
             </div>
@@ -305,81 +348,88 @@ const VacationRentalCleaningPage: React.FC = () => {
                 variant="feature"
                 number="04"
                 title="Geprüftes Personal & Versicherungsschutz für Ihr Eigentum"
-                className="relative min-h-[300px] lg:min-h-[400px]"
+                className="relative min-h-[260px] lg:min-h-[350px]"
               >
                 <div className="flex justify-center pt-12">
-                  <Image src="/images/icon4.svg" alt="Security icon" width={110} height={110} />
+                  <Image src="/images/icon4.svg" alt="Security icon" width={80} height={80} />
                 </div>
               </Card>
             </div>
           </div>
         </div>
       </section>
+
       {/* Process Section */}
-      <section className="container px-5 lg:px-10 mt-20">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-semibold text-[#13263e] text-center mb-8">
+          <h2 className="text-3xl lg:text-5xl font-semibold text-[#13263e] text-center mb-8">
             In 3 Schritten zum perfekten Reinigungsergebnis
           </h2>
           <p className="text-2xl text-black text-center mb-16">Wie funktioniert es?</p>
-          <div className="flex flex-row justify-between">
-            {' '}
-            <p className="text-lg lg:text-2xl font-semibold text-[#131313] mb-4">
-              Termin und Besichtigung vereinbaren
-            </p>
-            {/* <Image src="/images/img_battles_quote_2.png" alt="Quote" width={23} height={38} /> */}
-            <p className="text-lg lg:text-2xl text-[#737373] text-right mb-4">
-              {'\u201C'}Kontaktieren Sie Uns Und Vereinbaren
-              <br />
-              Sie Einen Termin Zur
-              <br />
-              Objektbesichtigung
-              {'\u201E'}
-            </p>
-          </div>{' '}
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:items-start relative">
-            {/* Левая часть */}
-            <div className="mx-auto lg:ml-[120px] bg-[#4d8fa789] rounded-3xl py-[20px] lg:py-[80px] px-[20px] lg:px-[170px] flex items-center justify-center">
-              <Image
-                src="/images/img_battles_image_2.png"
-                alt="Appointment booking"
-                width={506}
-                height={345}
-                className="rounded-2xl w-full max-w-[506px]"
-              />
-            </div>
 
-            {/* Правая часть */}
-            <div className="mt-4 lg:mt-0 lg:absolute bg-transparent rounded-3xl py-[20px] lg:py-[80px] flex flex-col gap-4 lg:right-[-200px] items-center lg:items-end">
-              <Image
-                src="/images/img_battles_image_1.png"
-                alt="Professional cleaning"
-                width={506}
-                height={345}
-                className="rounded-2xl w-full max-w-[506px]"
-              />
-
-              <p className="text-gray-600 italic text-center lg:text-right">
-                Wir Werden Dafür Sorgen, Dass
-                <br />
-                Es Immer Einwandfrei Ist
+          {/* Шаг */}
+          <div className="w-full">
+            <div className="flex flex-row justify-between">
+              <p className="text-base lg:text-2xl font-semibold text-[#131313] mb-[120px] lg:mb-4">
+                {step.title}
+              </p>
+              <p className="text-base lg:text-2xl text-[#737373] text-right mb-[120px] lg:mb-4">
+                {step.quote}
               </p>
             </div>
+
+            <div className="flex flex-row items-center justify-center lg:items-start relative">
+              {/* Левая часть */}
+              <div className="mx-auto lg:ml-[120px] bg-[#4d8fa789] rounded-3xl py-[10px] lg:py-[80px] px-[10px] lg:px-[170px] flex items-center justify-center">
+                <Image
+                  src={step.leftImage}
+                  alt="Left"
+                  width={506}
+                  height={345}
+                  className="rounded-sm w-full max-w-[506px]"
+                />
+              </div>
+
+              <div className="mt-[-120px] lg:mt-0 lg:absolute bg-transparent rounded-sm py-[10px] lg:py-[80px] flex flex-col gap-4 lg:right-[-200px] items-center lg:items-end">
+                <Image
+                  src={step.rightImage}
+                  alt="Right"
+                  width={506}
+                  height={345}
+                  className="rounded-sm w-full max-w-[506px]"
+                />
+                <p className="text-gray-600 italic text-right">
+                  Wir Werden Dafür Sorgen, Dass
+                  <br />
+                  Es Immer Einwandfrei Ist
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="flex justify-between gap-4 mt-5 lg:mt-20">
-            <p className="text-lg lg:text-2xl text-[#2c2c2c] uppercase">Sauberes Büro</p>
-            <p className="text-lg lg:text-2xl text-[#2c2c2c] uppercase">leistungsfähi Ges Team</p>
+
+          {/* Подписи */}
+          <div className="flex justify-between gap-10 mt-10 lg:mt-20">
+            <p className="text-base lg:text-2xl text-[#2c2c2c] uppercase">{step.bottomLeft}</p>
+            <p className="text-base lg:text-2xl text-[#2c2c2c] uppercase text-right">
+              {step.bottomRight}
+            </p>
           </div>
-          <div className="flex justify-center space-x-4 mb-8">
-            <Image src="/images/img_arrowbackios.svg" alt="Previous" width={20} height={20} />
-            <Image src="/images/img_arrowforwardios.svg" alt="Next" width={20} height={20} />
+
+          {/* Стрелки */}
+          <div className="flex justify-center space-x-4 mt-10">
+            <button onClick={handlePrev}>
+              <Image src="/images/img_arrowbackios.svg" alt="Previous" width={20} height={20} />
+            </button>
+            <button onClick={handleNext}>
+              <Image src="/images/img_arrowforwardios.svg" alt="Next" width={20} height={20} />
+            </button>
           </div>
         </div>
       </section>
 
       <section className="container px-5 lg:px-10 py-10 mb-[200px] lg:mb-[170px]">
         <div>
-          <h3 className="text-4xl font-semibold text-[#13263e] text-center mb-8">
+          <h3 className="text-3xl lg:text-5xlfont-semibold text-[#13263e] text-center mb-8">
             Lassen Sie Ihre Ferienwohnung glänzen! Erfahren Sie jetzt den Preis für die perfekte
             Reinigung.
           </h3>

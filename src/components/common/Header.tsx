@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { usePathname } from 'next/navigation';
+import ServiceForm from '@/components/common/ServiceForm';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +16,7 @@ const Header: React.FC = () => {
   const handleLinkClick = () => {
     setIsOpen(false); // Закрыть меню при выборе пункта
   };
+  const [openForm, setOpenForm] = useState(false);
 
   return (
     <header className="container px-5 lg:px-10 bg-white shadow-sm mt-[35px] py-4 relative z-50">
@@ -124,10 +126,12 @@ const Header: React.FC = () => {
         <div className="hidden md:flex items-center">
           <Button
             variant="primary"
+            onClick={() => setOpenForm(true)}
             className="bg-gradient-to-r from-[#4d8fa7] to-[#508fa8] text-white px-6 py-3 rounded-[500px] font-semibold text-lg hover:shadow-lg transition-all"
           >
             Jetzt buchen
           </Button>
+          {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
         </div>
 
         {/* Mobile Burger Icon */}
@@ -227,12 +231,13 @@ const Header: React.FC = () => {
               Kontakt
             </Link>
             <Button
+              onClick={() => setOpenForm(true)}
               variant="primary"
               className="bg-gradient-to-r from-[#4d8fa7] to-[#508fa8] text-white px-6 py-3 rounded-[500px] font-semibold text-lg hover:shadow-lg transition-all w-full"
-              onClick={() => setIsMenuOpen(false)}
             >
               Jetzt buchen
             </Button>
+            {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
           </nav>
         </div>
       )}

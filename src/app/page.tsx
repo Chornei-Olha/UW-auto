@@ -241,7 +241,7 @@ const HomePage: React.FC = () => {
               </div>
               <Button
                 variant="primary"
-                className="bg-gradient-to-r from-[#508FA8] to-[#4D8FA7] text-white px-8 py-4 rounded-3xl text-2xl font-semibold hover:from-blue-600 hover:to-blue-700"
+                className="bg-gradient-to-r from-[#508FA8] to-[#4D8FA7] text-white px-8 py-4 rounded-3xl text-2xl font-semibold hover:shadow-lg"
               >
                 Jetzt buchen
               </Button>

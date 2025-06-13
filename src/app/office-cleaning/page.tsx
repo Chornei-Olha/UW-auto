@@ -6,6 +6,37 @@ import Footer from '@/components/common/Footer';
 import Card from '@/components/common/Card';
 import Button from '@/components/ui/Button';
 import InputField from '@/components/ui/InputField';
+
+const steps = [
+  {
+    id: 1,
+    title: 'Termin und Besichtigung vereinbaren',
+    quote: `“Kontaktieren Sie Uns Und Vereinbaren\nSie Einen Termin Zur\nObjektbesichtigung”`,
+    leftImage: '/images/img_battles_image_2.png',
+    rightImage: '/images/img_battles_image_1.png',
+    bottomLeft: 'Sauberes Büro',
+    bottomRight: 'Leistungsfähiges Team',
+  },
+  {
+    id: 2,
+    title: 'Individuelles Angebot erhalten',
+    quote: `“Basierend auf Ihrem Bedarf erstellen wir ein maßgeschneidertes Angebot.”`,
+    leftImage: '/images/img_battles_image_2.png',
+    rightImage: '/images/img_battles_image_1.png',
+    bottomLeft: 'Sauberes Büro',
+    bottomRight: 'Leistungsfähiges Team',
+  },
+  {
+    id: 3,
+    title: 'Professionelle Reinigung durchführen',
+    quote: `“Unser Team übernimmt die Reinigung termingerecht und gründlich.”`,
+    leftImage: '/images/img_battles_image_2.png',
+    rightImage: '/images/img_battles_image_1.png',
+    bottomLeft: 'Sauberes Büro',
+    bottomRight: 'Leistungsfähiges Team',
+  },
+];
+
 const VacationRentalCleaningPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +54,19 @@ const VacationRentalCleaningPage: React.FC = () => {
     alert('Anfrage erfolgreich gesendet! Wir werden uns bald bei Ihnen melden.');
     setFormData({ name: '', phone: '', email: '' });
   };
+
+  const [current, setCurrent] = useState(0);
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev === 0 ? steps.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev === steps.length - 1 ? 0 : prev + 1));
+  };
+
+  const step = steps[current];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -142,115 +186,176 @@ const VacationRentalCleaningPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-center">
             {/* Feature 1 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Staubsaugen{' '}
               </p>
+              <Image
+                src="/images/icon5.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 2 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <div className="text-left mb-3"></div>
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Möbelreinigung{' '}
               </p>
+              <Image
+                src="/images/icon6.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 3 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Sanitäranlagen reinigen {' '}
               </p>
+              <Image
+                src="/images/icon7-1.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 4 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Glastüren und Spiegelreinigung{' '}
               </p>
+              <Image
+                src="/images/icon8.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 5 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Küchenreinigung{' '}
               </p>
+              <Image
+                src="/images/icon9.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 6 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Müllentsorgung{' '}
               </p>
+              <Image
+                src="/images/icon10.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 7 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Bodenreinigung{' '}
               </p>
+              <Image
+                src="/images/icon11.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
             {/* Feature 8 */}
             <div className="bg-[#4D8FA7] rounded-lg p-3 lg:p-8 relative flex flex-col h-full">
-              <p className="text-xl lg:text-2xl font-medium text-white mb-3 min-h-[72px] lg:min-h-[100px]">
+              <p className="text-xl lg:text-2xl font-medium text-white min-h-[50px] lg:min-h-[100px]">
                 Individuelle Reinigungswünsche{' '}
               </p>
+              <Image
+                src="/images/icon12.svg"
+                alt="icon"
+                width={506}
+                height={345}
+                className="w-full max-h-[73px]"
+              />{' '}
             </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="container px-5 lg:px-10 mt-20">
+      <section className="container px-5 lg:px-10 py-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-semibold text-[#13263e] text-center mb-8">
+          <h2 className="text-3xl lg:text-5xl font-semibold text-[#13263e] text-center mb-8">
             In 3 Schritten zum perfekten Reinigungsergebnis
           </h2>
           <p className="text-2xl text-black text-center mb-16">Wie funktioniert es?</p>
-          <div className="flex flex-row justify-between">
-            {' '}
-            <p className="text-lg lg:text-2xl font-semibold text-[#131313] mb-4">
-              Termin und Besichtigung vereinbaren
-            </p>
-            {/* <Image src="/images/img_battles_quote_2.png" alt="Quote" width={23} height={38} /> */}
-            <p className="text-lg lg:text-2xl text-[#737373] text-right mb-4">
-              {'\u201C'}Kontaktieren Sie Uns Und Vereinbaren
-              <br />
-              Sie Einen Termin Zur
-              <br />
-              Objektbesichtigung
-              {'\u201E'}
-            </p>
-          </div>{' '}
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:items-start relative">
-            {/* Левая часть */}
-            <div className="mx-auto lg:ml-[120px] bg-[#4d8fa789] rounded-3xl py-[20px] lg:py-[80px] px-[20px] lg:px-[170px] flex items-center justify-center">
-              <Image
-                src="/images/img_battles_image_2.png"
-                alt="Appointment booking"
-                width={506}
-                height={345}
-                className="rounded-2xl w-full max-w-[506px]"
-              />
-            </div>
 
-            {/* Правая часть */}
-            <div className="mt-4 lg:mt-0 lg:absolute bg-transparent rounded-3xl py-[20px] lg:py-[80px] flex flex-col gap-4 lg:right-[-200px] items-center lg:items-end">
-              <Image
-                src="/images/img_battles_image_1.png"
-                alt="Professional cleaning"
-                width={506}
-                height={345}
-                className="rounded-2xl w-full max-w-[506px]"
-              />
-
-              <p className="text-gray-600 italic text-center lg:text-right">
-                Wir Werden Dafür Sorgen, Dass
-                <br />
-                Es Immer Einwandfrei Ist
+          {/* Шаг */}
+          <div className="w-full">
+            <div className="flex flex-row justify-between">
+              <p className="text-base lg:text-2xl font-semibold text-[#131313] mb-[120px] lg:mb-4">
+                {step.title}
+              </p>
+              <p className="text-base lg:text-2xl text-[#737373] text-right mb-[120px] lg:mb-4">
+                {step.quote}
               </p>
             </div>
+
+            <div className="flex flex-row items-center justify-center lg:items-start relative">
+              {/* Левая часть */}
+              <div className="mx-auto lg:ml-[120px] bg-[#4d8fa789] rounded-3xl py-[10px] lg:py-[80px] px-[10px] lg:px-[170px] flex items-center justify-center">
+                <Image
+                  src={step.leftImage}
+                  alt="Left"
+                  width={506}
+                  height={345}
+                  className="rounded-sm w-full max-w-[506px]"
+                />
+              </div>
+
+              <div className="mt-[-120px] lg:mt-0 lg:absolute bg-transparent rounded-sm py-[10px] lg:py-[80px] flex flex-col gap-4 lg:right-[-200px] items-center lg:items-end">
+                <Image
+                  src={step.rightImage}
+                  alt="Right"
+                  width={506}
+                  height={345}
+                  className="rounded-sm w-full max-w-[506px]"
+                />
+                <p className="text-gray-600 italic text-right">
+                  Wir Werden Dafür Sorgen, Dass
+                  <br />
+                  Es Immer Einwandfrei Ist
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="flex justify-between gap-4 mt-5 lg:mt-20">
-            <p className="text-lg lg:text-2xl text-[#2c2c2c] uppercase">Sauberes Büro</p>
-            <p className="text-lg lg:text-2xl text-[#2c2c2c] uppercase">leistungsfähi Ges Team</p>
+
+          {/* Подписи */}
+          <div className="flex justify-between gap-10 mt-10 lg:mt-20">
+            <p className="text-base lg:text-2xl text-[#2c2c2c] uppercase">{step.bottomLeft}</p>
+            <p className="text-base lg:text-2xl text-[#2c2c2c] uppercase text-right">
+              {step.bottomRight}
+            </p>
           </div>
-          <div className="flex justify-center space-x-4 mb-8">
-            <Image src="/images/img_arrowbackios.svg" alt="Previous" width={20} height={20} />
-            <Image src="/images/img_arrowforwardios.svg" alt="Next" width={20} height={20} />
+
+          {/* Стрелки */}
+          <div className="flex justify-center space-x-4 mt-10">
+            <button onClick={handlePrev}>
+              <Image src="/images/img_arrowbackios.svg" alt="Previous" width={20} height={20} />
+            </button>
+            <button onClick={handleNext}>
+              <Image src="/images/img_arrowforwardios.svg" alt="Next" width={20} height={20} />
+            </button>
           </div>
         </div>
       </section>
