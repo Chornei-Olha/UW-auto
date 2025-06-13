@@ -1,10 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ServiceForm from '@/components/common/ServiceForm';
 
 const Footer: React.FC = () => {
+  const [openForm, setOpenForm] = useState(false);
+
   return (
     <footer id="footer" className="bg-[#13263e] text-white pb-[35px] min-h-[347px] lg:mt-[85px]">
       <div className="relative">
@@ -18,9 +21,13 @@ const Footer: React.FC = () => {
               </h2>
             </div>
             <div>
-              <button className="bg-white text-[#4d8fa7] px-[70px] py-[10px] lg:px-[95px] lg:py-[20px] rounded-[500px] font-bold text-lg lg:text-xl hover:shadow-lg transition-all">
+              <button
+                onClick={() => setOpenForm(true)}
+                className="bg-white text-[#4d8fa7] px-[70px] py-[10px] lg:px-[95px] lg:py-[20px] rounded-[500px] font-bold text-lg lg:text-xl hover:shadow-lg transition-all"
+              >
                 Kontakt
               </button>
+              {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
             </div>
           </div>
         </div>

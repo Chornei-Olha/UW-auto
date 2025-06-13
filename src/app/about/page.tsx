@@ -103,11 +103,11 @@ export default function AboutPage(): JSX.Element {
             <div className="flex flex-col text-center">
               <div>
                 <Image
-                  src="/images/img_margin4.png"
+                  src="/images/img_margin1.png"
                   alt="Office cleaning service"
                   width={286}
                   height={300}
-                  className="w-full h-auto object-cover"
+                  className="w-full max-h-[250px] object-cover"
                 />
               </div>
               <div className="bg-[#f7fbfc] p-4">
@@ -121,8 +121,8 @@ export default function AboutPage(): JSX.Element {
                   src="/images/img_margin2.png"
                   alt="Window cleaning service"
                   width={286}
-                  height={300}
-                  className="w-full h-auto object-cover"
+                  height={200}
+                  className="w-full max-h-[250px] object-cover"
                 />
               </div>
               <div className="bg-[#f7fbfc] p-4">
@@ -137,7 +137,7 @@ export default function AboutPage(): JSX.Element {
                   alt="Moving cleaning service"
                   width={286}
                   height={300}
-                  className="w-full h-auto object-cover"
+                  className="w-full max-h-[250px] object-cover"
                 />
               </div>
               <div className="bg-[#f7fbfc] p-4">
@@ -152,7 +152,7 @@ export default function AboutPage(): JSX.Element {
                   alt="Vacation rental cleaning service"
                   width={286}
                   height={300}
-                  className="w-full h-auto object-cover"
+                  className="w-full max-h-[250px] object-cover"
                 />
               </div>
               <div className="bg-white p-4">

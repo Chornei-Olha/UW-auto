@@ -7,6 +7,8 @@ import Footer from '@/components/common/Footer';
 import Button from '@/components/ui/Button';
 import RatingBar from '@/components/ui/RatingBar';
 import Calendar from '@/components/ui/Calendar';
+import ServiceForm from '@/components/common/ServiceForm';
+
 const HomePage: React.FC = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -31,6 +33,8 @@ const HomePage: React.FC = () => {
       alert('Bitte wählen Sie Datum und Uhrzeit aus.');
     }
   };
+  const [openForm, setOpenForm] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -240,11 +244,13 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
               <Button
+                onClick={() => setOpenForm(true)}
                 variant="primary"
                 className="bg-gradient-to-r from-[#508FA8] to-[#4D8FA7] text-white px-8 py-4 rounded-3xl text-2xl font-semibold hover:shadow-lg"
               >
                 Jetzt buchen
               </Button>
+              {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
             </div>
 
             {/* Decorative Elements */}
@@ -485,6 +491,7 @@ const HomePage: React.FC = () => {
               Spüren Sie die Reinheit - testen Sie es kostenlos und unverbindlich!
             </p>
             <Button
+              onClick={() => setOpenForm(true)}
               className="bg-gradient-to-r from-[#508fa8] to-[#4d8fa7] text-white px-12 py-4 rounded-full font-semibold text-xl hover:shadow-lg transition-all inline-flex items-center
                    max-sm:px-6 max-sm:py-3 max-sm:text-base
                   "
@@ -498,6 +505,7 @@ const HomePage: React.FC = () => {
                 className="ml-4"
               />
             </Button>
+            {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
           </div>
         </div>
       </section>
@@ -527,10 +535,10 @@ const HomePage: React.FC = () => {
               Bewertungen unserer Kunden
             </h2>
             <p className="text-base text-[#8a8a8a] leading-relaxed mb-12 ">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-              dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-              quis, sem. Nulla consequat massa quis enim.
+              Unsere Kunden schätzen vor allem unsere Zuverlässigkeit, klare Kommunikation und
+              termingerechte Umsetzung. Viele Projekte wurden dank unserer Zusammenarbeit schneller
+              realisiert als geplant. Wir freuen uns über das Vertrauen, das uns immer wieder
+              entgegengebracht wird.
             </p>
             <div
               className="grid grid-cols-1 lg:grid-cols-[250px_1fr_1fr] gap-3 items-stretch mt-[100px]

@@ -6,6 +6,7 @@ import Footer from '@/components/common/Footer';
 import Card from '@/components/common/Card';
 import Button from '@/components/ui/Button';
 import InputField from '@/components/ui/InputField';
+import ServiceForm from '@/components/common/ServiceForm';
 
 const steps = [
   {
@@ -66,6 +67,7 @@ const VacationRentalCleaningPage: React.FC = () => {
   };
 
   const step = steps[current];
+  const [openForm, setOpenForm] = useState(false);
 
   return (
     <div className="min-h-screen">
@@ -105,9 +107,13 @@ const VacationRentalCleaningPage: React.FC = () => {
               und produktive Arbeitsumgebung. Überzeugen Sie sich selbst von unserem zuverlässigen
               und flexiblen Service!
             </p>
-            <button className="mt-4 inline-block bg-[#4891A1] text-white text-lg lg:text-2xl font-semibold py-5 px-10 rounded-full hover:bg-[#387a87] transition">
+            <button
+              onClick={() => setOpenForm(true)}
+              className="mt-4 inline-block bg-[#4891A1] text-white text-lg lg:text-2xl font-semibold py-5 px-10 rounded-full hover:bg-[#387a87] transition"
+            >
               Jetzt buchen
             </button>
+            {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
           </div>
         </div>
       </section>
@@ -370,14 +376,13 @@ const VacationRentalCleaningPage: React.FC = () => {
           </p>
 
           <button
-            onClick={() => {
-              /* откроется модалка */
-            }}
+            onClick={() => setOpenForm(true)}
             className="mt-10 inline-flex items-center gap-2 bg-[#4891A1] text-white text-lg md:text-2xl font-semibold py-3 px-7 rounded-full hover:bg-[#387a87] transition"
           >
             Kostenlos testen
             <img src="/images/mop.svg" alt="Icon" className="h-5 w-5" />
           </button>
+          {openForm && <ServiceForm onClose={() => setOpenForm(false)} />}
         </div>
       </section>
 

@@ -3,6 +3,11 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+
+interface Props {
+  onClose: () => void;
+}
 
 export default function ServiceForm({ onClose }: { onClose: () => void }) {
   useEffect(() => {
@@ -30,7 +35,7 @@ export default function ServiceForm({ onClose }: { onClose: () => void }) {
       });
   };
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
       <div className="bg-white rounded-lg max-w-xl w-full p-6 relative">
         <button onClick={onClose} className="absolute top-4 right-4 text-2xl">
@@ -128,6 +133,7 @@ export default function ServiceForm({ onClose }: { onClose: () => void }) {
           </div>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
