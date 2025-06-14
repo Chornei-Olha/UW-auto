@@ -28,7 +28,7 @@ const WindowCleaningPage: React.FC = () => {
       {/* Hero Section */}
       <section
         className="relative min-h-[421px] overflow-hidden bg-cover bg-bottom"
-        style={{ backgroundImage: "url('/images/img_5175.png')" }}
+        style={{ backgroundImage: "url('/images/img_5175.webp')" }}
       >
         {/* Черный оверлей */}
         <div
