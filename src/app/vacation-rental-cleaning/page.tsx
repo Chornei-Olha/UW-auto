@@ -73,7 +73,7 @@ const VacationRentalCleaningPage: React.FC = () => {
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/img_5175.png"
+            src="/images/img_5175.webp"
             alt="Vacation rental cleaning"
             fill
             className="object-cover lg:rounded-b-[36px]"
