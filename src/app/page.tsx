@@ -134,9 +134,21 @@ const HomePage: React.FC = () => {
               </p>
               {/* Social Media Icons */}
               <div className="flex justify-center md:justify-start space-x-4">
+                <a
+                  href="https://www.instagram.com/reinex_gbr?igsh=cnpmbGl1aGRsbjE4&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
+                    alt="Instagram"
+                    width={29}
+                    height={29}
+                  />
+                </a>
                 <Image
                   src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
-                  alt="Google"
+                  alt="YouTube"
                   width={29}
                   height={29}
                 />
@@ -146,18 +158,18 @@ const HomePage: React.FC = () => {
                   width={25}
                   height={25}
                 />
-                <Image
+                {/* <Image
                   src="/images/img_logostwitter_blue_gray_500.svg"
                   alt="Twitter"
                   width={22}
                   height={26}
-                />
-                <Image
+                /> */}
+                {/* <Image
                   src="/images/img_vector_blue_gray_500_25x25.svg"
                   alt="LinkedIn"
                   width={25}
                   height={25}
-                />
+                /> */}
               </div>
             </div>
           </div>

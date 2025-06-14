@@ -47,19 +47,29 @@ const Footer: React.FC = () => {
                 24/7 Kundensupport – Wir sind jederzeit für Sie da!
               </p>
               <div className="flex space-x-4">
+                <a
+                  href="https://www.instagram.com/reinex_gbr?igsh=cnpmbGl1aGRsbjE4&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
+                    alt="Instagram"
+                    width={29}
+                    height={29}
+                  />
+                </a>
                 <Image
-                  src="/images/img_flatcoloriconsgoogle.svg"
-                  alt="Google"
-                  width={27}
-                  height={27}
+                  src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
+                  alt="YouTube"
+                  width={29}
+                  height={29}
                 />
-                <Image src="/images/img_vector.svg" alt="Facebook" width={24} height={24} />
-                <Image src="/images/img_logostwitter.svg" alt="Twitter" width={21} height={25} />
                 <Image
-                  src="/images/img_vector_white_a700.svg"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
+                  src="/images/img_vector_blue_gray_500.svg"
+                  alt="Facebook"
+                  width={25}
+                  height={25}
                 />
               </div>
             </div>
