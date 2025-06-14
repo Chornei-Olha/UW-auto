@@ -20,12 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-        {/* <script id="dhws-errorTracker" src="/dhws-error-tracker.js"></script>
-  <script id="dhws-elementInspector" src="/dhws-web-inspector.js"></script> */}
-      </body>
+    <html lang="de">
+      <body>{children}</body>
     </html>
   );
 }
