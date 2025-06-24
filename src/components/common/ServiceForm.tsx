@@ -24,7 +24,7 @@ export default function ServiceForm({ onClose }: { onClose: () => void }) {
     if (!form.current) return;
 
     emailjs
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      .sendForm('service_pt54ifm', 'template_d9dprzr', form.current, '2MsZyRA85-VVPfu4D')
       .then(() => {
         alert('Erfolgreich gesendet!');
         form.current?.reset();

@@ -139,37 +139,10 @@ const HomePage: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Image
-                    src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
-                    alt="Instagram"
-                    width={29}
-                    height={29}
-                  />
+                  <Image src="/images/instagram.svg" alt="instagram" width={29} height={29} />
                 </a>
-                <Image
-                  src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
-                  alt="YouTube"
-                  width={29}
-                  height={29}
-                />
-                <Image
-                  src="/images/img_vector_blue_gray_500.svg"
-                  alt="Facebook"
-                  width={25}
-                  height={25}
-                />
-                {/* <Image
-                  src="/images/img_logostwitter_blue_gray_500.svg"
-                  alt="Twitter"
-                  width={22}
-                  height={26}
-                /> */}
-                {/* <Image
-                  src="/images/img_vector_blue_gray_500_25x25.svg"
-                  alt="LinkedIn"
-                  width={25}
-                  height={25}
-                /> */}
+                <Image src="/images/youtube.svg" alt="YouTube" width={29} height={29} />
+                <Image src="/images/facebook.svg" alt="Facebook" width={25} height={25} />
               </div>
             </div>
           </div>

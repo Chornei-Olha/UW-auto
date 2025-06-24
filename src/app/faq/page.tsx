@@ -6,6 +6,7 @@ import Accordion from '@/components/ui/Accordion';
 
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import ContactForm from '../../components/common/ContactForm';
 const FAQPage: React.FC = () => {
   const faqData = [
     {
@@ -188,6 +189,8 @@ const FAQPage: React.FC = () => {
           ))}
         </div>
       </main>
+      <ContactForm />
+
       <Footer />
     </div>
   );

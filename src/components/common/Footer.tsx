@@ -46,31 +46,17 @@ const Footer: React.FC = () => {
               <p className="text-[#e8e8e8] text-base leading-5 mb-10">
                 24/7 Kundensupport – Wir sind jederzeit für Sie da!
               </p>
-              <div className="flex space-x-4">
+              {/* Social Media Icons */}
+              <div className="flex justify-left md:justify-start space-x-4">
                 <a
                   href="https://www.instagram.com/reinex_gbr?igsh=cnpmbGl1aGRsbjE4&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Image
-                    src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
-                    alt="Instagram"
-                    width={29}
-                    height={29}
-                  />
+                  <Image src="/images/instagram.svg" alt="instagram" width={29} height={29} />
                 </a>
-                <Image
-                  src="/images/img_flatcoloriconsgoogle_blue_gray_500.svg"
-                  alt="YouTube"
-                  width={29}
-                  height={29}
-                />
-                <Image
-                  src="/images/img_vector_blue_gray_500.svg"
-                  alt="Facebook"
-                  width={25}
-                  height={25}
-                />
+                <Image src="/images/youtube.svg" alt="YouTube" width={29} height={29} />
+                <Image src="/images/facebook.svg" alt="Facebook" width={25} height={25} />
               </div>
             </div>
 
