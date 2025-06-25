@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Calendar from '@/components/ui/Calendar';
 import { useBookingSelection } from '@/hooks/useBookingSelection';
+import emailjs from '@emailjs/browser';
 
 export default function HomePage() {
   const { selectedDate, selectedTime, timeSlots, handleDateSelect, handleTimeSelect } =
@@ -22,6 +23,43 @@ export default function HomePage() {
   });
 
   const visibleSlots = showAllSessions ? [...morningSlots, ...afternoonSlots] : morningSlots;
+
+  const sendBookingEmail = () => {
+    const form = document.getElementById('booking-form') as HTMLFormElement;
+    if (!form) return;
+
+    const formData = new FormData(form);
+
+    const selectedCheckboxes = Array.from(
+      form.querySelectorAll('input[name="reinigungsart"]:checked')
+    ).map((el) => (el as HTMLInputElement).value);
+    formData.set('reinigungsart_text', selectedCheckboxes.join(', '));
+
+    const templateParams = {
+      service: formData.get('reinigungsart_text'),
+      date: selectedDate?.toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+      }),
+      time: selectedTime,
+      customer_name: formData.get('vorname'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+    };
+
+    emailjs
+      .send('service_eo6rvwr', 'template_xxw0p1w', templateParams, 'VhhPtQDOb0JrKUeSO')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Buchung wurde erfolgreich gesendet!');
+        form.reset();
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        alert('Fehler beim Senden der Buchung.');
+      });
+  };
 
   return (
     <section className="container px-1 lg:px-10 inset-0 bg-white flex items-center justify-center z-50 py-10 mb-[200px] lg:mb-[170px]">
@@ -55,11 +93,76 @@ export default function HomePage() {
                       'Datum und Uhrzeit auswählen'
                     )}
                   </p>
-                  <p>Beim Kunden</p>
+                  <form className="space-y-3 lg:space-y-4 text-gray-700" id="booking-form">
+                    <div>
+                      <label className="block text-sm mb-1">Vorname *</label>
+                      <input
+                        type="text"
+                        name="vorname"
+                        required
+                        className="w-full border-b-2 border-[#4db4c8] outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm mb-1">Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        className="w-full border-b-2 border-[#4db4c8] outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm mb-1">Phone</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        className="w-full border-b-2 border-[#4db4c8] outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm mb-2">Reinigungsart</label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Büroreinigung" />{' '}
+                          Büroreinigung
+                        </label>
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Fensterreinigung" />{' '}
+                          Fensterreinigung
+                        </label>
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Ferienwohnung" />{' '}
+                          Ferienwohnungsreinigung
+                        </label>
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Grundreinigung" />{' '}
+                          Grundreinigung
+                        </label>
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Polstermöbel" />{' '}
+                          Polstermöbel- und Teppichreinigung
+                        </label>
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Industrie" /> Reinigung
+                          für Gewerbe und Industrie
+                        </label>
+                        <label>
+                          <input type="checkbox" name="reinigungsart" value="Andere" /> Andere
+                        </label>
+                      </div>
+                      <input type="hidden" name="reinigungsart_text" id="reinigungsart_text" />
+                    </div>
+                  </form>
+
+                  {/* <p>Beim Kunden</p>
                   <p>Ilja Gixt</p>
                   <p>1 Std.</p>
                   <p>1 Stunde</p>
-                  <p>Auf Anfrage</p>
+                  <p>Auf Anfrage</p> */}
                 </div>
                 <div className="mt-8">
                   <Image src="/images/people.svg" alt="Service Frame" width={119} height={32} />
@@ -117,6 +220,7 @@ export default function HomePage() {
                   variant="primary"
                   className="w-full bg-blue-600 text-white py-4 rounded-2xl text-2xl font-semibold hover:bg-black"
                   disabled={!selectedDate || !selectedTime}
+                  onClick={sendBookingEmail}
                 >
                   Weiter
                 </Button>

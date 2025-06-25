@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 interface Props {
@@ -16,6 +15,7 @@ export default function ServiceForm({ onClose }: { onClose: () => void }) {
       document.body.classList.remove('overflow-hidden');
     };
   }, []);
+
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
@@ -23,11 +23,23 @@ export default function ServiceForm({ onClose }: { onClose: () => void }) {
 
     if (!form.current) return;
 
+    // Собрать выбранные checkbox'ы и передать в скрытое поле
+    const selected = Array.from(
+      form.current.querySelectorAll('input[name="reinigungsart"]:checked')
+    ).map((el) => (el as HTMLInputElement).value);
+
+    const hiddenInput = form.current.querySelector('#reinigungsart_text') as HTMLInputElement;
+
+    if (hiddenInput) {
+      hiddenInput.value = selected.join(', ');
+    }
+
     emailjs
-      .sendForm('service_pt54ifm', 'template_d9dprzr', form.current, '2MsZyRA85-VVPfu4D')
+      .sendForm('service_eo6rvwr', 'template_2rz9sij', form.current, 'VhhPtQDOb0JrKUeSO')
       .then(() => {
         alert('Erfolgreich gesendet!');
         form.current?.reset();
+        onClose(); // Закрыть форму после отправки
       })
       .catch((error) => {
         console.error('EmailJS Error:', error);
