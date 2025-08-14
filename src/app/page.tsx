@@ -1,9 +1,10 @@
 'use client';
 import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
 import Hero from '../components/common/Hero';
 import ProductSlider from '../components/common/ProductSlider';
 import SensoMaskingTape from '../components/common/SensoMaskingTape';
+import BoardSlider from '../components/common/BoardSlider';
+import Footer from '@/components/common/Footer';
 
 const HomePage: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage: React.FC = () => {
       <Hero />
       <ProductSlider />
       <SensoMaskingTape />
+      <BoardSlider />
       <Footer />
     </div>
   );

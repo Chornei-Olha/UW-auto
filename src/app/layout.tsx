@@ -10,7 +10,7 @@ export const metadata = {
   title: 'Senso',
   description: 'Ihre vertrauenswürdige Reinigungsfirma mit System, Plan und VerantwortungS',
   icons: {
-    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    icon: [{ url: '/favicon.png', type: 'image/x-icon' }],
   },
 };
 
