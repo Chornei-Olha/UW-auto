@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-10 md:py-16">
+    <section>
+      <div className="py-10 md:py-16">
         {/* Верхняя часть: текст + маленькое изображение */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}
-          <div className="md:max-w-2xl">
+          <div className="md:max-w-5xl">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
               Малярні стрічки SENSO
             </h1>

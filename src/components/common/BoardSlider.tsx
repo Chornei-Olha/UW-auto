@@ -57,8 +57,8 @@ export default function BoardSlider() {
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
 
   return (
-    <div id="slider1" className="w-full text-center relative">
-      <div className="relative max-w-7xl mx-auto">
+    <section id="slider1" className="py-10 md:py-16 text-center relative">
+      <div className="relative">
         {/* Стрелки (десктоп) */}
         <button
           onClick={() => swiperRef.current?.slidePrev()}
@@ -201,6 +201,6 @@ export default function BoardSlider() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

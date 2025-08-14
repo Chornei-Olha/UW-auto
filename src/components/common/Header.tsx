@@ -1,38 +1,98 @@
-// components/Header.tsx
 'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [lang, setLang] = useState<'UA' | 'IT'>('UA');
+  const [collabOpen, setCollabOpen] = useState(false); // для выпадающего меню
+
+  const toggleLang = () => {
+    setLang((prev) => (prev === 'UA' ? 'IT' : 'UA'));
+  };
 
   return (
-    <header className="w-full border-b bg-white shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+    <header className="border-b shadow-sm">
+      <div className="flex items-center justify-between py-5">
         {/* Лого */}
         <div className="flex items-center">
-          <Image src="/images/logo.webp" alt="Senso Logo" width={100} height={40} priority />
+          <Image src="/images/logo.webp" alt="Senso Logo" width={133} height={55} priority />
         </div>
 
-        {/* Десктоп меню */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+        {/* Десктоп меню по центру */}
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700 mx-auto relative">
           <Link href="/" className="px-3 py-1 rounded-full bg-red-600 text-white">
             Головна
           </Link>
           <Link href="/products" className="hover:text-red-600">
             Продукція
           </Link>
-          <Link href="/partners" className="hover:text-red-600">
-            Співпраця
-          </Link>
+
+          {/* Выпадающее меню Співпраця */}
+          <div className="relative">
+            <button
+              className="flex items-center space-x-1 hover:text-red-600"
+              onMouseEnter={() => setCollabOpen(true)}
+              onMouseLeave={() => setCollabOpen(false)}
+            >
+              <span>Співпраця</span>
+              <ChevronDown size={16} />
+            </button>
+
+            {collabOpen && (
+              <div
+                onMouseEnter={() => setCollabOpen(true)}
+                onMouseLeave={() => setCollabOpen(false)}
+                className="absolute top-full left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
+              >
+                <Link href="/collab/partners" className="block px-4 py-2 hover:bg-red-100">
+                  Партнери
+                </Link>
+                <Link href="/collab/dealers" className="block px-4 py-2 hover:bg-red-100">
+                  Дилери
+                </Link>
+                <Link href="/collab/services" className="block px-4 py-2 hover:bg-red-100">
+                  Сервіси
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link href="/contacts" className="hover:text-red-600">
             Контакти
           </Link>
         </nav>
 
-        {/* Мобильная кнопка */}
+        {/* Кнопка переключения языка (десктоп) */}
+        <div
+          className="hidden md:block relative w-24 h-10 bg-gray-200 rounded-full cursor-pointer select-none"
+          onClick={toggleLang}
+        >
+          <div
+            className={`absolute top-0 w-1/2 h-full rounded-full bg-red-600 transition-all duration-300 ${
+              lang === 'UA' ? 'left-0' : 'left-1/2'
+            }`}
+          ></div>
+          <span
+            className={`absolute left-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+              lang === 'UA' ? 'text-white' : 'text-gray-700'
+            }`}
+          >
+            UA
+          </span>
+          <span
+            className={`absolute right-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+              lang === 'IT' ? 'text-white' : 'text-gray-700'
+            }`}
+          >
+            IT
+          </span>
+        </div>
+
+        {/* Мобильная кнопка (бургер) */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -54,12 +114,65 @@ export default function Header() {
             <Link href="/products" onClick={() => setIsOpen(false)}>
               Продукція
             </Link>
-            <Link href="/partners" onClick={() => setIsOpen(false)}>
-              Співпраця
-            </Link>
+
+            {/* Мобильное выпадающее меню */}
+            <div>
+              <button
+                className="w-full flex justify-start items-center gap-5 hover:bg-gray-100 rounded"
+                onClick={() => setCollabOpen(!collabOpen)}
+              >
+                <span>Співпраця</span>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform ${collabOpen ? 'rotate-180' : 'rotate-0'}`}
+                />
+              </button>
+              {collabOpen && (
+                <div className="flex flex-col pl-4 mt-1 space-y-1">
+                  <Link href="/collab/partners" onClick={() => setIsOpen(false)}>
+                    Партнери
+                  </Link>
+                  <Link href="/collab/dealers" onClick={() => setIsOpen(false)}>
+                    Дилери
+                  </Link>
+                  <Link href="/collab/services" onClick={() => setIsOpen(false)}>
+                    Сервіси
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link href="/contacts" onClick={() => setIsOpen(false)}>
               Контакти
             </Link>
+
+            {/* Кнопка переключения языка внутри мобильного меню */}
+            <div className="pt-4 flex justify-center">
+              <div
+                className="relative w-24 h-10 bg-gray-200 rounded-full cursor-pointer select-none"
+                onClick={toggleLang}
+              >
+                <div
+                  className={`absolute top-0 w-1/2 h-full rounded-full bg-red-600 transition-all duration-300 ${
+                    lang === 'UA' ? 'left-0' : 'left-1/2'
+                  }`}
+                ></div>
+                <span
+                  className={`absolute left-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                    lang === 'UA' ? 'text-white' : 'text-gray-700'
+                  }`}
+                >
+                  UA
+                </span>
+                <span
+                  className={`absolute right-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                    lang === 'IT' ? 'text-white' : 'text-gray-700'
+                  }`}
+                >
+                  IT
+                </span>
+              </div>
+            </div>
           </div>
         </nav>
       )}

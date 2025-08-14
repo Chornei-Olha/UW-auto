@@ -22,8 +22,8 @@ export default function ProductSlider() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="w-full bg-white py-8">
-      <div className="mx-auto max-w-7xl px-4">
+    <section>
+      <div className="py-2 md:py-4">
         <Swiper
           modules={[Navigation, Pagination]}
           onInit={(swiper) => {
@@ -95,6 +95,6 @@ export default function ProductSlider() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
