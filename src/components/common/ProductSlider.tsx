@@ -7,14 +7,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const products = [
   { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/products/blanco' },
-  { title: 'SENSO ROSSA – AUTO + 120°C', image: '/images/product2.webp', link: '/products/rossa' },
   {
     title: 'SENSO MARRONE – AUTO + 110°C',
     image: '/images/product3.webp',
     link: '/products/marrone',
   },
+  { title: 'SENSO ROSSA – AUTO + 120°C', image: '/images/product2.webp', link: '/products/rossa' },
+
   { title: 'SENSO ORO – AUTO + 130°C', image: '/images/product4.webp', link: '/products/oro' },
-  { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/products/blanco' },
 ];
 
 export default function ProductSlider() {
@@ -52,8 +52,8 @@ export default function ProductSlider() {
                   <Image
                     src={product.image}
                     alt={product.title}
-                    width={200}
-                    height={200}
+                    width={1000}
+                    height={1000}
                     className="object-contain w-full h-auto"
                   />
                   <h3 className="absolute top-2 left-2 text-xl font-bold leading-snug">

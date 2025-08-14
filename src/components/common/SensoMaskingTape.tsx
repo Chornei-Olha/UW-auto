@@ -48,15 +48,15 @@ export default function SensoMaskingTape() {
           <Image
             src="/images/fsc-logo.png"
             alt="FSC сертифікація"
-            width={150}
-            height={100}
+            width={500}
+            height={500}
             style={{ height: 'auto', width: '100%', maxWidth: '150px' }}
           />
           <Image
             src="/images/pefc-logo.png"
             alt="PEFC сертифікація"
-            width={200}
-            height={125}
+            width={500}
+            height={500}
             style={{ height: 'auto', width: '100%', maxWidth: '150px' }}
           />
         </div>

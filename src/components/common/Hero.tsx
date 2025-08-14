@@ -24,10 +24,11 @@ export default function Hero() {
           <div className="flex-shrink-0">
             <Image
               src="/images/logo-bg.webp"
+              // src="/images/bg-right.jpg"
               alt="Senso Small Banner"
-              width={300}
-              height={150}
-              className="object-cover"
+              width={1200}
+              height={600}
+              className="object-cover w-[350px] h-auto"
               priority
             />
           </div>
@@ -37,9 +38,10 @@ export default function Hero() {
         <div className="mt-8">
           <Image
             src="/images/bg.webp"
+            // src="/images/bg.png"
             alt="Senso Tape Rolls"
-            width={1200}
-            height={600}
+            width={2200}
+            height={1600}
             className="w-full h-auto object-cover"
             priority
           />

@@ -12,15 +12,13 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         {/* Левая колонка */}
         <div className="gap-6 text-sm">
-          <div>
-            <p className="font-bold mb-2">Меню</p>
-            <ul className="space-y-1">
-              <li>Головна</li>
-              <li>Продукція</li>
-              <li>Співпраця</li>
-              <li>Контакти</li>
-            </ul>
-          </div>
+          <p className="font-bold mb-2">Меню</p>
+          <ul className="space-y-1">
+            <li>Головна</li>
+            <li>Продукція</li>
+            <li>Співпраця</li>
+            <li>Контакти</li>
+          </ul>
         </div>
 
         {/* Центр */}
