@@ -1,9 +1,8 @@
-'use client';
+import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const products = [
@@ -15,26 +14,30 @@ const products = [
     link: '/products/marrone',
   },
   { title: 'SENSO ORO – AUTO + 130°C', image: '/images/product4.webp', link: '/products/oro' },
+  { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/products/blanco' },
 ];
 
 export default function ProductSlider() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const swiperRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (swiperRef.current && prevRef.current && nextRef.current) {
+      swiperRef.current.params.navigation.prevEl = prevRef.current;
+      swiperRef.current.params.navigation.nextEl = nextRef.current;
+      swiperRef.current.navigation.destroy(); // очищаем старую навигацию
+      swiperRef.current.navigation.init(); // инициализируем заново
+      swiperRef.current.navigation.update();
+    }
+  }, []);
 
   return (
     <section>
       <div className="py-2 md:py-4">
         <Swiper
-          modules={[Navigation, Pagination]}
-          onInit={(swiper) => {
-            // @ts-ignore
-            swiper.params.navigation.prevEl = prevRef.current;
-            // @ts-ignore
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          pagination={{ clickable: true }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          modules={[Navigation]}
           spaceBetween={20}
           breakpoints={{
             320: { slidesPerView: 1 },
@@ -45,7 +48,6 @@ export default function ProductSlider() {
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col">
-                {/* Карточка с текстом поверх картинки */}
                 <div className="bg-white rounded-xl shadow-md relative overflow-hidden">
                   <Image
                     src={product.image}
@@ -67,10 +69,9 @@ export default function ProductSlider() {
                   </h3>
                 </div>
 
-                {/* Кнопка под карточкой */}
                 <Link
                   href={product.link}
-                  className="mt-2 text-sm text-gray-500 hover:text-gray-700 text-left"
+                  className="mt-2 text-lg text-gray-500 hover:text-gray-700 text-left"
                 >
                   Детальніше
                 </Link>
