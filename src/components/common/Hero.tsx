@@ -14,12 +14,7 @@ export default function Hero() {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
               {t('title')}{' '}
             </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              це професійний вибір у сфері малярних рішень. Ми пропонуємо широкий асортимент
-              маскувальних скотчів, що відповідають вимогам широкого спектру завдань та проектів.
-              Малярські стрічки SENSO відрізняються винятковими властивостями, розробленими для
-              задоволення точних вимог різних галузей промисловості.
-            </p>
+            <p className="mt-4 text-gray-600 leading-relaxed">{t('mainText')}</p>
           </div>
 
           {/* Маленькое фото */}

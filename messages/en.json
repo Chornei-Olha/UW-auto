@@ -1,1 +1,7 @@
-{ "TabTitles": { "home": "Senso" }, "Hero": { "title": "SENSO masking tapes" } }
+{
+  "TabTitles": { "home": "Senso" },
+  "Hero": {
+    "title": "SENSO masking tapes",
+    "mainText": "are the professional choice in the field of painting solutions. We offer a wide range of masking tapes that meet the requirements of a broad spectrum of tasks and projects. SENSO masking tapes are distinguished by exceptional properties designed to meet the precise demands of various industries."
+  }
+}
