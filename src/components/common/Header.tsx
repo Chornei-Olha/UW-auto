@@ -93,13 +93,13 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => changeLocale('ua')}
-            className={`border p-2 font-bold rounded-md text-sm ${locale === 'ua' && 'bg-black text-white'}`}
+            className={`border p-2 font-bold rounded-md text-sm ${locale === 'ua' && 'bg-red-500 text-white'}`}
           >
             UA
           </button>
           <button
             onClick={() => changeLocale('en')}
-            className={`border p-2 font-bold rounded-md text-sm ${locale === 'en' && 'bg-white text-black'}`}
+            className={`border p-2 font-bold rounded-md text-sm ${locale === 'en' && 'bg-red-500 text-white'}`}
           >
             EN
           </button>
