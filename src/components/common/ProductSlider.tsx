@@ -52,9 +52,9 @@ export default function ProductSlider() {
                   <Image
                     src={product.image}
                     alt={product.title}
-                    width={1000}
-                    height={1000}
-                    className="object-contain w-full h-auto"
+                    width={1320}
+                    height={1608}
+                    className="object-contain w-[330px] h-auto"
                   />
                   <h3 className="absolute top-2 left-2 text-xl font-bold leading-snug">
                     {product.title.includes('–') ? (

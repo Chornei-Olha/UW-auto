@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -12,6 +14,27 @@ export default function Header() {
 
   const toggleLang = () => {
     setLang((prev) => (prev === 'UA' ? 'IT' : 'UA'));
+  };
+  const router = useRouter();
+  const [locale, setLocale] = useState<string>('');
+  useEffect(() => {
+    const cookieLocale = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('MYNEXTAPP_LOCALE='))
+      ?.split('=')[1];
+    if (cookieLocale) {
+      setLocale(cookieLocale);
+    } else {
+      const browserLocale = navigator.language.slice(0, 2);
+      setLocale(browserLocale);
+      document.cookie = `MYNEXTAPP_LOCALE=${browserLocale};router.refresh()`;
+    }
+  }, [router]);
+
+  const changeLocale = (newLocale: string) => {
+    setLocale(newLocale);
+    document.cookie = `MYNEXTAPP_LOCALE=${newLocale};`;
+    router.refresh();
   };
 
   return (
@@ -67,7 +90,21 @@ export default function Header() {
         </nav>
 
         {/* Кнопка переключения языка (десктоп) */}
-        <div
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => changeLocale('ua')}
+            className={`border p-2 font-bold rounded-md text-sm ${locale === 'ua' && 'bg-black text-white'}`}
+          >
+            UA
+          </button>
+          <button
+            onClick={() => changeLocale('en')}
+            className={`border p-2 font-bold rounded-md text-sm ${locale === 'en' && 'bg-white text-black'}`}
+          >
+            EN
+          </button>
+        </div>
+        {/* <div
           className="hidden md:block relative w-24 h-10 bg-gray-200 rounded-full cursor-pointer select-none"
           onClick={toggleLang}
         >
@@ -90,7 +127,7 @@ export default function Header() {
           >
             IT
           </span>
-        </div>
+        </div> */}
 
         {/* Мобильная кнопка (бургер) */}
         <div className="md:hidden">

@@ -1,7 +1,16 @@
 'use client';
+import { AbstractIntlMessages } from 'next-intl';
+import { getMessages } from 'next-intl/server'; // make sure this is imported
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
+export async function generateMetadata({ params }: { params: { locale: string } }) {
+  const messages: AbstractIntlMessages = await getMessages({ locale: params.locale });
+  const title = messages.TabTitles?.home;
+  return { title };
+}
 export default function Hero() {
+  const t = useTranslations('Hero');
   return (
     <section>
       <div className="py-10 md:py-16">
@@ -10,7 +19,7 @@ export default function Hero() {
           {/* Текст */}
           <div className="md:max-w-5xl">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
-              Малярні стрічки SENSO
+              {t('title')}{' '}
             </h1>
             <p className="mt-4 text-gray-600 leading-relaxed">
               це професійний вибір у сфері малярних рішень. Ми пропонуємо широкий асортимент
@@ -26,8 +35,8 @@ export default function Hero() {
               src="/images/logo-bg.webp"
               // src="/images/bg-right.jpg"
               alt="Senso Small Banner"
-              width={1200}
-              height={600}
+              width={1244}
+              height={495}
               className="object-cover w-[350px] h-auto"
               priority
             />
@@ -40,8 +49,8 @@ export default function Hero() {
             src="/images/bg.webp"
             // src="/images/bg.png"
             alt="Senso Tape Rolls"
-            width={2200}
-            height={1600}
+            width={5568}
+            height={2096}
             className="w-full h-auto object-cover"
             priority
           />

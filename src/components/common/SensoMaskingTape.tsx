@@ -11,8 +11,8 @@ export default function SensoMaskingTape() {
           <Image
             src="/images/left-bg.png"
             alt="Маляр красит авто"
-            width={482}
-            height={428}
+            width={1459}
+            height={1884}
             className="w-auto h-[300px] sm:h-[428px] object-cover"
             priority
           />
@@ -48,15 +48,15 @@ export default function SensoMaskingTape() {
           <Image
             src="/images/fsc-logo.png"
             alt="FSC сертифікація"
-            width={500}
-            height={500}
+            width={560}
+            height={811}
             style={{ height: 'auto', width: '100%', maxWidth: '150px' }}
           />
           <Image
             src="/images/pefc-logo.png"
             alt="PEFC сертифікація"
-            width={500}
-            height={500}
+            width={581}
+            height={1079}
             style={{ height: 'auto', width: '100%', maxWidth: '150px' }}
           />
         </div>

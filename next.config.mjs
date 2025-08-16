@@ -1,9 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // output: 'export',
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
+
+export default withNextIntl({
   productionBrowserSourceMaps: true,
-  allowedDevOrigins: ['.amazonaws.com', '.builtwithrocket.new'],
   distDir: process.env.DIST_DIR || '.next',
+  // output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -19,5 +21,4 @@ const nextConfig = {
     });
     return config;
   },
-};
-export default nextConfig;
+});
