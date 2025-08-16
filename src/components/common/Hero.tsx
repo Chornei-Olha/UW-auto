@@ -1,14 +1,7 @@
 'use client';
-import { AbstractIntlMessages } from 'next-intl';
-import { getMessages } from 'next-intl/server'; // make sure this is imported
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-export async function generateMetadata({ params }: { params: { locale: string } }) {
-  const messages: AbstractIntlMessages = await getMessages({ locale: params.locale });
-  const title = messages.TabTitles?.home;
-  return { title };
-}
 export default function Hero() {
   const t = useTranslations('Hero');
   return (
