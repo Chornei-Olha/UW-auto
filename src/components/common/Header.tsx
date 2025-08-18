@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,36 +56,43 @@ export default function Header() {
           </Link>
 
           {/* Выпадающее меню Співпраця */}
-          <div className="relative">
-            <button
-              className="flex items-center space-x-1 hover:text-red-600"
-              onMouseEnter={() => setCollabOpen(true)}
-              onMouseLeave={() => setCollabOpen(false)}
-            >
+          <div
+            className="relative"
+            onMouseEnter={() => setCollabOpen(true)}
+            onMouseLeave={() => setCollabOpen(false)}
+          >
+            <button className="flex items-center space-x-1 hover:text-red-600">
               <span>Співпраця</span>
-              <ChevronDown size={16} />
+              <ChevronDown
+                size={16}
+                className={`transition-transform ${collabOpen ? 'rotate-180' : 'rotate-0'}`}
+              />
             </button>
 
-            {collabOpen && (
-              <div
-                onMouseEnter={() => setCollabOpen(true)}
-                onMouseLeave={() => setCollabOpen(false)}
-                className="absolute top-full left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
-              >
-                <Link href="/collab/partners" className="block px-4 py-2 hover:bg-red-100">
-                  Партнери
-                </Link>
-                <Link href="/collab/dealers" className="block px-4 py-2 hover:bg-red-100">
-                  Дилери
-                </Link>
-                <Link href="/collab/services" className="block px-4 py-2 hover:bg-red-100">
-                  Сервіси
-                </Link>
-              </div>
-            )}
+            <AnimatePresence>
+              {collabOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  className="absolute top-full left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50 overflow-hidden"
+                >
+                  <Link href="/partnersPage" className="block px-4 py-2 hover:bg-red-100">
+                    Партнери
+                  </Link>
+                  <Link href="/dealersPage" className="block px-4 py-2 hover:bg-red-100">
+                    Дилери
+                  </Link>
+                  <Link href="/buyersPage" className="block px-4 py-2 hover:bg-red-100">
+                    Сервіси
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
-          <Link href="/contacts" className="hover:text-red-600">
+          <Link href="#footer" className="hover:text-red-600">
             Контакти
           </Link>
         </nav>
@@ -104,30 +112,6 @@ export default function Header() {
             EN
           </button>
         </div>
-        {/* <div
-          className="hidden md:block relative w-24 h-10 bg-gray-200 rounded-full cursor-pointer select-none"
-          onClick={toggleLang}
-        >
-          <div
-            className={`absolute top-0 w-1/2 h-full rounded-full bg-red-600 transition-all duration-300 ${
-              lang === 'UA' ? 'left-0' : 'left-1/2'
-            }`}
-          ></div>
-          <span
-            className={`absolute left-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
-              lang === 'UA' ? 'text-white' : 'text-gray-700'
-            }`}
-          >
-            UA
-          </span>
-          <span
-            className={`absolute right-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
-              lang === 'IT' ? 'text-white' : 'text-gray-700'
-            }`}
-          >
-            IT
-          </span>
-        </div> */}
 
         {/* Мобильная кнопка (бургер) */}
         <div className="md:hidden">
@@ -166,20 +150,20 @@ export default function Header() {
               </button>
               {collabOpen && (
                 <div className="flex flex-col pl-4 mt-1 space-y-1">
-                  <Link href="/collab/partners" onClick={() => setIsOpen(false)}>
+                  <Link href="/partnersPage" onClick={() => setIsOpen(false)}>
                     Партнери
                   </Link>
-                  <Link href="/collab/dealers" onClick={() => setIsOpen(false)}>
+                  <Link href="/dealersPage" onClick={() => setIsOpen(false)}>
                     Дилери
                   </Link>
-                  <Link href="/collab/services" onClick={() => setIsOpen(false)}>
+                  <Link href="/buyersPage" onClick={() => setIsOpen(false)}>
                     Сервіси
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link href="/contacts" onClick={() => setIsOpen(false)}>
+            <Link href="#footer" onClick={() => setIsOpen(false)}>
               Контакти
             </Link>
 

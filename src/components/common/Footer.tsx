@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="py-10 md:py-16 ">
+    <footer id="footer" className="py-10 md:py-16 ">
       <p className="mb-10 text-gray-600">
         SENSO: сертифікована якість, <br />
         створена для професіоналів.{' '}
@@ -14,10 +15,36 @@ export default function Footer() {
         <div className="gap-6 text-sm">
           <p className="font-bold mb-2">Меню</p>
           <ul className="space-y-1">
-            <li>Головна</li>
-            <li>Продукція</li>
-            <li>Співпраця</li>
-            <li>Контакти</li>
+            <li>
+              <Link href="/" className="hover:text-red-500 transition-colors">
+                Головна
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="hover:text-red-500 transition-colors">
+                Продукція
+              </Link>
+            </li>
+            <li>
+              <Link href="/partnersPage" className="hover:text-red-500 transition-colors">
+                Партнери
+              </Link>
+            </li>
+            <li>
+              <Link href="/dealersPage" className="hover:text-red-500 transition-colors">
+                Дилери
+              </Link>
+            </li>
+            <li>
+              <Link href="/buyersPage" className="hover:text-red-500 transition-colors">
+                Сервіси
+              </Link>
+            </li>
+            <li>
+              <Link href="#footer" className="hover:text-red-500 transition-colors">
+                Контакти
+              </Link>
+            </li>
           </ul>
         </div>
 

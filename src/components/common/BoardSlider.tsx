@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
-import Button from '@/components/ui/button';
 
 import 'swiper/css';
 
