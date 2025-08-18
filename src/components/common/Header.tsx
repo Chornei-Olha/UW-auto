@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -17,6 +16,7 @@ export default function Header() {
     setLang((prev) => (prev === 'UA' ? 'IT' : 'UA'));
   };
   const router = useRouter();
+  const pathname = usePathname();
   const [locale, setLocale] = useState<string>('');
   useEffect(() => {
     const cookieLocale = document.cookie
@@ -38,6 +38,12 @@ export default function Header() {
     router.refresh();
   };
 
+  // хелпер для стилей активной ссылки
+  const linkClass = (href: string) =>
+    `px-3 py-1 rounded-full transition-colors ${
+      pathname === href ? 'bg-red-600 text-white' : 'hover:text-red-600'
+    }`;
+
   return (
     <header className="border-b shadow-sm">
       <div className="flex items-center justify-between py-5">
@@ -48,10 +54,10 @@ export default function Header() {
 
         {/* Десктоп меню по центру */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700 mx-auto relative">
-          <Link href="/" className="px-3 py-1 rounded-full bg-red-600 text-white">
+          <Link href="/" className={linkClass('/')}>
             Головна
           </Link>
-          <Link href="/products" className="hover:text-red-600">
+          <Link href="/buyersPage" className={linkClass('/buyersPage')}>
             Продукція
           </Link>
 
@@ -79,20 +85,23 @@ export default function Header() {
                   className="absolute top-full left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50 overflow-hidden"
                 >
                   <Link href="/partnersPage" className="block px-4 py-2 hover:bg-red-100">
-                    Партнери
-                  </Link>
+                    {' '}
+                    Партнери{' '}
+                  </Link>{' '}
                   <Link href="/dealersPage" className="block px-4 py-2 hover:bg-red-100">
-                    Дилери
-                  </Link>
+                    {' '}
+                    Дилери{' '}
+                  </Link>{' '}
                   <Link href="/buyersPage" className="block px-4 py-2 hover:bg-red-100">
-                    Сервіси
+                    {' '}
+                    Сервіси{' '}
                   </Link>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          <Link href="#footer" className="hover:text-red-600">
+          <Link href="#footer" className={linkClass('#footer')}>
             Контакти
           </Link>
         </nav>
@@ -125,14 +134,14 @@ export default function Header() {
       {isOpen && (
         <nav className="md:hidden bg-white border-t">
           <div className="flex flex-col space-y-2 px-4 py-3">
-            <Link
-              href="/"
-              className="px-3 py-2 rounded bg-red-600 text-white"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href="/" className={linkClass('/')} onClick={() => setIsOpen(false)}>
               Головна
             </Link>
-            <Link href="/products" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/buyersPage"
+              className={linkClass('/buyersPage')}
+              onClick={() => setIsOpen(false)}
+            >
               Продукція
             </Link>
 
@@ -163,7 +172,7 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="#footer" onClick={() => setIsOpen(false)}>
+            <Link href="#footer" className={linkClass('#footer')} onClick={() => setIsOpen(false)}>
               Контакти
             </Link>
 
