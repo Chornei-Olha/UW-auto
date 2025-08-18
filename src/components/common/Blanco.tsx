@@ -3,7 +3,53 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function Bianco() {
+type Feature = {
+  title: string;
+  subtitle?: string;
+  value: number; // сколько красных блоков
+  max?: number; // всего блоков
+};
+
+const features: Feature[] = [
+  {
+    title: 'МЕХАНІЧНА СТІЙКІСТЬ',
+    subtitle: 'утримуюча сила при шліфуванні і поліруванні',
+    value: 5,
+    max: 6,
+  },
+  {
+    title: 'ЕЛАСТИЧНІСТЬ',
+    subtitle: 'гнучкість на криволінійних поверхнях',
+    value: 5,
+    max: 6,
+  },
+  {
+    title: 'СИЛА АДГЕЗІЇ',
+    subtitle: 'пофарбований метал, скло, поліуретан',
+    value: 4,
+    max: 6,
+  },
+  {
+    title: 'СИЛА АДГЕЗІЇ',
+    subtitle: 'метал, поліуретан, ПП, ПВХ, полікарбонат, фарба, лак, скло, деревина, картон тощо',
+    value: 3,
+    max: 6,
+  },
+  {
+    title: 'ТЕРМОСТІЙКІСТЬ',
+    subtitle: 'до 1 години',
+    value: 6,
+    max: 6,
+  },
+  {
+    title: 'БЕЗПЕЧНЕ ВИДАЛЕННЯ',
+    subtitle: 'без слідів і пошкоджень',
+    value: 8,
+    max: 6,
+  },
+];
+
+export default function Blanco() {
   const [tab, setTab] = useState('Призначення');
 
   return (
@@ -32,18 +78,28 @@ export default function Bianco() {
       </div>
 
       {/* Buy buttons */}
-      <div className="flex justify-start gap-4 mt-6 flex-wrap items-center">
+      <div className="flex justify-start gap-4 my-8 flex-wrap items-center">
         <p>ПРИДБАТИ В РОЗДРІБ</p>
-        <button className="border border-red-500 text-red-500 px-4 py-2 rounded-lg hover:bg-red-500 hover:text-white transition">
+        <a
+          href="https://epicentrk.ua/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-1 rounded-2xl border border-[#C52233] text-[#C52233] text-lg font-medium shadow-md hover:bg-[#C52233] hover:text-white transition"
+        >
           Епіцентр
-        </button>
-        <button className="border border-red-500 text-red-500 px-4 py-2 rounded-lg hover:bg-red-500 hover:text-white transition">
+        </a>
+        <a
+          href="https://rozetka.com.ua/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-1 rounded-2xl border border-[#C52233] text-[#C52233] text-lg font-medium shadow-md hover:bg-[#C52233] hover:text-white transition"
+        >
           Розетка
-        </button>
+        </a>
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center gap-4 mt-6">
+      <div className="flex justify-center gap-4 my-8">
         <button
           onClick={() => setTab('Призначення')}
           className={`px-4 py-2 rounded-full border ${
@@ -59,6 +115,14 @@ export default function Bianco() {
           }`}
         >
           Характеристики
+        </button>
+        <button
+          onClick={() => setTab('Параметри')}
+          className={`px-4 py-2 rounded-full border ${
+            tab === 'Параметри' ? 'bg-black text-white' : 'bg-white'
+          }`}
+        >
+          Параметри
         </button>
       </div>
 
@@ -87,7 +151,10 @@ export default function Bianco() {
                   <th className="border px-3 py-2">Найменування</th>
                   <th className="border px-3 py-2">Колір</th>
                   <th className="border px-3 py-2">Розмір</th>
-                  <th className="border px-3 py-2">Кількість в ящику</th>
+                  <th className="border px-3 py-2">
+                    Кількість
+                    <br />в ящику
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -121,6 +188,34 @@ export default function Bianco() {
                 </tr>
               </tbody>
             </table>
+          </div>
+        )}
+        {tab === 'Параметри' && (
+          <div className="w-full max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-md">
+            <div className="space-y-6">
+              {features.map((f, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between"
+                >
+                  {/* Текст */}
+                  <div className="mb-2 sm:mb-0">
+                    <p className="font-bold text-gray-900">{f.title}</p>
+                    {f.subtitle && <p className="text-sm text-gray-600">{f.subtitle}</p>}
+                  </div>
+
+                  {/* Шкала */}
+                  <div className="flex gap-1">
+                    {Array.from({ length: f.max || 8 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-5 h-4 ${i < f.value ? 'bg-red-600' : 'bg-gray-200'}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

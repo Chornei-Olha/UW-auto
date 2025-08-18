@@ -56,7 +56,7 @@ export default function BoardSlider() {
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
 
   return (
-    <section id="slider1" className="py-10 md:py-16 text-center relative">
+    <section className="py-10 md:py-16 text-center relative">
       <div className="relative">
         {/* Стрелки (десктоп) */}
         <button

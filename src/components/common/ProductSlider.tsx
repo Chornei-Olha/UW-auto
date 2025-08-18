@@ -6,15 +6,15 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const products = [
-  { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/products/blanco' },
+  { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/blanco' },
   {
     title: 'SENSO MARRONE – AUTO + 110°C',
     image: '/images/product3.webp',
-    link: '/products/marrone',
+    link: '/marrone',
   },
-  { title: 'SENSO ROSSA – AUTO + 120°C', image: '/images/product2.webp', link: '/products/rossa' },
+  { title: 'SENSO ROSSA – AUTO + 120°C', image: '/images/product2.webp', link: '/rossa' },
 
-  { title: 'SENSO ORO – AUTO + 130°C', image: '/images/product4.webp', link: '/products/oro' },
+  { title: 'SENSO ORO – AUTO + 130°C', image: '/images/product4.webp', link: '/oro' },
 ];
 
 export default function ProductSlider() {
@@ -33,7 +33,7 @@ export default function ProductSlider() {
   }, []);
 
   return (
-    <section>
+    <section id="slider1">
       <div className="py-2 md:py-4">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}

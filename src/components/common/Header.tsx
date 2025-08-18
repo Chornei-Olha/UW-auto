@@ -10,7 +10,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [lang, setLang] = useState<'UA' | 'IT'>('UA');
-  const [collabOpen, setCollabOpen] = useState(false); // для выпадающего меню
+  const [productOpen, setProductOpen] = useState(false);
+  const [collabOpen, setCollabOpen] = useState(false);
 
   const toggleLang = () => {
     setLang((prev) => (prev === 'UA' ? 'IT' : 'UA'));
@@ -49,7 +50,16 @@ export default function Header() {
       <div className="flex items-center justify-between py-5">
         {/* Лого */}
         <div className="flex items-center">
-          <Image src="/images/logo.webp" alt="Senso Logo" width={133} height={55} priority />
+          <Link href="/" className="block">
+            <Image
+              src="/images/logo.webp"
+              alt="Senso Logo"
+              width={133}
+              height={55}
+              priority
+              className="cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Десктоп меню по центру */}
@@ -57,9 +67,46 @@ export default function Header() {
           <Link href="/" className={linkClass('/')}>
             Головна
           </Link>
-          <Link href="/products" className={linkClass('/products')}>
-            Продукція
-          </Link>
+
+          {/* Выпадающее меню Продукція */}
+          <div
+            className="relative"
+            onMouseEnter={() => setProductOpen(true)}
+            onMouseLeave={() => setProductOpen(false)}
+          >
+            <button className="flex items-center space-x-1 hover:text-red-600">
+              <span>Продукція</span>
+              <ChevronDown
+                size={16}
+                className={`transition-transform ${productOpen ? 'rotate-180' : 'rotate-0'}`}
+              />
+            </button>
+
+            <AnimatePresence>
+              {productOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  className="absolute top-full left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50 overflow-hidden"
+                >
+                  <Link href="/blanco" className="block px-4 py-2 hover:bg-red-100">
+                    Senso Blanco
+                  </Link>
+                  <Link href="/rossa" className="block px-4 py-2 hover:bg-red-100">
+                    Senso Rossa
+                  </Link>
+                  <Link href="/marrone" className="block px-4 py-2 hover:bg-red-100">
+                    Senso Marrone
+                  </Link>
+                  <Link href="/oro" className="block px-4 py-2 hover:bg-red-100">
+                    Senso ORO
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Выпадающее меню Співпраця */}
           <div
@@ -106,6 +153,25 @@ export default function Header() {
           </Link>
         </nav>
 
+        <div className="absolute left-[36px] top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col items-center gap-[46px] bg-black/10 rounded-[36px] px-[28px] py-[36px] z-20">
+          {[
+            { text: 'TWITTER', href: 'https://twitter.com/yourprofile' },
+            { text: 'FACEBOOK', href: 'https://facebook.com/yourprofile' },
+            { text: 'INSTAGRAM', href: 'https://instagram.com/yourprofile' },
+          ].map(({ text, href }, idx) => (
+            <a
+              key={idx}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-krona-one font-normal leading-[15px] text-center text-global-10 hover:underline"
+              style={{ writingMode: 'vertical-rl' }}
+            >
+              {text}
+            </a>
+          ))}
+        </div>
+
         {/* Кнопка переключения языка (десктоп) */}
         <div className="flex items-center gap-3">
           <button
@@ -138,8 +204,8 @@ export default function Header() {
               Головна
             </Link>
             <Link
-              href="/products"
-              className={linkClass('/products')}
+              href="#slider1"
+              className={linkClass('#slider1')}
               onClick={() => setIsOpen(false)}
             >
               Продукція
@@ -203,7 +269,7 @@ export default function Header() {
                 </span>
               </div>
             </div>
-          </div>
+          </div>{' '}
         </nav>
       )}
     </header>

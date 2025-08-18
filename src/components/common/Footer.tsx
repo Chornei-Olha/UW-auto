@@ -21,7 +21,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/products" className="hover:text-red-500 transition-colors">
+              <Link href="#slider1" className="hover:text-red-500 transition-colors">
                 Продукція
               </Link>
             </li>
