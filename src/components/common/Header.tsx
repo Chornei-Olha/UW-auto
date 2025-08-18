@@ -57,7 +57,7 @@ export default function Header() {
           <Link href="/" className={linkClass('/')}>
             Головна
           </Link>
-          <Link href="/buyersPage" className={linkClass('/buyersPage')}>
+          <Link href="/products" className={linkClass('/products')}>
             Продукція
           </Link>
 
@@ -138,8 +138,8 @@ export default function Header() {
               Головна
             </Link>
             <Link
-              href="/buyersPage"
-              className={linkClass('/buyersPage')}
+              href="/products"
+              className={linkClass('/products')}
               onClick={() => setIsOpen(false)}
             >
               Продукція
