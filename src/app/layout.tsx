@@ -12,7 +12,14 @@ export const viewport = {
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const messages: AbstractIntlMessages = await getMessages({ locale: params.locale });
   const title = messages.TabTitles?.home;
-  return { title };
+  return {
+    title,
+    icons: {
+      icon: [
+        { url: '/favicon.png', type: 'image/png' }, // или image/x-icon, если .ico
+      ],
+    },
+  };
 }
 // export const metadata = {
 //   title: 'Senso',
