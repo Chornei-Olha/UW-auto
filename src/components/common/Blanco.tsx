@@ -65,20 +65,20 @@ export default function Blanco() {
             className="rounded-2xl shadow-md h-[400px] w-auto"
           />
         </div>
-        <div className="relative flex justify-center items-center h-[400px]">
+        <div className="relative flex justify-center items-center sm:h-[400px]">
           <Image
             src="/images/video.png"
             alt="Tape in use"
             width={4096}
             height={2560}
-            className="rounded-2xl shadow-md filter grayscale h-full w-[898px]"
+            className="rounded-2xl shadow-md filter grayscale h-auto sm:h-full w-full sm:w-[898px]"
           />
           <button className="absolute bg-white/80 rounded-full p-4 shadow-md text-xl">▶</button>
         </div>
       </div>
 
       {/* Buy buttons */}
-      <div className="flex justify-start gap-4 my-8 flex-wrap items-center">
+      <div className="flex justify-start gap-4 my-8 flex-nowrap sm:flex-wrap items-center">
         <p>ПРИДБАТИ В РОЗДРІБ</p>
         <a
           href="https://epicentrk.ua/"
@@ -102,7 +102,7 @@ export default function Blanco() {
       <div className="flex justify-center gap-4 my-8">
         <button
           onClick={() => setTab('Призначення')}
-          className={`px-4 py-2 rounded-full border ${
+          className={`text-sm sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
             tab === 'Призначення' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
@@ -110,7 +110,7 @@ export default function Blanco() {
         </button>
         <button
           onClick={() => setTab('Характеристики')}
-          className={`px-4 py-2 rounded-full border ${
+          className={`text-sm sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
             tab === 'Характеристики' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
@@ -118,7 +118,7 @@ export default function Blanco() {
         </button>
         <button
           onClick={() => setTab('Параметри')}
-          className={`px-4 py-2 rounded-full border ${
+          className={`text-sm sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
             tab === 'Параметри' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
@@ -144,16 +144,17 @@ export default function Blanco() {
 
         {tab === 'Характеристики' && (
           <div className="overflow-x-auto mt-4">
-            <table className="min-w-full border border-gray-300 text-sm md:text-base">
+            <table className="min-w-full border border-gray-300 text-xs sm:text-lg">
               <thead className="bg-gray-100">
                 <tr>
                   <th className="border px-3 py-2">Артикул</th>
-                  <th className="border px-3 py-2">Найменування</th>
+                  <th className="border px-3 py-2">Назва</th>
                   <th className="border px-3 py-2">Колір</th>
                   <th className="border px-3 py-2">Розмір</th>
                   <th className="border px-3 py-2">
-                    Кількість
-                    <br />в ящику
+                    В ящику,
+                    <br className="text-xs sm:text-lg" />
+                    шт.
                   </th>
                 </tr>
               </thead>

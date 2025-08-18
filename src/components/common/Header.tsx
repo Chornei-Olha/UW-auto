@@ -203,13 +203,35 @@ export default function Header() {
             <Link href="/" className={linkClass('/')} onClick={() => setIsOpen(false)}>
               Головна
             </Link>
-            <Link
-              href="#slider1"
-              className={linkClass('#slider1')}
-              onClick={() => setIsOpen(false)}
-            >
-              Продукція
-            </Link>
+
+            <div>
+              <button
+                className="w-full flex justify-start items-center gap-5 hover:bg-gray-100 rounded"
+                onClick={() => setCollabOpen(!collabOpen)}
+              >
+                <span>Продукція</span>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform ${collabOpen ? 'rotate-180' : 'rotate-0'}`}
+                />
+              </button>
+              {collabOpen && (
+                <div className="flex flex-col pl-4 mt-1 space-y-1">
+                  <Link href="/blanco" onClick={() => setIsOpen(false)}>
+                    Senco Blanco
+                  </Link>
+                  <Link href="/" onClick={() => setIsOpen(false)}>
+                    Senso Marrone
+                  </Link>
+                  <Link href="/" onClick={() => setIsOpen(false)}>
+                    Senso Rossa
+                  </Link>
+                  <Link href="/" onClick={() => setIsOpen(false)}>
+                    Senso Oro
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Мобильное выпадающее меню */}
             <div>
@@ -243,7 +265,7 @@ export default function Header() {
             </Link>
 
             {/* Кнопка переключения языка внутри мобильного меню */}
-            <div className="pt-4 flex justify-center">
+            {/* <div className="pt-4 flex justify-center">
               <div
                 className="relative w-24 h-10 bg-gray-200 rounded-full cursor-pointer select-none"
                 onClick={toggleLang}
@@ -268,7 +290,7 @@ export default function Header() {
                   IT
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>{' '}
         </nav>
       )}
