@@ -200,22 +200,27 @@ export default function Header() {
       {isOpen && (
         <nav className="md:hidden bg-white border-t">
           <div className="flex flex-col space-y-2 px-4 py-3">
-            <Link href="/" className={linkClass('/')} onClick={() => setIsOpen(false)}>
+            <Link
+              href="/"
+              className={`${linkClass('/')} text-left w-full pl-[100px]`}
+              onClick={() => setIsOpen(false)}
+            >
+              {' '}
               Головна
             </Link>
 
             <div>
               <button
-                className="w-full flex justify-start items-center gap-5 hover:bg-gray-100 rounded"
-                onClick={() => setCollabOpen(!collabOpen)}
+                className="w-full flex justify-left pl-[100px] items-center gap-5 hover:bg-gray-100 rounded"
+                onClick={() => setProductOpen(!productOpen)}
               >
                 <span>Продукція</span>
                 <ChevronDown
                   size={16}
-                  className={`transition-transform ${collabOpen ? 'rotate-180' : 'rotate-0'}`}
+                  className={`transition-transform ${productOpen ? 'rotate-180' : 'rotate-0'}`}
                 />
               </button>
-              {collabOpen && (
+              {productOpen && (
                 <div className="flex flex-col pl-4 mt-1 space-y-1">
                   <Link href="/blanco" onClick={() => setIsOpen(false)}>
                     Senco Blanco
@@ -236,7 +241,7 @@ export default function Header() {
             {/* Мобильное выпадающее меню */}
             <div>
               <button
-                className="w-full flex justify-start items-center gap-5 hover:bg-gray-100 rounded"
+                className="w-full flex justify-left pl-[100px] items-center gap-5 hover:bg-gray-100 rounded"
                 onClick={() => setCollabOpen(!collabOpen)}
               >
                 <span>Співпраця</span>
@@ -260,10 +265,13 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="#footer" className={linkClass('#footer')} onClick={() => setIsOpen(false)}>
+            <Link
+              href="#footer"
+              className={`${linkClass('#footer')} text-left w-full pl-[100px]`}
+              onClick={() => setIsOpen(false)}
+            >
               Контакти
             </Link>
-
             {/* Кнопка переключения языка внутри мобильного меню */}
             {/* <div className="pt-4 flex justify-center">
               <div

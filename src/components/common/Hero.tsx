@@ -25,7 +25,7 @@ export default function Hero() {
               alt="Senso Small Banner"
               width={1244}
               height={495}
-              className="object-cover w-[350px] h-auto"
+              className="object-cover w-full sm:w-[350px] h-auto"
               priority
             />
           </div>

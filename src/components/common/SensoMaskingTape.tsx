@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function SensoMaskingTape() {
   return (
-    <section className="py-10 md:py-16">
+    <section className="py-0 md:py-16">
       {/* Верхний блок */}
       <div className="flex flex-col md:flex-row items-center">
         {/* Фото слева */}
@@ -50,14 +50,14 @@ export default function SensoMaskingTape() {
             alt="FSC сертифікація"
             width={560}
             height={811}
-            style={{ height: 'auto', width: '100%', maxWidth: '150px' }}
+            className="w-full max-w-[70px] sm:max-w-[150px] h-auto"
           />
           <Image
             src="/images/pefc-logo.png"
             alt="PEFC сертифікація"
             width={581}
             height={1079}
-            style={{ height: 'auto', width: '100%', maxWidth: '150px' }}
+            className="w-full max-w-[70px] sm:max-w-[150px] h-auto"
           />
         </div>
       </div>
