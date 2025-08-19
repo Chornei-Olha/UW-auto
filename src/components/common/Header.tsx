@@ -45,6 +45,14 @@ export default function Header() {
       pathname === href ? 'bg-red-600 text-white' : 'hover:text-red-600'
     }`;
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isOpen]);
+
   return (
     <header className="border-b shadow-sm">
       <div className="flex items-center justify-between py-5">
@@ -101,7 +109,7 @@ export default function Header() {
                     Senso Marrone
                   </Link>
                   <Link href="/oro" className="block px-4 py-2 hover:bg-red-100">
-                    Senso ORO
+                    Senso Oro
                   </Link>
                 </motion.div>
               )}
@@ -173,7 +181,7 @@ export default function Header() {
         </div>
 
         {/* Кнопка переключения языка (десктоп) */}
-        <div className="flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
           <button
             onClick={() => changeLocale('ua')}
             className={`border p-2 font-bold rounded-md text-sm ${locale === 'ua' && 'bg-red-500 text-white'}`}
@@ -198,8 +206,8 @@ export default function Header() {
 
       {/* Мобильное меню */}
       {isOpen && (
-        <nav className="md:hidden bg-white border-t">
-          <div className="flex flex-col space-y-2 px-4 py-3">
+        <nav className="md:hidden bg-white border-t h-screen">
+          <div className="flex flex-col space-y-4 px-4 py-3">
             <Link
               href="/"
               className={`${linkClass('/')} text-left w-full pl-[100px]`}
@@ -272,33 +280,22 @@ export default function Header() {
             >
               Контакти
             </Link>
+
             {/* Кнопка переключения языка внутри мобильного меню */}
-            {/* <div className="pt-4 flex justify-center">
-              <div
-                className="relative w-24 h-10 bg-gray-200 rounded-full cursor-pointer select-none"
-                onClick={toggleLang}
+            <div className="flex justify-center gap-3 pt-[100px]">
+              <button
+                onClick={() => changeLocale('ua')}
+                className={`border px-5 py-2 font-bold rounded-md text-sm ${locale === 'ua' && 'bg-red-500 text-white'}`}
               >
-                <div
-                  className={`absolute top-0 w-1/2 h-full rounded-full bg-red-600 transition-all duration-300 ${
-                    lang === 'UA' ? 'left-0' : 'left-1/2'
-                  }`}
-                ></div>
-                <span
-                  className={`absolute left-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
-                    lang === 'UA' ? 'text-white' : 'text-gray-700'
-                  }`}
-                >
-                  UA
-                </span>
-                <span
-                  className={`absolute right-0 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
-                    lang === 'IT' ? 'text-white' : 'text-gray-700'
-                  }`}
-                >
-                  IT
-                </span>
-              </div>
-            </div> */}
+                UA
+              </button>
+              <button
+                onClick={() => changeLocale('en')}
+                className={`border px-5 py-2 font-bold rounded-md text-sm ${locale === 'en' && 'bg-red-500 text-white'}`}
+              >
+                EN
+              </button>
+            </div>
           </div>{' '}
         </nav>
       )}

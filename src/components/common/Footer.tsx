@@ -12,8 +12,8 @@ export default function Footer() {
       {/* Центральная часть футера */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         {/* Левая колонка */}
-        <div className="gap-6 text-sm">
-          <p className="font-bold mb-2">Меню</p>
+        <div className="gap-6 text-sm text-center md:text-left md:items-start flex flex-col items-center">
+          <p className="font-bold mb-1">Меню</p>
           <ul className="space-y-1">
             <li>
               <Link href="/" className="hover:text-red-500 transition-colors">
