@@ -37,10 +37,10 @@ export default function ContactForm() {
         {/* контент */}
         <form
           onSubmit={handleSubmit}
-          className="relative z-10 text-white flex flex-col md:flex-row gap-6 p-5 sm:p-16"
+          className="relative z-10 text-white flex flex-col gap-6 p-5 sm:p-5"
         >
-          {/* Левая часть */}
-          <div className="flex-1 space-y-4">
+          {/* Верхняя часть */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
             <div>
               <label className="block mb-1">Як Вас звати?</label>
               <input
@@ -53,7 +53,20 @@ export default function ContactForm() {
                 required
               />
             </div>
-
+            <div className="space-y-4">
+              <div>
+                <label className="block mb-1">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Введіть e-mail..."
+                  className="w-full p-2 rounded-lg text-white bg-transparent border border-white placeholder-white/50"
+                  required
+                />
+              </div>
+            </div>
             <div>
               <label className="block mb-1">Коментар</label>
               <textarea
@@ -64,9 +77,12 @@ export default function ContactForm() {
                 className="w-full p-2 rounded-lg text-white h-20 bg-transparent border border-white placeholder-white/50"
               />
             </div>
+          </div>
 
-            <div className="space-y-2 text-sm">
-              <label className="flex items-center gap-2">
+          {/* Нижняя часть */}
+          <div className="flex flex-col sm:flex-row justify-between items-left sm:items-center gap-5 sm:gap-0">
+            <div className="items-left space-y-2 text-sm">
+              <label className="flex items-left gap-2">
                 <input
                   type="checkbox"
                   name="agreeProcessing"
@@ -86,29 +102,10 @@ export default function ContactForm() {
                 Погоджуюсь з політикою конфіденційності
               </label>
             </div>
-          </div>
-
-          {/* Правая часть */}
-          <div className="flex-1 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div>
-                <label className="block mb-1">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Введіть Вашу електронну адресу..."
-                  className="w-full p-2 rounded-lg text-white bg-transparent border border-white placeholder-white/50"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="flex justify-end mt-4">
+            <div className="flex justify-center sm:justify-end">
               <button
                 type="submit"
-                className="bg-white hover:bg-red-600 text-[#C52233] hover:text-white px-6 py-2 rounded-full shadow-md"
+                className="bg-white hover:bg-red-600 text-[#C52233] hover:text-white px-6 py-2 rounded-full shadow-md "
               >
                 Надіслати
               </button>
