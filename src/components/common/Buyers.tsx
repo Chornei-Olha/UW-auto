@@ -184,17 +184,30 @@ export default function Buyers() {
           href="https://epicentrk.ua/"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 rounded-2xl border border-[#C52233] text-[#C52233] text-lg font-medium shadow-md hover:bg-[#C52233] hover:text-white transition"
+          className="transition transform hover:-translate-y-2 hover:scale-105 duration-300"
         >
-          Епіцентр
+          <Image
+            src="/images/epicentr-logo.png" // 👉 картинка логотипа Эпицентра
+            alt="Епіцентр"
+            width={492}
+            height={163}
+            className="object-contain w-auto h-[30px] sm:h-[50px]"
+          />
         </a>
+
         <a
           href="https://rozetka.com.ua/"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 rounded-2xl border border-[#C52233] text-[#C52233] text-lg font-medium shadow-md hover:bg-[#C52233] hover:text-white transition"
+          className="transition transform hover:-translate-y-2 hover:scale-105 duration-300"
         >
-          Розетка
+          <Image
+            src="/images/rozetka-logo.png" // 👉 картинка логотипа Розетки
+            alt="Розетка"
+            width={1864}
+            height={431}
+            className="object-contain w-auto h-[30px] sm:h-[50px]"
+          />
         </a>
       </div>
     </section>

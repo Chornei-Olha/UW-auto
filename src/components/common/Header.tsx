@@ -142,15 +142,15 @@ export default function Header() {
                 >
                   <Link href="/partnersPage" className="block px-4 py-2 hover:bg-red-100">
                     {' '}
-                    Партнери{' '}
+                    Промисловим клієнтам{' '}
                   </Link>{' '}
                   <Link href="/dealersPage" className="block px-4 py-2 hover:bg-red-100">
                     {' '}
-                    Дилери{' '}
+                    Дистриб’юторам та дилерам{' '}
                   </Link>{' '}
                   <Link href="/buyersPage" className="block px-4 py-2 hover:bg-red-100">
                     {' '}
-                    Сервіси{' '}
+                    Роздрібним покупцям{' '}
                   </Link>
                 </motion.div>
               )}
@@ -262,13 +262,13 @@ export default function Header() {
               {collabOpen && (
                 <div className="flex flex-col pl-4 mt-1 space-y-1">
                   <Link href="/partnersPage" onClick={() => setIsOpen(false)}>
-                    Партнери
+                    Промисловим клієнтам
                   </Link>
                   <Link href="/dealersPage" onClick={() => setIsOpen(false)}>
-                    Дилери
+                    Дистриб’юторам та дилерам
                   </Link>
                   <Link href="/buyersPage" onClick={() => setIsOpen(false)}>
-                    Сервіси
+                    Роздрібним покупцям
                   </Link>
                 </div>
               )}

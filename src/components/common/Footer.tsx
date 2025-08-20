@@ -27,17 +27,17 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/partnersPage" className="hover:text-red-500 transition-colors">
-                Партнери
+                Промисловим клієнтам
               </Link>
             </li>
             <li>
               <Link href="/dealersPage" className="hover:text-red-500 transition-colors">
-                Дилери
+                Дистриб’юторам та дилерам
               </Link>
             </li>
             <li>
               <Link href="/buyersPage" className="hover:text-red-500 transition-colors">
-                Сервіси
+                Роздрібним покупцям
               </Link>
             </li>
             <li>
