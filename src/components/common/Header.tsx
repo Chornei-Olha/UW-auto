@@ -162,7 +162,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className="absolute left-[36px] top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col items-center gap-[46px] bg-black/10 rounded-[36px] px-[28px] py-[36px] z-20">
+        <div className="absolute left-[25px] top-1/2 transform -translate-y-1/2 hidden md:flex flex-col items-center gap-[46px] bg-black/10 rounded-[36px] px-[15px] py-[25px] z-20">
           {[
             { text: 'TWITTER', href: 'https://twitter.com/yourprofile' },
             { text: 'FACEBOOK', href: 'https://facebook.com/yourprofile' },
@@ -208,10 +208,10 @@ export default function Header() {
       {/* Мобильное меню */}
       {isOpen && (
         <nav className="md:hidden bg-white border-t h-screen">
-          <div className="flex flex-col space-y-4 px-4 py-3">
+          <div className="flex flex-col space-y-4 items-center px-4 py-3">
             <Link
               href="/"
-              className={`${linkClass('/')} text-left w-full pl-[100px]`}
+              className={`${linkClass('/')} flex justify-center items-center w-full`}
               onClick={() => setIsOpen(false)}
             >
               {' '}
@@ -220,7 +220,7 @@ export default function Header() {
 
             <div>
               <button
-                className="w-full flex justify-left pl-[100px] items-center gap-5 hover:bg-gray-100 rounded"
+                className="w-full flex justify-left items-center gap-2 hover:bg-gray-100 rounded"
                 onClick={() => setProductOpen(!productOpen)}
               >
                 <span>Продукція</span>
@@ -250,7 +250,7 @@ export default function Header() {
             {/* Мобильное выпадающее меню */}
             <div>
               <button
-                className="w-full flex justify-left pl-[100px] items-center gap-5 hover:bg-gray-100 rounded"
+                className="w-full flex justify-left items-center gap-2 hover:bg-gray-100 rounded"
                 onClick={() => setCollabOpen(!collabOpen)}
               >
                 <span>Співпраця</span>
@@ -276,7 +276,7 @@ export default function Header() {
 
             <Link
               href="#footer"
-              className={`${linkClass('#footer')} text-left w-full pl-[100px]`}
+              className={`${linkClass('#footer')} flex justify-center items-center w-full`}
               onClick={() => setIsOpen(false)}
             >
               Контакти
@@ -296,6 +296,18 @@ export default function Header() {
               >
                 EN
               </button>
+            </div>
+            {/* Соцсети внизу */}
+            <div className="mt-auto border-t pt-6 flex justify-center gap-6">
+              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/twitter.png" alt="Twitter" width={24} height={24} />
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/facebook.png" alt="Facebook" width={24} height={24} />
+              </a>
+              <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/instagram.png" alt="Instagram" width={24} height={24} />
+              </a>
             </div>
           </div>{' '}
         </nav>
