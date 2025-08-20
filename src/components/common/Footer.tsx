@@ -70,6 +70,7 @@ export default function Footer() {
           >
             +38 (044) 585 21 08
           </a>
+          <br />
           <a
             href="tel:+380993413857"
             className="text-blue-600 hover:underline font-inter font-regular"
