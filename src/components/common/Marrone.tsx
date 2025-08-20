@@ -72,24 +72,40 @@ export default function Marrone() {
       </div>
 
       {/* Buy buttons */}
-      <div className="flex justify-start gap-4 my-8 flex-nowrap sm:flex-wrap items-center">
-        <p>ПРИДБАТИ В РОЗДРІБ</p>
-        <a
-          href="https://epicentrk.ua/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-1 rounded-2xl border border-[#C52233] text-[#C52233] text-lg font-medium shadow-md hover:bg-[#C52233] hover:text-white transition"
-        >
-          Епіцентр
-        </a>
-        <a
-          href="https://rozetka.com.ua/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-1 rounded-2xl border border-[#C52233] text-[#C52233] text-lg font-medium shadow-md hover:bg-[#C52233] hover:text-white transition"
-        >
-          Розетка
-        </a>
+      <div className="flex flex-col sm:flex-row justify-start items-left sm:items-center gap-5 my-16 flex-nowrap sm:flex-wrap">
+        <p className="whitespace-nowrap">ПРИДБАТИ В РОЗДРІБ</p>
+
+        <div className="flex flex-row gap-2 sm: gap-6 items-start">
+          <a
+            href="https://epicentrk.ua/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition transform hover:-translate-y-2 hover:scale-105 duration-300"
+          >
+            <Image
+              src="/images/epicentr-logo.png" // 👉 картинка логотипа Эпицентра
+              alt="Епіцентр"
+              width={492}
+              height={163}
+              className="object-contain w-auto h-[40px] sm:h-[60px]"
+            />
+          </a>
+
+          <a
+            href="https://rozetka.com.ua/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition transform hover:-translate-y-2 hover:scale-105 duration-300"
+          >
+            <Image
+              src="/images/rozetka-logo.png" // 👉 картинка логотипа Розетки
+              alt="Розетка"
+              width={1864}
+              height={431}
+              className="object-contain w-auto h-[40px] sm:h-[60px]"
+            />
+          </a>
+        </div>
       </div>
 
       {/* Tabs */}
