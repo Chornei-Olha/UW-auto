@@ -15,9 +15,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   return {
     title,
     icons: {
-      icon: [
-        { url: '/favicon.png', type: 'image/png' }, // или image/x-icon, если .ico
-      ],
+      icon: [{ url: '/favicon.png', type: 'image/png' }],
     },
   };
 }

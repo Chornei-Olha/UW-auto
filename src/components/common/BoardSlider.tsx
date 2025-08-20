@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Autoplay } from 'swiper/modules';
@@ -12,48 +12,43 @@ const boardMembers = [
   {
     id: 1,
     photo: '/images/banner01.jpg',
-    name: 'COMPETENZA',
-    // position: 'Lorem ipsum dolor',
-    // badge: 'Lorem ipsum dolor',
-    description: `I nastri da mascheratura SENSO sono certificati FSC® e PEFC, a garanzia del rispetto dei più alti standard di qualità.`,
+    name: 'ЕКСПЕРТНІСТЬ',
+    description: `Малярні стрічки SENSO мають європейську сертифікацію, що гарантує відповідність високим стандартам якості.`,
   },
   {
     id: 2,
     photo: '/images/banner02.jpg',
-    name: 'EFFICIENZA',
-    // position: 'Lorem ipsum dolor',
-    // badge: 'Lorem ipsum dolor',
-    description: `La gamma SENSO è progettata appositamente per soddisfare tutte le esigenze del settore automobilistico.`,
+    name: 'ЕФЕКТИВНІСТЬ',
+    description: `Асортимент SENSO розроблений спеціально для закриття всіх потреб автомобільної галузі.`,
   },
   {
     id: 3,
     photo: '/images/banner03.jpg',
-    name: 'PROFESSIONALITÀ',
-    // position: 'Lorem ipsum dolor',
-    // badge: 'Lorem ipsum dolor',
-    description: `Ogni prodotto SENSO viene sottoposto a test specifici, in base ai quali viene determinata la sua destinazione d'uso.`,
+    name: 'КОМПЕТЕНТНІСТЬ',
+    description: `Кожен продукт SENSO проходить спеціалізовані випробування, на основі яких визначається його цільове призначення.`,
   },
   {
     id: 4,
     photo: '/images/banner04.jpeg',
-    name: 'ORIENTAMENTO AL CLIENTE',
-    // position: 'Lorem ipsum dolor',
-    // badge: 'Lorem ipsum dolor',
-    description: `Il team SENSO è aperto alla collaborazione ed è sempre pronto a offrire soluzioni pronte per la tua attività.`,
-  },
-  {
-    id: 5,
-    photo: '/images/banner05.jpeg',
-    name: 'FLESSIBILITÀ',
-    // position: 'Lorem ipsum dolor',
-    // badge: 'Lorem ipsum dolor',
-    description: `La linea SENSO è pensata per adattarsi con facilità a diverse superfici e contesti di utilizzo, garantendo sempre risultati precisi e professionali.`,
+    name: 'БАГАТОФУНКЦІОНАЛЬНІСТЬ',
+    description: `Продукція SENSO надає готові рішення для закриття різноманітних потреб у машинобудівній, деревообробній, картонно-паперовій, будівельній та меблевій промисловості.`,
   },
 ];
 
 export default function BoardSlider() {
   const swiperRef = useRef<SwiperType | null>(null);
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
+  const [maxHeight, setMaxHeight] = useState(0);
+  const cardRefs = useRef<HTMLDivElement[]>([]);
+
+  // Рассчитать максимальную высоту карточек
+  useLayoutEffect(() => {
+    if (cardRefs.current.length > 0) {
+      const heights = cardRefs.current.map((el) => el?.offsetHeight || 0);
+      const max = Math.max(...heights);
+      setMaxHeight(max);
+    }
+  }, []);
 
   return (
     <section className="py-10 md:py-16 text-center relative">
@@ -142,40 +137,27 @@ export default function BoardSlider() {
             1024: { slidesPerView: 3 },
           }}
         >
-          {boardMembers.map((member) => (
+          {boardMembers.map((member, index) => (
             <SwiperSlide key={member.id}>
-              <div className="h-full flex flex-col justify-between p-2 border rounded-xl shadow-md bg-white">
-                <div className="relative mb-2">
+              <div
+                ref={(el) => (cardRefs.current[index] = el!)}
+                style={{ height: maxHeight || 'auto' }}
+                className="flex flex-col p-2 border rounded-xl shadow-md bg-white"
+              >
+                <div className="relative mb-2 flex-shrink-0">
                   <Image
                     src={member.photo}
                     alt={member.name}
                     width={700}
-                    height={300}
+                    height={200}
                     className="w-full object-contain rounded-lg"
                     priority
                   />
-                  {/* <div className="absolute bottom-2 right-2 bg-[#0103B8] text-white text-sm font-semibold px-3 py-1 rounded-full shadow-sm">
-                    {member.badge}
-                  </div> */}
                 </div>
-                <h3 className="font-bold font-dm text-[20px]">{member.name}</h3>
-                {/* <p className="font-bold font-inter text-[16px] text-[#09234B] mt-[15px]">
-                  {member.position}
-                </p> */}
-                <p className="font-regular font-inter text-[16px] mt-[15px] flex-grow line-clamp-3">
+                <h3 className="font-bold font-inter text-[20px] mt-2">{member.name}</h3>
+                <p className="font-regular font-inter text-[16px] mt-2 flex-grow overflow-hidden">
                   {member.description}
                 </p>
-                {/* <div className="mt-[20px] flex justify-center">
-                  <Button
-                    className="max-w-[180px] px-[40px] py-[10px] font-bold font-inter text-[16px] bg-black text-white rounded-3xl"
-                    onClick={() => {
-                      console.log('Click!', member);
-                      setSelectedMember(member);
-                    }}
-                  >
-                    more...
-                  </Button>
-                </div> */}
               </div>
             </SwiperSlide>
           ))}
@@ -193,7 +175,6 @@ export default function BoardSlider() {
               ✕
             </button>
             <h3 className="text-xl font-bold mb-2">{selectedMember.name}</h3>
-            <p className="text-md font-semibold text-[#09234B] mb-2">{selectedMember.position}</p>
             <p className="text-sm text-gray-700 whitespace-pre-line text-left">
               {selectedMember.description}
             </p>

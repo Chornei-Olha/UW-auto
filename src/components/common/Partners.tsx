@@ -43,11 +43,11 @@ export default function Partners() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}
           <div className="w-full">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+            <h1 className="text-3xl md:text-4xl font-bold font-montserrat text-gray-900 leading-snug">
               {/* {t('title')}{' '} */}
               ПРОМИСЛОВИМ КЛІЄНТАМ
             </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed">
+            <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">
               {/* {t('mainText')} */}
               TM SENSO надає готові рішення для закриття різноманітних потреб у машинобудівній,
               оборонній, деревообробній, картонно-паперовій, будівельній та агропромисловій галузі.

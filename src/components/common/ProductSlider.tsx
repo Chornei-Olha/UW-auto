@@ -56,7 +56,7 @@ export default function ProductSlider() {
                     height={1608}
                     className="object-contain w-full h-auto"
                   />
-                  <h3 className="absolute top-2 left-2 text-xl font-bold leading-snug">
+                  <h3 className="absolute top-2 left-2 text-xl leading-snug font-montserrat font-bold">
                     {product.title.includes('–') ? (
                       <>
                         {product.title.split('–')[0]} –
@@ -71,7 +71,7 @@ export default function ProductSlider() {
 
                 <Link
                   href={product.link}
-                  className="mt-2 text-lg text-gray-500 hover:text-gray-700 text-left"
+                  className="mt-2 text-lg text-gray-500 hover:text-gray-700 text-left font-montserrat font-extralight"
                 >
                   Детальніше
                 </Link>

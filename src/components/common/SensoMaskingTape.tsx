@@ -20,11 +20,11 @@ export default function SensoMaskingTape() {
 
         {/* Текст справа */}
         <div className="w-full pt-5 text-lg sm:text-xl md:text-2xl">
-          <p className="text-gray-800 font-medium leading-relaxed mb-4">
+          <p className="text-gray-800 font-medium leading-relaxed mb-4 font-montserrat font-medium">
             Виробництво стрічок здійснюється в Італії згідно з міжнародними стандартами, що гарантує
             стабільно високий рівень якості та продуктивності.
           </p>
-          <p className="text-gray-500 leading-relaxed">
+          <p className="text-gray-500 leading-relaxed font-inter font-light">
             Компанія УКРПАК ХОЛДІНГ ІНДАСТРІ є ексклюзивним представником та імпортером ТМ SENSO на
             території України та Східної Європи. Ми пропонуємо вигідні умови співпраці для
             дистриб’юторів, дилерів, промислових і виробничих підприємств, автомобільних сервісів та
@@ -35,11 +35,11 @@ export default function SensoMaskingTape() {
 
       {/* Нижний блок */}
       <div className="pt-10 text-left font-semibold">
-        <h2 className="text-2xl md:text-4xl mb-6 leading-snug">
+        <h2 className="text-2xl md:text-4xl mb-6 leading-snug font-montserrat font-semibold">
           Відкрийте для себе повний асортимент маскувальних стрічок SENSO та підніміть свої проєкти
           на новий рівень за допомогою рішень, розроблених для досконалості.
         </h2>
-        <p className="text-base md:text-xl mb-6 text-gray-700">
+        <p className="text-base md:text-xl mb-6 text-gray-700 font-montserrat font-semibold">
           Малярні стрічки SENSO сертифіковані FSC® и PEFC:
         </p>
 

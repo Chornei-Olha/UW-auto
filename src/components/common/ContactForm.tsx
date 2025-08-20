@@ -27,7 +27,7 @@ export default function ContactForm() {
     <section className="py-5 sm:py-16">
       {' '}
       <div className="mb-6 text-left font-semibold">
-        <h2 className="text-base md:text-xl mb-6 text-gray-700">
+        <h2 className="text-lg md:text-2xl font-bold font-inter mb-6 text-gray-700">
           Купити оптом, або замовити консультацію
         </h2>
       </div>
@@ -45,7 +45,7 @@ export default function ContactForm() {
           className="relative z-10 text-white flex flex-col gap-6 p-5 sm:p-5"
         >
           {/* Верхняя часть */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-montserrat font-regular">
             <div>
               <label className="block mb-1">Як Вас звати?</label>
               <input
@@ -85,7 +85,7 @@ export default function ContactForm() {
           </div>
 
           {/* Нижняя часть */}
-          <div className="flex flex-col sm:flex-row justify-between items-left sm:items-center gap-5 sm:gap-0">
+          <div className="flex flex-col sm:flex-row justify-between items-left sm:items-center gap-5 sm:gap-0 font-montserrat font-regular">
             <div className="items-left space-y-2 text-sm">
               <label className="flex items-left gap-2">
                 <input
@@ -110,7 +110,7 @@ export default function ContactForm() {
             <div className="flex justify-center sm:justify-end">
               <button
                 type="submit"
-                className="bg-white hover:bg-red-600 text-[#C52233] hover:text-white px-6 py-2 rounded-full shadow-md "
+                className="bg-white hover:bg-red-600 text-[#C52233] hover:text-white px-6 py-2 rounded-full shadow-md font-inter font-bold"
               >
                 Надіслати
               </button>

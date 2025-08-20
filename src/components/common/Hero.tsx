@@ -11,10 +11,12 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}
           <div className="md:max-w-5xl">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+            <h1 className="text-3xl md:text-4xl text-gray-900 leading-snug font-montserrat font-medium">
               {t('title')}{' '}
             </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed">{t('mainText')}</p>
+            <p className="mt-4 text-gray-600 leading-relaxed font-montserrat font-light">
+              {t('mainText')}
+            </p>
           </div>
 
           {/* Маленькое фото */}

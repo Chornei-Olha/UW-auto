@@ -43,11 +43,11 @@ export default function Dealers() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}
           <div className="w-full">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+            <h1 className="text-3xl md:text-4xl font-bold font-montserrat text-gray-900 leading-snug">
               {/* {t('title')}{' '} */}
               ДИСТРИБ’ЮТОРАМ ТА ДИЛЕРАМ
             </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed">
+            <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">
               {/* {t('mainText')} */}
               Компанія УКРПАК ХОЛДИНГ ІНДАСТРІ запрошує до співпраці дистриб’юторів та дилерів з
               України та країн Східної Європи. Приєднавшись до команди SENSO Ви отримаєте повний

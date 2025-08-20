@@ -71,7 +71,7 @@ export default function Header() {
         </div>
 
         {/* Десктоп меню по центру */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700 mx-auto relative">
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium font-montserrat text-gray-700 mx-auto relative">
           <Link href="/" className={linkClass('/')}>
             Головна
           </Link>
@@ -164,8 +164,7 @@ export default function Header() {
 
         <div className="absolute left-[25px] top-1/2 transform -translate-y-1/2 hidden md:flex flex-col items-center gap-[46px] bg-black/10 rounded-[36px] px-[15px] py-[25px] z-20">
           {[
-            { text: 'TWITTER', href: 'https://twitter.com/yourprofile' },
-            { text: 'FACEBOOK', href: 'https://facebook.com/yourprofile' },
+            { text: 'YOUTUBE', href: 'https://www.youtube.com/' },
             { text: 'INSTAGRAM', href: 'https://instagram.com/yourprofile' },
           ].map(({ text, href }, idx) => (
             <a
@@ -173,7 +172,7 @@ export default function Header() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-krona-one font-normal leading-[15px] text-center text-global-10 hover:underline"
+              className="text-[11px] font-krona-one font-normal font-montserrat leading-[15px] text-center text-global-10 hover:underline"
               style={{ writingMode: 'vertical-rl' }}
             >
               {text}
@@ -185,13 +184,13 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={() => changeLocale('ua')}
-            className={`border p-2 font-bold rounded-md text-sm ${locale === 'ua' && 'bg-red-500 text-white'}`}
+            className={`border p-2 font-medium font-inter rounded-md text-sm ${locale === 'ua' && 'bg-red-500 text-white'}`}
           >
             UA
           </button>
           <button
             onClick={() => changeLocale('en')}
-            className={`border p-2 font-bold rounded-md text-sm ${locale === 'en' && 'bg-red-500 text-white'}`}
+            className={`border p-2 font-medium font-inter rounded-md text-sm ${locale === 'en' && 'bg-red-500 text-white'}`}
           >
             EN
           </button>
@@ -299,11 +298,8 @@ export default function Header() {
             </div>
             {/* Соцсети внизу */}
             <div className="mt-auto border-t pt-6 flex justify-center gap-6">
-              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/twitter.png" alt="Twitter" width={24} height={24} />
-              </a>
-              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/facebook.png" alt="Facebook" width={24} height={24} />
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/youtube.png" alt="Youtube" width={24} height={24} />
               </a>
               <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
                 <Image src="/images/instagram.png" alt="Instagram" width={24} height={24} />

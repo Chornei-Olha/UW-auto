@@ -73,7 +73,7 @@ export default function Oro() {
 
       {/* Buy buttons */}
       <div className="flex flex-col sm:flex-row justify-start items-left sm:items-center gap-5 my-16 flex-nowrap sm:flex-wrap">
-        <p className="whitespace-nowrap">ПРИДБАТИ В РОЗДРІБ</p>
+        <p className="whitespace-nowrap font-inter font-regular">ПРИДБАТИ В РОЗДРІБ</p>
 
         <div className="flex flex-row gap-2 sm: gap-6 items-start">
           <a
@@ -112,7 +112,7 @@ export default function Oro() {
       <div className="flex justify-center gap-4 my-8">
         <button
           onClick={() => setTab('Призначення')}
-          className={`text-sm sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
+          className={`font-montserrat font-regular text-xs sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
             tab === 'Призначення' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
@@ -120,7 +120,7 @@ export default function Oro() {
         </button>
         <button
           onClick={() => setTab('Характеристики')}
-          className={`text-sm sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
+          className={`font-montserrat font-regular text-xs sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
             tab === 'Характеристики' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
@@ -128,7 +128,7 @@ export default function Oro() {
         </button>
         <button
           onClick={() => setTab('Параметри')}
-          className={`text-sm sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
+          className={`font-montserrat font-regular text-xs sm:text-lg px-2 sm:px-4 py-2 rounded-full border ${
             tab === 'Параметри' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
@@ -137,7 +137,7 @@ export default function Oro() {
       </div>
 
       {/* Content */}
-      <div className="mt-6 text-gray-700 leading-relaxed">
+      <div className="mt-6 text-gray-700 leading-relaxed font-medium font-montserrat text-sm sm:text-xl">
         {tab === 'Призначення' && (
           <>
             <p>
@@ -256,7 +256,7 @@ export default function Oro() {
       </div>
 
       <div className="pt-10 text-left font-semibold">
-        <p className="text-base md:text-xl mb-6 text-gray-700">
+        <p className="font-regular font-inter text-base md:text-xl mb-6 text-gray-700">
           Автомалярська стрічка SENSO ORO сертифікована FSC® и PEFC:
         </p>
 
