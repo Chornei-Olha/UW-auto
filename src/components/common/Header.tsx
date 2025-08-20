@@ -102,12 +102,13 @@ export default function Header() {
                   <Link href="/blanco" className="block px-4 py-2 hover:bg-red-100">
                     Senso Blanco
                   </Link>
-                  <Link href="/rossa" className="block px-4 py-2 hover:bg-red-100">
-                    Senso Rossa
-                  </Link>
                   <Link href="/marrone" className="block px-4 py-2 hover:bg-red-100">
                     Senso Marrone
                   </Link>
+                  <Link href="/rossa" className="block px-4 py-2 hover:bg-red-100">
+                    Senso Rossa
+                  </Link>
+
                   <Link href="/oro" className="block px-4 py-2 hover:bg-red-100">
                     Senso Oro
                   </Link>
@@ -233,13 +234,13 @@ export default function Header() {
                   <Link href="/blanco" onClick={() => setIsOpen(false)}>
                     Senco Blanco
                   </Link>
-                  <Link href="/" onClick={() => setIsOpen(false)}>
+                  <Link href="/marrone" onClick={() => setIsOpen(false)}>
                     Senso Marrone
                   </Link>
-                  <Link href="/" onClick={() => setIsOpen(false)}>
+                  <Link href="/rossa" onClick={() => setIsOpen(false)}>
                     Senso Rossa
                   </Link>
-                  <Link href="/" onClick={() => setIsOpen(false)}>
+                  <Link href="/oro" onClick={() => setIsOpen(false)}>
                     Senso Oro
                   </Link>
                 </div>

@@ -52,8 +52,8 @@ export default function Rossa() {
       <div className="flex flex-col sm:flex-row gap-6 items-center">
         <div className="flex justify-center">
           <Image
-            src="/images/product1.webp"
-            alt="Senso Bianco Tape"
+            src="/images/product2.webp"
+            alt="Senso Rossa Tape"
             width={1320}
             height={1680}
             className="rounded-2xl shadow-md h-[400px] w-auto"
@@ -124,17 +124,21 @@ export default function Rossa() {
       <div className="mt-6 text-gray-700 leading-relaxed">
         {tab === 'Призначення' && (
           <p>
-            SENSO BIANCO – це вискотемпературна автомалярна стрічка італійського виробництва, яка
-            призначена для проведення лакофарбових робіт. Виготовляється з крепованого паперу на
-            який з одного боку нанесений клейовий шар на основі натурального каучуку. Коричневий
+            SENSO ROSSA – це професійна автомалярна стрічка італійського виробництва, яка призначена
+            для проведення лакофарбових робіт. Виготовляється з насиченого напівкрепованого паперу
+            на який з одного боку нанесений клейовий шар на основі натурального каучуку. Червоний
             малярний скотч зручний у використанні, легко видаляється з поверхні без залишків клею,
-            не пошкоджує структуру поверхні. Відмінно фіксується на склі, металах, фарбах, лаках,
-            поліпропілені, ПВХ, ABS, полікарбонаті, гумі, деревині. Забезпечує рівний контур
-            фарбування. Використовується для захисту поверхонь при проведенні кузовних лакофарбових
-            робіт. Захищає поверхні при поліруванні та шліфуванні. Застосовується у деревообробній і
-            меблевій промисловості. Малярська стрічка має помірну стійкість до дії
-            уф-випромінювання, може використовуватися на вулиці (2 доби за сприятливих погодних
-            умов).
+            не пошкоджує структуру поверхні. Висока еластичність забезпечує відмінне прилягання на
+            вигнуті та нерівні поверхні (арки, фари тощо). Має хороший рівень зчеплення стрічки до
+            стрічки. Середній рівень адгезії забезпечує високу клейкість навіть до шорстких,
+            фактурних і нерівних поверхонь. Відмінно фіксується на склі, металах, фарбах, лаках,
+            поліпропілені, ПВХ, ABS, полікарбонаті, гумі, деревині. Утворює ідеально чіткі лінії та
+            контури фарби з тонким профілем переходу. Автоскотч ROSSA має високий рівень стійкості
+            до вологи, фарб на водній основі, розчинників. Витримує процес мокрого шліфування.
+            Призначений для професійного фарбування. Використовується для захисту поверхонь при
+            проведенні кузовних лакофарбових робіт. Застосовується у деревообробній і меблевій
+            промисловості. Малярська стрічка має високу стійкість до дії уф-випромінювання, може
+            використовуватися на вулиці (до 3 діб).
           </p>
         )}
 
@@ -156,30 +160,23 @@ export default function Rossa() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="border px-3 py-2">SB18</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
-                  <td className="border px-3 py-2">18mm*40yd</td>
-                  <td className="border px-3 py-2">24</td>
-                </tr>
-                <tr>
-                  <td className="border px-3 py-2">SB24</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">SR24</td>
+                  <td className="border px-3 py-2">Стрічка автомобільна SENSO ROSSA +120ºC</td>
+                  <td className="border px-3 py-2">Червоний</td>
                   <td className="border px-3 py-2">24mm*40yd</td>
                   <td className="border px-3 py-2">24</td>
                 </tr>
                 <tr>
-                  <td className="border px-3 py-2">SB36</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">SR36</td>
+                  <td className="border px-3 py-2">Стрічка автомобільна SENSO ROSSA +120ºC</td>
+                  <td className="border px-3 py-2">Червоний</td>
                   <td className="border px-3 py-2">36mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
                 <tr>
-                  <td className="border px-3 py-2">SB48</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">SR48</td>
+                  <td className="border px-3 py-2">Стрічка автомобільна SENSO ROSSA +120ºC</td>
+                  <td className="border px-3 py-2">Червоний</td>
                   <td className="border px-3 py-2">48mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
@@ -219,7 +216,7 @@ export default function Rossa() {
 
       <div className="pt-10 text-left font-semibold">
         <p className="text-base md:text-xl mb-6 text-gray-700">
-          Автомалярська стрічка SENSO BIANCO сертифікована FSC® и PEFC:
+          Автомалярська стрічка SENSO ROSSA сертифікована FSC® и PEFC:
         </p>
 
         {/* Логотипы */}
