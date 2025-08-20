@@ -38,7 +38,7 @@ export default function Dealers() {
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
   return (
     <section className="bg-[#F3F4F6]">
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16">
+      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16">
         {/* Верхняя часть: текст */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}

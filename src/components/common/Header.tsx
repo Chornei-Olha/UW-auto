@@ -229,7 +229,7 @@ export default function Header() {
                 />
               </button>
               {productOpen && (
-                <div className="flex flex-col pl-4 mt-1 space-y-1">
+                <div className="flex flex-col pl-4 mt-3 space-y-3">
                   <Link href="/blanco" onClick={() => setIsOpen(false)}>
                     Senco Blanco
                   </Link>
@@ -259,7 +259,7 @@ export default function Header() {
                 />
               </button>
               {collabOpen && (
-                <div className="flex flex-col pl-4 mt-1 space-y-1">
+                <div className="flex flex-col pl-4 mt-3 space-y-3">
                   <Link href="/partnersPage" onClick={() => setIsOpen(false)}>
                     Промисловим клієнтам
                   </Link>

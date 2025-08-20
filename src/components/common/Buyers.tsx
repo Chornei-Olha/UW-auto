@@ -55,7 +55,7 @@ export default function Buyers() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 text-center relative">
+      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16 text-center relative">
         <div className="relative">
           {/* Стрелки (десктоп) */}
           <button
