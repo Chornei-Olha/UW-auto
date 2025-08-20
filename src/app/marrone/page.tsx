@@ -9,8 +9,8 @@ const Products: React.FC = () => {
     <>
       <div className="container mx-auto px-4 md:px-8">
         <Header />
+        <Marrone />
       </div>
-      <Marrone />
       <div className="container mx-auto px-4 md:px-8">
         <ContactForm />
         <Footer />

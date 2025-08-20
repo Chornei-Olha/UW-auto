@@ -26,9 +26,11 @@ export default function ContactForm() {
   return (
     <section className="py-5 sm:py-16">
       {' '}
-      <h2 className="container mx-auto px-4 md:px-8 text-center mb-6">
-        Купити оптом, або замовити консультацію
-      </h2>
+      <div className="mb-6 text-left font-semibold">
+        <h2 className="text-base md:text-xl mb-6 text-gray-700">
+          Купити оптом, або замовити консультацію
+        </h2>
+      </div>
       <div
         className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden w-full"
         style={{

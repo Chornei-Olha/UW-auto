@@ -50,14 +50,14 @@ export default function SensoMaskingTape() {
             alt="FSC сертифікація"
             width={560}
             height={811}
-            className="w-full max-w-[70px] sm:max-w-[150px] h-auto"
+            className="w-full max-w-[70px] sm:max-w-[130px] h-auto"
           />
           <Image
             src="/images/pefc-logo.png"
             alt="PEFC сертифікація"
             width={581}
             height={1079}
-            className="w-full max-w-[70px] sm:max-w-[150px] h-auto"
+            className="w-full max-w-[70px] sm:max-w-[130px] h-auto"
           />
         </div>
       </div>
