@@ -22,7 +22,7 @@ export default function Hero() {
           {/* Маленькое фото */}
           <div className="flex-shrink-0">
             <Image
-              src="/images/logo-bg.webp"
+              src="/images/logo-bg.png"
               // src="/images/bg-right.jpg"
               alt="Senso Small Banner"
               width={1244}
@@ -36,7 +36,7 @@ export default function Hero() {
         {/* Большое фото */}
         <div className="mt-8">
           <Image
-            src="/images/bg.webp"
+            src="/images/bg.png"
             // src="/images/bg.png"
             alt="Senso Tape Rolls"
             width={5568}
