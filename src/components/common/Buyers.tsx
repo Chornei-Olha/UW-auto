@@ -7,7 +7,7 @@ import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
 import 'swiper/css';
-// import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 const boardMembers = [
   {
@@ -33,7 +33,7 @@ const boardMembers = [
 ];
 
 export default function Buyers() {
-  // const t = useTranslations('Hero');
+  const t = useTranslations('Buyers');
   const swiperRef = useRef<SwiperType | null>(null);
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
   return (
@@ -44,14 +44,9 @@ export default function Buyers() {
           {/* Текст */}
           <div className="w-full">
             <h1 className="text-3xl md:text-4xl font-bold font-montserrat text-gray-900 leading-snug">
-              {/* {t('title')}{' '} */}
-              РОЗДРІБНИМ ПОКУПЦЯМ{' '}
+              {t('title')}{' '}
             </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">
-              {/* {t('mainText')} */}
-              Придбати продукцію TM SENSO Ви можете в online та роздрібних магазинах наших партнерів
-              ЕПІЦЕНТР та ROZETKA.
-            </p>
+            <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">{t('text')}</p>
           </div>
         </div>
       </div>

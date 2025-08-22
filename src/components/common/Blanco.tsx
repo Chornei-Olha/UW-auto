@@ -47,12 +47,12 @@ export default function Blanco() {
   const [tab, setTab] = useState('Призначення');
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-10">
       {/* Top section with images */}
-      <div className="flex flex-col sm:flex-row gap-6 items-center">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 items-center">
         <div className="flex justify-center">
           <Image
-            src="/images/product1.webp"
+            src="/images/BIANCO2.webp"
             alt="Senso Bianco Tape"
             width={1320}
             height={1680}
@@ -61,13 +61,13 @@ export default function Blanco() {
         </div>
         <div className="relative flex justify-center items-center sm:h-[400px]">
           <Image
-            src="/images/video.png"
+            src="/images/BIANCO.webp"
             alt="Tape in use"
             width={4096}
             height={2560}
-            className="rounded-2xl shadow-md filter grayscale h-auto sm:h-full w-full sm:w-[898px]"
+            className="rounded-2xl shadow-md h-auto sm:h-full w-[auto]"
           />
-          <button className="absolute bg-white/80 rounded-full p-4 shadow-md text-xl">▶</button>
+          {/* <button className="absolute bg-white/80 rounded-full p-4 shadow-md text-xl">▶</button> */}
         </div>
       </div>
 
@@ -75,7 +75,7 @@ export default function Blanco() {
       <div className="flex flex-col sm:flex-row justify-start items-left sm:items-center gap-5 my-16 flex-nowrap sm:flex-wrap">
         <p className="whitespace-nowrap font-inter font-regular">ПРИДБАТИ В РОЗДРІБ</p>
 
-        <div className="flex flex-row gap-2 sm: gap-6 items-start">
+        <div className="flex flex-row gap-2 sm:gap-6 items-start">
           <a
             href="https://epicentrk.ua/"
             target="_blank"

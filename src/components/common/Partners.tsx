@@ -7,59 +7,64 @@ import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
 import 'swiper/css';
-// import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 const boardMembers = [
   {
     id: 1,
-    photo: '/images/banner01.jpg',
+    photo: '/images/partners01.webp',
   },
   {
     id: 2,
-    photo: '/images/banner02.jpg',
+    photo: '/images/partners02.webp',
   },
   {
     id: 3,
-    photo: '/images/banner03.jpg',
+    photo: '/images/partners03.webp',
   },
   {
     id: 4,
-    photo: '/images/banner04.jpeg',
+    photo: '/images/partners04.webp',
   },
   {
     id: 5,
-    photo: '/images/banner05.jpeg',
+    photo: '/images/partners05.webp',
+  },
+  {
+    id: 6,
+    photo: '/images/partners06.webp',
+  },
+  {
+    id: 7,
+    photo: '/images/partners07.webp',
+  },
+  {
+    id: 8,
+    photo: '/images/partners08.webp',
   },
 ];
 
 export default function Partners() {
-  // const t = useTranslations('Hero');
+  const t = useTranslations('Partners');
   const swiperRef = useRef<SwiperType | null>(null);
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
   return (
     <section className="bg-[#F3F4F6]">
-      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16">
+      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16 py-10 md:py-16">
         {/* Верхняя часть: текст */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}
           <div className="w-full">
             <h1 className="text-3xl md:text-4xl font-bold font-montserrat text-gray-900 leading-snug">
-              {/* {t('title')}{' '} */}
-              ПРОМИСЛОВИМ КЛІЄНТАМ
+              {t('title')}{' '}
             </h1>
             <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">
-              {/* {t('mainText')} */}
-              TM SENSO надає готові рішення для закриття різноманітних потреб у машинобудівній,
-              оборонній, деревообробній, картонно-паперовій, будівельній та агропромисловій галузі.
-              Малярні стрічки мають широкий спектр застосувань при виробництві меблів, холодильного
-              обладнання, БПЛА та інших складних технічних пристроїв. Скотч SENSO обирають для
-              виробництва і ремонту вагонів, автомобілів, сільськогосподарської техніки та інших
-              транспортних засобів.
+              {t('text')}
             </p>
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 text-center relative">
+      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16 text-center relative">
         <div className="relative">
           {/* Стрелки (десктоп) */}
           <button
@@ -159,7 +164,7 @@ export default function Partners() {
                       alt="slider"
                       width={900}
                       height={500}
-                      className="w-auto h-[20vh] object-cover rounded-lg"
+                      className="w-auto h-full object-cover rounded-lg"
                       priority
                     />
                   </div>

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,7 @@ export default function Header() {
     `px-3 py-1 rounded-full transition-colors ${
       pathname === href ? 'bg-red-600 text-white' : 'hover:text-red-600'
     }`;
+  const t = useTranslations('Header');
 
   useEffect(() => {
     if (isOpen) {
@@ -73,7 +75,7 @@ export default function Header() {
         {/* Десктоп меню по центру */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium font-montserrat text-gray-700 mx-auto relative">
           <Link href="/" className={linkClass('/')}>
-            Головна
+            {t('menu1')}{' '}
           </Link>
 
           {/* Выпадающее меню Продукція */}
@@ -83,7 +85,7 @@ export default function Header() {
             onMouseLeave={() => setProductOpen(false)}
           >
             <button className="flex items-center space-x-1 hover:text-red-600">
-              <span>Продукція</span>
+              <span> {t('menu2')} </span>
               <ChevronDown
                 size={16}
                 className={`transition-transform ${productOpen ? 'rotate-180' : 'rotate-0'}`}
@@ -124,7 +126,7 @@ export default function Header() {
             onMouseLeave={() => setCollabOpen(false)}
           >
             <button className="flex items-center space-x-1 hover:text-red-600">
-              <span>Співпраця</span>
+              <span> {t('menu3')} </span>
               <ChevronDown
                 size={16}
                 className={`transition-transform ${collabOpen ? 'rotate-180' : 'rotate-0'}`}
@@ -142,15 +144,15 @@ export default function Header() {
                 >
                   <Link href="/partnersPage" className="block px-4 py-2 hover:bg-red-100">
                     {' '}
-                    Промисловим клієнтам{' '}
+                    {t('menu3-1')}{' '}
                   </Link>{' '}
                   <Link href="/dealersPage" className="block px-4 py-2 hover:bg-red-100">
                     {' '}
-                    Дистриб’юторам та дилерам{' '}
+                    {t('menu3-2')}{' '}
                   </Link>{' '}
                   <Link href="/buyersPage" className="block px-4 py-2 hover:bg-red-100">
                     {' '}
-                    Роздрібним покупцям{' '}
+                    {t('menu3-3')}{' '}
                   </Link>
                 </motion.div>
               )}
@@ -158,7 +160,7 @@ export default function Header() {
           </div>
 
           <Link href="#footer" className={linkClass('#footer')}>
-            Контакти
+            {t('menu4')}{' '}
           </Link>
         </nav>
 
@@ -214,7 +216,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
             >
               {' '}
-              Головна
+              {t('menu1')}{' '}
             </Link>
 
             <div>
@@ -222,7 +224,7 @@ export default function Header() {
                 className="w-full flex justify-left items-center gap-2 hover:bg-gray-100 rounded"
                 onClick={() => setProductOpen(!productOpen)}
               >
-                <span>Продукція</span>
+                <span> {t('menu2')} </span>
                 <ChevronDown
                   size={16}
                   className={`transition-transform ${productOpen ? 'rotate-180' : 'rotate-0'}`}
@@ -252,7 +254,7 @@ export default function Header() {
                 className="w-full flex justify-left items-center gap-2 hover:bg-gray-100 rounded"
                 onClick={() => setCollabOpen(!collabOpen)}
               >
-                <span>Співпраця</span>
+                <span> {t('menu3')} </span>
                 <ChevronDown
                   size={16}
                   className={`transition-transform ${collabOpen ? 'rotate-180' : 'rotate-0'}`}
@@ -261,13 +263,13 @@ export default function Header() {
               {collabOpen && (
                 <div className="flex flex-col pl-4 mt-3 space-y-3">
                   <Link href="/partnersPage" onClick={() => setIsOpen(false)}>
-                    Промисловим клієнтам
+                    {t('menu3-1')}{' '}
                   </Link>
                   <Link href="/dealersPage" onClick={() => setIsOpen(false)}>
-                    Дистриб’юторам та дилерам
+                    {t('menu3-2')}{' '}
                   </Link>
                   <Link href="/buyersPage" onClick={() => setIsOpen(false)}>
-                    Роздрібним покупцям
+                    {t('menu3-3')}{' '}
                   </Link>
                 </div>
               )}

@@ -7,7 +7,7 @@ import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
 import 'swiper/css';
-// import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 const boardMembers = [
   {
@@ -33,32 +33,24 @@ const boardMembers = [
 ];
 
 export default function Dealers() {
-  // const t = useTranslations('Hero');
+  const t = useTranslations('Dealers');
   const swiperRef = useRef<SwiperType | null>(null);
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
   return (
     <section className="bg-[#F3F4F6]">
-      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16">
+      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16 py-10 md:py-16">
         {/* Верхняя часть: текст */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Текст */}
           <div className="w-full">
             <h1 className="text-3xl md:text-4xl font-bold font-montserrat text-gray-900 leading-snug">
-              {/* {t('title')}{' '} */}
-              ДИСТРИБ’ЮТОРАМ ТА ДИЛЕРАМ
+              {t('title')}{' '}
             </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">
-              {/* {t('mainText')} */}
-              Компанія УКРПАК ХОЛДИНГ ІНДАСТРІ запрошує до співпраці дистриб’юторів та дилерів з
-              України та країн Східної Європи. Приєднавшись до команди SENSO Ви отримаєте повний
-              набір інструментів для розвитку Вашого бізнесу. Ми надаємо всебічну підтримку в усіх
-              сферах: захист Вашого прибутку контрольованою політикою РРЦ, навчання торгівельної
-              команди, надання рекламно-інформаційних матеріалів та багато іншого.
-            </p>
+            <p className="mt-4 text-gray-600 leading-relaxed font-light font-inter">{t('text')}</p>
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 text-center relative">
+      <div className="container mx-auto px-4 md:px-8 pb-10 md:pb-16 text-center relative">
         <div className="relative">
           {/* Стрелки (десктоп) */}
           <button

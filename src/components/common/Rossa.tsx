@@ -47,12 +47,12 @@ export default function Rossa() {
   const [tab, setTab] = useState('Призначення');
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-10">
       {/* Top section with images */}
-      <div className="flex flex-col sm:flex-row gap-6 items-center">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 items-center">
         <div className="flex justify-center">
           <Image
-            src="/images/product2.webp"
+            src="/images/ROSSA2.webp"
             alt="Senso Rossa Tape"
             width={1320}
             height={1680}
@@ -61,13 +61,13 @@ export default function Rossa() {
         </div>
         <div className="relative flex justify-center items-center sm:h-[400px]">
           <Image
-            src="/images/video.png"
+            src="/images/ROSSA.webp"
             alt="Tape in use"
             width={4096}
             height={2560}
-            className="rounded-2xl shadow-md filter grayscale h-auto sm:h-full w-full sm:w-[898px]"
+            className="rounded-2xl shadow-md h-auto sm:h-full w-[auto]"
           />
-          <button className="absolute bg-white/80 rounded-full p-4 shadow-md text-xl">▶</button>
+          {/* <button className="absolute bg-white/80 rounded-full p-4 shadow-md text-xl">▶</button> */}
         </div>
       </div>
 
