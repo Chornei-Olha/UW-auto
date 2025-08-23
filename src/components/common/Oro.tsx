@@ -164,7 +164,7 @@ export default function Oro() {
               <li>{t('char-li2')}</li>
               <li>{t('char-li3')}</li>
               <li>{t('char-li4')}</li>
-              <li>{t('char-li5')}.</li>
+              <li>{t('char-li5')}</li>
               <li>{t('char-li6')}</li>
             </ul>{' '}
             <table className="min-w-full border border-gray-300 text-xs sm:text-lg">

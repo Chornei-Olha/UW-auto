@@ -7,7 +7,7 @@ export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer id="footer" className="py-10 md:py-16 ">
+    <footer id="footer" className="pb-5">
       <p className="mb-10 text-gray-600 font-montserrat font-light">
         {t('slogan1')} <br />
         {t('slogan2')}{' '}

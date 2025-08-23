@@ -11,39 +11,6 @@ type Feature = {
   max?: number; // всего блоков
 };
 
-const features: Feature[] = [
-  {
-    title: 'МЕХАНІЧНА СТІЙКІСТЬ',
-    subtitle: 'утримуюча сила при шліфуванні і поліруванні',
-    value: 5,
-    max: 6,
-  },
-  {
-    title: 'ЕЛАСТИЧНІСТЬ',
-    subtitle: 'гнучкість на криволінійних поверхнях',
-    value: 5,
-    max: 6,
-  },
-  {
-    title: 'СИЛА АДГЕЗІЇ',
-    subtitle: 'метал, поліуретан, ПП, ПВХ, полікарбонат, фарба, лак, скло, деревина, картон тощо',
-    value: 4,
-    max: 6,
-  },
-  {
-    title: 'ТЕРМОСТІЙКІСТЬ',
-    subtitle: 'до 1 години',
-    value: 3,
-    max: 6,
-  },
-  {
-    title: 'БЕЗПЕЧНЕ ВИДАЛЕННЯ',
-    subtitle: 'без слідів і пошкоджень',
-    value: 6,
-    max: 6,
-  },
-];
-
 export default function Bianco() {
   const t = useTranslations('Bianco');
 
@@ -194,7 +161,7 @@ export default function Bianco() {
               <li>{t('char-li2')}</li>
               <li>{t('char-li3')}</li>
               <li>{t('char-li4')}</li>
-              <li>{t('char-li5')}.</li>
+              <li>{t('char-li5')}</li>
               <li>{t('char-li6')}</li>
             </ul>{' '}
             <table className="min-w-full border border-gray-300 text-xs sm:text-lg">
