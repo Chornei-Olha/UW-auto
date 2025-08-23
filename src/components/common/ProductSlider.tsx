@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 const products = [
-  { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/blanco' },
+  { title: 'SENSO BIANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/bianco' },
   {
     title: 'SENSO MARRONE – AUTO + 110°C',
     image: '/images/product3.webp',

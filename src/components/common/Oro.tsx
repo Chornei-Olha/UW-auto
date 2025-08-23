@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type Feature = {
   title: string;
@@ -10,40 +11,42 @@ type Feature = {
   max?: number; // всего блоков
 };
 
-const features: Feature[] = [
-  {
-    title: 'МЕХАНІЧНА СТІЙКІСТЬ',
-    subtitle: 'утримуюча сила при шліфуванні і поліруванні',
-    value: 6,
-    max: 6,
-  },
-  {
-    title: 'ЕЛАСТИЧНІСТЬ',
-    subtitle: 'гнучкість на криволінійних поверхнях',
-    value: 6,
-    max: 6,
-  },
-  {
-    title: 'СИЛА АДГЕЗІЇ',
-    subtitle: 'метал, поліуретан, ПП, ПВХ, полікарбонат, фарба, лак, скло, деревина, картон тощо',
-    value: 6,
-    max: 6,
-  },
-  {
-    title: 'ТЕРМОСТІЙКІСТЬ',
-    subtitle: 'до 1 години',
-    value: 6,
-    max: 6,
-  },
-  {
-    title: 'БЕЗПЕЧНЕ ВИДАЛЕННЯ',
-    subtitle: 'без слідів і пошкоджень',
-    value: 6,
-    max: 6,
-  },
-];
-
 export default function Oro() {
+  const t = useTranslations('Oro');
+
+  const features: Feature[] = [
+    {
+      title: t('par-title1'),
+      subtitle: t('par-text1'),
+      value: 6,
+      max: 6,
+    },
+    {
+      title: t('par-title2'),
+      subtitle: t('par-text2'),
+      value: 6,
+      max: 6,
+    },
+    {
+      title: t('par-title3'),
+      subtitle: t('par-text3'),
+      value: 6,
+      max: 6,
+    },
+    {
+      title: t('par-title4'),
+      subtitle: t('par-text4'),
+      value: 6,
+      max: 6,
+    },
+    {
+      title: t('par-title5'),
+      subtitle: t('par-text5'),
+      value: 6,
+      max: 6,
+    },
+  ];
+
   const [tab, setTab] = useState('Призначення');
 
   return (
@@ -73,9 +76,9 @@ export default function Oro() {
 
       {/* Buy buttons */}
       <div className="flex flex-col sm:flex-row justify-start items-left sm:items-center gap-5 my-16 flex-nowrap sm:flex-wrap">
-        <p className="whitespace-nowrap font-inter font-regular">ПРИДБАТИ В РОЗДРІБ</p>
+        <p className="whitespace-nowrap font-inter font-regular">{t('shop')}</p>
 
-        <div className="flex flex-row gap-2 sm: gap-6 items-start">
+        <div className="flex flex-row gap-2 sm:gap-6 items-start">
           <a
             href="https://epicentrk.ua/"
             target="_blank"
@@ -116,7 +119,7 @@ export default function Oro() {
             tab === 'Призначення' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Призначення
+          {t('menu1')}
         </button>
         <button
           onClick={() => setTab('Характеристики')}
@@ -124,7 +127,7 @@ export default function Oro() {
             tab === 'Характеристики' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Характеристики
+          {t('menu2')}
         </button>
         <button
           onClick={() => setTab('Параметри')}
@@ -132,7 +135,7 @@ export default function Oro() {
             tab === 'Параметри' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Параметри
+          {t('menu3')}
         </button>
       </div>
 
@@ -140,37 +143,16 @@ export default function Oro() {
       <div className="mt-6 text-gray-700 leading-relaxed font-medium font-montserrat text-sm sm:text-xl">
         {tab === 'Призначення' && (
           <>
-            <p>
-              SENSO ORO – це професійна автомалярна стрічка італійського виробництва, яка призначена
-              для проведення лакофарбових робіт. Виготовляється з щільного напівкрепованого паперу
-              на який з одного боку нанесений клейовий шар на основі натурального каучуку. Жовтий
-              малярний скотч зручний у використанні, легко видаляється з поверхні без залишків клею,
-              не пошкоджує структуру поверхні. Відрізняється високою щільністю паперу, що забезпечує
-              відмінну механічну стійкість. Завдяки високій еластичності чудово прилягає на вигнуті
-              та нерівні поверхні (арки, фари тощо). Має хороший рівень зчеплення стрічки до
-              стрічки. Середній рівень адгезії забезпечує високу клейкість навіть до шорстких,
-              фактурних і нерівних поверхонь. Відмінно фіксується на склі, металах, фарбах, лаках,
-              поліпропілені, ПВХ, ABS, полікарбонаті, гумі, деревині. Утворює ідеально чіткі лінії
-              та контури фарби з тонким профілем переходу. Автоскотч ORO має високий рівень
-              стійкості до вологи, фарб на водній основі, розчинників. Витримує процес мокрого
-              шліфування. Призначений для професійного фарбування. Використовується для захисту
-              поверхонь при проведенні кузовних лакофарбових робіт. Застосовується у автомобільній,
-              сільськогосподарській, металургійній та деревообробній промисловості. Малярська
-              стрічка має високу стійкість до дії уф-випромінювання, може використовуватися на
-              вулиці (до 5 діб).
-            </p>
+            <p>{t('mainText')}</p>
             <ul className="list-disc list-inside mt-4 space-y-1">
-              <li>Професійне фарбування у автомобільній промисловості.</li>
-              <li>Високотемпературна сушка до +130°C.</li>
-              <li>Маскування поверхонь і елементів при проведенні кузовних лакофарбових робіт.</li>
-              <li>Захист деталей при поліруванні та шліфуванні (в т.ч. мокрому).</li>
-              <li>Проклеювання і фіксація у деревообробній і меблевій промисловості.</li>
-              <li>Виконання складних завдань у деревообробній і металургійній промисловості.</li>
-              <li>
-                Тимчасова фіксація деталей і елементів при проведенні робіт із монтажу, ремонту і
-                склеювання.
-              </li>
-              <li>Захист суміжних областей та деталей при фарбуванні.</li>
+              <li>{t('text-li1')}</li>
+              <li>{t('text-li2')} </li>
+              <li>{t('text-li3')} </li>
+              <li>{t('text-li4')} </li>
+              <li>{t('text-li5')}</li>
+              <li>{t('text-li6')} </li>
+              <li>{t('text-li7')} </li>
+              <li>{t('text-li8')} </li>
             </ul>
           </>
         )}
@@ -178,46 +160,46 @@ export default function Oro() {
         {tab === 'Характеристики' && (
           <div className="overflow-x-auto mt-4">
             <ul className="list-disc list-inside space-y-1 mb-6">
-              <li>Матеріал основи: крепований папір.</li>
-              <li>Клей: натуральний каучук.</li>
-              <li>Товщина: 125мкм.</li>
-              <li>Щільність паперу: 95г/м².</li>
-              <li>Еластичність: 8%.</li>
-              <li>Адгезія: 2,7Н/см.</li>
+              <li>{t('char-li1')}</li>
+              <li>{t('char-li2')}</li>
+              <li>{t('char-li3')}</li>
+              <li>{t('char-li4')}</li>
+              <li>{t('char-li5')}.</li>
+              <li>{t('char-li6')}</li>
             </ul>{' '}
             <table className="min-w-full border border-gray-300 text-xs sm:text-lg">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="border px-3 py-2">Артикул</th>
-                  <th className="border px-3 py-2">Назва</th>
-                  <th className="border px-3 py-2">Колір</th>
-                  <th className="border px-3 py-2">Розмір</th>
+                  <th className="border px-3 py-2">{t('table-title-col1')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col2')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col3')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col4')}</th>
                   <th className="border px-3 py-2">
-                    В ящику,
+                    {t('table-title-col5')}
                     <br className="text-xs sm:text-lg" />
-                    шт.
+                    {t('table-title-col5-1')}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="border px-3 py-2">SO24</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO Oro +130ºC</td>
-                  <td className="border px-3 py-2">Жовтий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO Oro +130ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">24mm*40yd</td>
                   <td className="border px-3 py-2">24</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SO36</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO Oro +130ºC</td>
-                  <td className="border px-3 py-2">Жовтий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO Oro +130ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">36mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SO48</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO Oro +130ºC</td>
-                  <td className="border px-3 py-2">Жовтий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO Oro +130ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">48mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
@@ -257,7 +239,7 @@ export default function Oro() {
 
       <div className="pt-10 text-left font-semibold">
         <p className="font-regular font-inter text-base md:text-xl mb-6 text-gray-700">
-          Автомалярська стрічка SENSO ORO сертифікована FSC® и PEFC:
+          {t('certification')}
         </p>
 
         {/* Логотипы */}

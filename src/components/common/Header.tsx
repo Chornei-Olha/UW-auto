@@ -101,8 +101,8 @@ export default function Header() {
                   transition={{ duration: 0.2, ease: 'easeOut' }}
                   className="absolute top-full left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50 overflow-hidden"
                 >
-                  <Link href="/blanco" className="block px-4 py-2 hover:bg-red-100">
-                    Senso Blanco
+                  <Link href="/bianco" className="block px-4 py-2 hover:bg-red-100">
+                    Senso Bianco
                   </Link>
                   <Link href="/marrone" className="block px-4 py-2 hover:bg-red-100">
                     Senso Marrone
@@ -232,8 +232,8 @@ export default function Header() {
               </button>
               {productOpen && (
                 <div className="flex flex-col pl-4 mt-3 space-y-3">
-                  <Link href="/blanco" onClick={() => setIsOpen(false)}>
-                    Senco Blanco
+                  <Link href="/bianco" onClick={() => setIsOpen(false)}>
+                    Senco Bianco
                   </Link>
                   <Link href="/marrone" onClick={() => setIsOpen(false)}>
                     Senso Marrone

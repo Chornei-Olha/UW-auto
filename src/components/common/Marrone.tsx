@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type Feature = {
   title: string;
@@ -10,40 +11,42 @@ type Feature = {
   max?: number; // всего блоков
 };
 
-const features: Feature[] = [
-  {
-    title: 'МЕХАНІЧНА СТІЙКІСТЬ',
-    subtitle: 'утримуюча сила при шліфуванні і поліруванні',
-    value: 6,
-    max: 6,
-  },
-  {
-    title: 'ЕЛАСТИЧНІСТЬ',
-    subtitle: 'гнучкість на криволінійних поверхнях',
-    value: 5,
-    max: 6,
-  },
-  {
-    title: 'СИЛА АДГЕЗІЇ',
-    subtitle: 'метал, поліуретан, ПП, ПВХ, полікарбонат, фарба, лак, скло, деревина, картон тощо',
-    value: 5,
-    max: 6,
-  },
-  {
-    title: 'ТЕРМОСТІЙКІСТЬ',
-    subtitle: 'до 1 години',
-    value: 5,
-    max: 6,
-  },
-  {
-    title: 'БЕЗПЕЧНЕ ВИДАЛЕННЯ',
-    subtitle: 'без слідів і пошкоджень',
-    value: 6,
-    max: 6,
-  },
-];
-
 export default function Marrone() {
+  const t = useTranslations('Marrone');
+
+  const features: Feature[] = [
+    {
+      title: t('par-title1'),
+      subtitle: t('par-text1'),
+      value: 6,
+      max: 6,
+    },
+    {
+      title: t('par-title2'),
+      subtitle: t('par-text2'),
+      value: 5,
+      max: 6,
+    },
+    {
+      title: t('par-title3'),
+      subtitle: t('par-text3'),
+      value: 5,
+      max: 6,
+    },
+    {
+      title: t('par-title4'),
+      subtitle: t('par-text4'),
+      value: 5,
+      max: 6,
+    },
+    {
+      title: t('par-title5'),
+      subtitle: t('par-text5'),
+      value: 6,
+      max: 6,
+    },
+  ];
+
   const [tab, setTab] = useState('Призначення');
 
   return (
@@ -73,7 +76,7 @@ export default function Marrone() {
 
       {/* Buy buttons */}
       <div className="flex flex-col sm:flex-row justify-start items-left sm:items-center gap-5 my-16 flex-nowrap sm:flex-wrap">
-        <p className="whitespace-nowrap font-inter font-regular">ПРИДБАТИ В РОЗДРІБ</p>
+        <p className="whitespace-nowrap font-inter font-regular">{t('shop')}Б</p>
 
         <div className="flex flex-row gap-2 sm: gap-6 items-start">
           <a
@@ -116,7 +119,7 @@ export default function Marrone() {
             tab === 'Призначення' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Призначення
+          {t('menu1')}
         </button>
         <button
           onClick={() => setTab('Характеристики')}
@@ -124,7 +127,7 @@ export default function Marrone() {
             tab === 'Характеристики' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Характеристики
+          {t('menu2')}
         </button>
         <button
           onClick={() => setTab('Параметри')}
@@ -132,7 +135,7 @@ export default function Marrone() {
             tab === 'Параметри' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Параметри
+          {t('menu3')}
         </button>
       </div>
 
@@ -140,30 +143,15 @@ export default function Marrone() {
       <div className="mt-6 text-gray-700 leading-relaxed font-medium font-montserrat text-sm sm:text-xl">
         {tab === 'Призначення' && (
           <>
-            <p>
-              SENSO BIANCO – це вискотемпературна автомалярна стрічка італійського виробництва, яка
-              призначена для проведення лакофарбових робіт. Виготовляється з крепованого паперу на
-              який з одного боку нанесений клейовий шар на основі натурального каучуку. Коричневий
-              малярний скотч зручний у використанні, легко видаляється з поверхні без залишків клею,
-              не пошкоджує структуру поверхні. Відмінно фіксується на склі, металах, фарбах, лаках,
-              поліпропілені, ПВХ, ABS, полікарбонаті, гумі, деревині. Забезпечує рівний контур
-              фарбування. Використовується для захисту поверхонь при проведенні кузовних
-              лакофарбових робіт. Захищає поверхні при поліруванні та шліфуванні. Застосовується у
-              деревообробній і меблевій промисловості. Малярська стрічка має помірну стійкість до
-              дії уф-випромінювання, може використовуватися на вулиці (2 доби за сприятливих
-              погодних умов).
-            </p>
+            <p>{t('mainText')}</p>
             <ul className="list-disc list-inside mt-4 space-y-1">
-              <li>Високотемпературна сушка до +110°C.</li>
-              <li>Маскування поверхонь і елементів при проведенні кузовних лакофарбових робіт.</li>
-              <li>Захист деталей при поліруванні та шліфуванні.</li>
-              <li>Фіксація захисних плівок і паперу.</li>
-              <li>Проклеювання у деревообробній і меблевій промисловості.</li>
-              <li>
-                Тимчасова фіксація деталей і елементів при проведенні робіт із монтажу, ремонту і
-                склеювання.
-              </li>
-              <li>Захист суміжних областей та деталей при фарбуванні.</li>
+              <li>{t('text-li1')}</li>
+              <li>{t('text-li2')} </li>
+              <li>{t('text-li3')} </li>
+              <li>{t('text-li4')} </li>
+              <li>{t('text-li5')}</li>
+              <li>{t('text-li6')} </li>
+              <li>{t('text-li7')} </li>{' '}
             </ul>
           </>
         )}
@@ -171,46 +159,46 @@ export default function Marrone() {
         {tab === 'Характеристики' && (
           <div className="overflow-x-auto mt-4">
             <ul className="list-disc list-inside space-y-1 mb-6">
-              <li>Матеріал основи: крепований папір.</li>
-              <li>Клей: натуральний каучук.</li>
-              <li>Товщина: 120мкм.</li>
-              <li>Щільність паперу: 93г/м².</li>
-              <li>Еластичність: 6%.</li>
-              <li>Адгезія: 2,3Н/см.</li>
+              <li>{t('char-li1')}</li>
+              <li>{t('char-li2')}</li>
+              <li>{t('char-li3')}</li>
+              <li>{t('char-li4')}</li>
+              <li>{t('char-li5')}.</li>
+              <li>{t('char-li6')}</li>
             </ul>{' '}
             <table className="min-w-full border border-gray-300 text-xs sm:text-lg">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="border px-3 py-2">Артикул</th>
-                  <th className="border px-3 py-2">Назва</th>
-                  <th className="border px-3 py-2">Колір</th>
-                  <th className="border px-3 py-2">Розмір</th>
+                  <th className="border px-3 py-2">{t('table-title-col1')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col2')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col3')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col4')}</th>
                   <th className="border px-3 py-2">
-                    В ящику,
+                    {t('table-title-col5')}
                     <br className="text-xs sm:text-lg" />
-                    шт.
+                    {t('table-title-col5-1')}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="border px-3 py-2">SM18</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO MARRONE +110ºC</td>
-                  <td className="border px-3 py-2">Коричневий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO MARRONE +110ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">18mm*40yd</td>
                   <td className="border px-3 py-2">24</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SM24</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO MARRONE +110ºC</td>
-                  <td className="border px-3 py-2">Коричневий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO MARRONE +110ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">24mm*40yd</td>
                   <td className="border px-3 py-2">24</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SM36</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO MARRONE +110ºC</td>
-                  <td className="border px-3 py-2">Коричневий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO MARRONE +110ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">36mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
@@ -257,7 +245,7 @@ export default function Marrone() {
 
       <div className="pt-10 text-left font-semibold">
         <p className="font-regular font-inter text-base md:text-xl mb-6 text-gray-700">
-          Автомалярська стрічка SENSO MARRONE сертифікована FSC® и PEFC:
+          {t('certification')}
         </p>
 
         {/* Логотипы */}

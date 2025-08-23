@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type Feature = {
   title: string;
@@ -43,7 +44,42 @@ const features: Feature[] = [
   },
 ];
 
-export default function Blanco() {
+export default function Bianco() {
+  const t = useTranslations('Bianco');
+
+  const features: Feature[] = [
+    {
+      title: t('par-title1'),
+      subtitle: t('par-text1'),
+      value: 5,
+      max: 6,
+    },
+    {
+      title: t('par-title2'),
+      subtitle: t('par-text2'),
+      value: 5,
+      max: 6,
+    },
+    {
+      title: t('par-title3'),
+      subtitle: t('par-text3'),
+      value: 4,
+      max: 6,
+    },
+    {
+      title: t('par-title4'),
+      subtitle: t('par-text4'),
+      value: 3,
+      max: 6,
+    },
+    {
+      title: t('par-title5'),
+      subtitle: t('par-text5'),
+      value: 6,
+      max: 6,
+    },
+  ];
+
   const [tab, setTab] = useState('Призначення');
 
   return (
@@ -73,7 +109,7 @@ export default function Blanco() {
 
       {/* Buy buttons */}
       <div className="flex flex-col sm:flex-row justify-start items-left sm:items-center gap-5 my-16 flex-nowrap sm:flex-wrap">
-        <p className="whitespace-nowrap font-inter font-regular">ПРИДБАТИ В РОЗДРІБ</p>
+        <p className="whitespace-nowrap font-inter font-regular">{t('shop')}</p>
 
         <div className="flex flex-row gap-2 sm:gap-6 items-start">
           <a
@@ -116,7 +152,7 @@ export default function Blanco() {
             tab === 'Призначення' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Призначення
+          {t('menu1')}
         </button>
         <button
           onClick={() => setTab('Характеристики')}
@@ -124,7 +160,7 @@ export default function Blanco() {
             tab === 'Характеристики' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Характеристики
+          {t('menu2')}
         </button>
         <button
           onClick={() => setTab('Параметри')}
@@ -132,7 +168,7 @@ export default function Blanco() {
             tab === 'Параметри' ? 'bg-black text-white' : 'bg-white'
           }`}
         >
-          Параметри
+          {t('menu3')}
         </button>
       </div>
 
@@ -140,26 +176,13 @@ export default function Blanco() {
       <div className="mt-6 text-gray-700 leading-relaxed font-medium font-montserrat text-sm sm:text-xl">
         {tab === 'Призначення' && (
           <>
-            <p>
-              SENSO BIANCO – це малярна стрічка італійського виробництва, яка призначена для
-              проведення базових робіт. Виготовляється з крепованого паперу на який з одного боку
-              нанесений клейовий шар на основі натурального каучуку. Бежевий малярний скотч зручний
-              у використанні, легко видаляється з поверхні без залишків клею, не пошкоджує структуру
-              поверхні. Відмінно фіксується на склі, плівках, металах, фарбах, лаках, пластиках.
-              Ідеально підходить для тимчасової фіксації деталей і елементів при склеюванні.
-              Використовується для захисту поверхонь при проведенні кузовних лакофарбових робіт.
-              Захищає поверхні при поліруванні деталей. Застосовується для фіксації захисних плівок
-              і паперу.
-            </p>
+            <p>{t('mainText')}</p>
 
             <ul className="list-disc list-inside mt-4 space-y-1">
-              <li>
-                Тимчасова фіксація деталей і елементів при проведенні робіт із монтажу, ремонту і
-                склеювання.
-              </li>
-              <li>Захист деталей при поліруванні.</li>
-              <li>Фіксація захисних плівок і паперу.</li>
-              <li>Маскування поверхонь і елементів при проведенні кузовних лакофарбових робіт.</li>
+              <li>{t('text-li1')}</li>
+              <li>{t('text-li2')} </li>
+              <li>{t('text-li3')} </li>
+              <li>{t('text-li4')} </li>
             </ul>
           </>
         )}
@@ -167,53 +190,53 @@ export default function Blanco() {
         {tab === 'Характеристики' && (
           <div className="overflow-x-auto mt-4">
             <ul className="list-disc list-inside space-y-1 mb-6">
-              <li>Матеріал основи: крепований папір.</li>
-              <li>Клей: натуральний каучук.</li>
-              <li>Товщина: 120мкм.</li>
-              <li>Щільність паперу: 90г/м².</li>
-              <li>Еластичність: 6%.</li>
-              <li>Адгезія: 2,1Н/см.</li>
+              <li>{t('char-li1')}</li>
+              <li>{t('char-li2')}</li>
+              <li>{t('char-li3')}</li>
+              <li>{t('char-li4')}</li>
+              <li>{t('char-li5')}.</li>
+              <li>{t('char-li6')}</li>
             </ul>{' '}
             <table className="min-w-full border border-gray-300 text-xs sm:text-lg">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="border px-3 py-2">Артикул</th>
-                  <th className="border px-3 py-2">Назва</th>
-                  <th className="border px-3 py-2">Колір</th>
-                  <th className="border px-3 py-2">Розмір</th>
+                  <th className="border px-3 py-2">{t('table-title-col1')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col2')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col3')}</th>
+                  <th className="border px-3 py-2">{t('table-title-col4')}</th>
                   <th className="border px-3 py-2">
-                    В ящику,
+                    {t('table-title-col5')}
                     <br className="text-xs sm:text-lg" />
-                    шт.
+                    {t('table-title-col5-1')}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="border px-3 py-2">SB18</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO BIANCO +80ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">18mm*40yd</td>
                   <td className="border px-3 py-2">24</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SB24</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO BIANCO +80ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">24mm*40yd</td>
                   <td className="border px-3 py-2">24</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SB36</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO BIANCO +80ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">36mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">SB48</td>
-                  <td className="border px-3 py-2">Стрічка автомобільна SENSO BIANCO +80ºC</td>
-                  <td className="border px-3 py-2">Бежевий</td>
+                  <td className="border px-3 py-2">{t('nameTape')} SENSO BIANCO +80ºC</td>
+                  <td className="border px-3 py-2">{t('colorTape')}</td>
                   <td className="border px-3 py-2">48mm*40yd</td>
                   <td className="border px-3 py-2">12</td>
                 </tr>
@@ -253,7 +276,7 @@ export default function Blanco() {
 
       <div className="pt-10 text-left font-semibold">
         <p className="font-regular font-inter text-base md:text-xl mb-6 text-gray-700">
-          Автомалярська стрічка SENSO BIANCO сертифікована FSC® и PEFC:
+          {t('certification')}
         </p>
 
         {/* Логотипы */}
