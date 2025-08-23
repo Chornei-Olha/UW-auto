@@ -24,5 +24,44 @@
   "Buyers": {
     "title": "FOR RETAIL CUSTOMERS",
     "text": "You can purchase TM SENSO products online and in retail stores of our partners, EPICENTER and ROZETKA."
+  },
+  "ProductSlider": { "text": "More details" },
+  "MaskingTape": { "text1": "", "text2": "", "text3": "", "certification": "" },
+  "BoardSlider": {
+    "title1": "",
+    "text1": "",
+    "title2": "",
+    "text2": "",
+    "title3": "",
+    "text3": "",
+    "title4": "",
+    "text4": ""
+  },
+  "ContactForm": {
+    "title": "Buy wholesale, or order a consultation",
+    "title1": "What is your name?",
+    "text1": "Enter Your Name",
+    "text2": "Enter email...",
+    "title3": "Comment",
+    "text3": "Text",
+    "consent1": "I consent to the processing of information",
+    "consent2": "I agree to the privacy policy",
+    "button": "Send"
+  },
+  "Footer": {
+    "slogan1": "",
+    "slogan2": "",
+    "menu": "Menu",
+    "menu1": "Home",
+    "menu2": "Products",
+    "menu3": "For industrial clients",
+    "menu4": "For distributors and dealers",
+    "menu5": "For retail customers",
+    "menu6": "Contacts",
+    "address": "Address:",
+    "telephone": "Tel:",
+    "street": "Lugova Str., Kyiv, Ukraine",
+    "everyday": "MON-TUE 10.00 - 18.00",
+    "weekend": "SAT-SUN 10.00 - 14.00"
   }
 }

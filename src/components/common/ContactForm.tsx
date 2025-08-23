@@ -1,7 +1,10 @@
 import { section } from 'framer-motion/client';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ContactForm() {
+  const t = useTranslations('ContactForm');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,7 +31,7 @@ export default function ContactForm() {
       {' '}
       <div className="mb-6 text-left font-semibold">
         <h2 className="text-lg md:text-2xl font-bold font-inter mb-6 text-gray-700">
-          Купити оптом, або замовити консультацію
+          {t('title')}{' '}
         </h2>
       </div>
       <div
@@ -47,13 +50,13 @@ export default function ContactForm() {
           {/* Верхняя часть */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-montserrat font-regular">
             <div>
-              <label className="block mb-1">Як Вас звати?</label>
+              <label className="block mb-1"> {t('title1')}</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Введіть Ваше Ім'я"
+                placeholder={t('text1')}
                 className="w-full p-2 rounded-lg text-white bg-transparent border border-white placeholder-white/50"
                 required
               />
@@ -66,19 +69,19 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Введіть e-mail..."
+                  placeholder={t('text2')}
                   className="w-full p-2 rounded-lg text-white bg-transparent border border-white placeholder-white/50"
                   required
                 />
               </div>
             </div>
             <div>
-              <label className="block mb-1">Коментар</label>
+              <label className="block mb-1"> {t('title3')}</label>
               <textarea
                 name="comment"
                 value={formData.comment}
                 onChange={handleChange}
-                placeholder="Текст"
+                placeholder={t('text3')}
                 className="w-full p-2 rounded-lg text-white h-20 bg-transparent border border-white placeholder-white/50"
               />
             </div>
@@ -94,7 +97,7 @@ export default function ContactForm() {
                   checked={formData.agreeProcessing}
                   onChange={handleChange}
                 />
-                Даю згоду на обробку інформації
+                {t('consent1')}{' '}
               </label>
 
               <label className="flex items-center gap-2">
@@ -104,7 +107,7 @@ export default function ContactForm() {
                   checked={formData.agreePolicy}
                   onChange={handleChange}
                 />
-                Погоджуюсь з політикою конфіденційності
+                {t('consent2')}{' '}
               </label>
             </div>
             <div className="flex justify-center sm:justify-end">
@@ -112,7 +115,7 @@ export default function ContactForm() {
                 type="submit"
                 className="bg-white hover:bg-red-600 text-[#C52233] hover:text-white px-6 py-2 rounded-full shadow-md font-inter font-bold"
               >
-                Надіслати
+                {t('button')}
               </button>
             </div>
           </div>

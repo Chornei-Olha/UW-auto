@@ -20,30 +20,34 @@ export default function Hero() {
           </div>
 
           {/* Маленькое фото */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative">
             <Image
               src="/images/logo-bg.png"
-              // src="/images/bg-right.jpg"
               alt="Senso Small Banner"
               width={1244}
               height={495}
               className="object-cover w-full sm:w-[350px] h-auto"
               priority
             />
+            <span className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+              NEW
+            </span>
           </div>
         </div>
 
         {/* Большое фото */}
-        <div className="mt-8">
+        <div className="mt-8 relative">
           <Image
             src="/images/bg.png"
-            // src="/images/bg.png"
             alt="Senso Tape Rolls"
             width={5568}
             height={2096}
             className="w-full h-auto object-cover"
             priority
           />
+          <span className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+            NEW
+          </span>
         </div>
       </div>
     </section>

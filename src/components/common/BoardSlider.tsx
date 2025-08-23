@@ -5,37 +5,39 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import 'swiper/css';
 
-const boardMembers = [
-  {
-    id: 1,
-    photo: '/images/banner01.jpg',
-    name: 'ЕКСПЕРТНІСТЬ',
-    description: `Малярні стрічки SENSO мають європейську сертифікацію, що гарантує відповідність високим стандартам якості.`,
-  },
-  {
-    id: 2,
-    photo: '/images/banner02.jpg',
-    name: 'ЕФЕКТИВНІСТЬ',
-    description: `Асортимент SENSO розроблений спеціально для закриття всіх потреб автомобільної галузі.`,
-  },
-  {
-    id: 3,
-    photo: '/images/banner03.jpg',
-    name: 'КОМПЕТЕНТНІСТЬ',
-    description: `Кожен продукт SENSO проходить спеціалізовані випробування, на основі яких визначається його цільове призначення.`,
-  },
-  {
-    id: 4,
-    photo: '/images/banner04.jpeg',
-    name: 'БАГАТОФУНКЦІОНАЛЬНІСТЬ',
-    description: `Продукція SENSO надає готові рішення для закриття різноманітних потреб у машинобудівній, деревообробній, картонно-паперовій, будівельній та меблевій промисловості.`,
-  },
-];
-
 export default function BoardSlider() {
+  const t = useTranslations('BoardSlider');
+
+  const boardMembers = [
+    {
+      id: 1,
+      photo: '/images/banner01.jpg',
+      name: t('title1'),
+      description: t('text1'),
+    },
+    {
+      id: 2,
+      photo: '/images/banner02.jpg',
+      name: t('title2'),
+      description: t('text2'),
+    },
+    {
+      id: 3,
+      photo: '/images/banner03.jpg',
+      name: t('title3'),
+      description: t('text3'),
+    },
+    {
+      id: 4,
+      photo: '/images/banner04.jpeg',
+      name: t('title4'),
+      description: t('text4'),
+    },
+  ];
   const swiperRef = useRef<SwiperType | null>(null);
   const [selectedMember, setSelectedMember] = useState<null | (typeof boardMembers)[0]>(null);
   const [maxHeight, setMaxHeight] = useState(0);

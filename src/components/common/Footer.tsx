@@ -1,48 +1,51 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+
   return (
     <footer id="footer" className="py-10 md:py-16 ">
       <p className="mb-10 text-gray-600 font-montserrat font-light">
-        SENSO: сертифікована якість, <br />
-        створена для професіоналів.{' '}
+        {t('slogan1')} <br />
+        {t('slogan2')}{' '}
       </p>
       {/* Центральная часть футера */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         {/* Левая колонка */}
         <div className="gap-6 text-sm text-center md:text-left md:items-start flex flex-col items-center">
-          <p className="font-semibold font-inter mb-1">Меню</p>
+          <p className="font-semibold font-inter mb-1"> {t('menu')}</p>
           <ul className="space-y-1 font-inter font-regular">
             <li>
               <Link href="/" className="hover:text-red-500 transition-colors">
-                Головна
+                {t('menu1')}
               </Link>
             </li>
             <li>
               <Link href="#slider1" className="hover:text-red-500 transition-colors">
-                Продукція
+                {t('menu2')}{' '}
               </Link>
             </li>
             <li>
               <Link href="/partnersPage" className="hover:text-red-500 transition-colors">
-                Промисловим клієнтам
+                {t('menu3')}{' '}
               </Link>
             </li>
             <li>
               <Link href="/dealersPage" className="hover:text-red-500 transition-colors">
-                Дистриб’юторам та дилерам
+                {t('menu4')}{' '}
               </Link>
             </li>
             <li>
               <Link href="/buyersPage" className="hover:text-red-500 transition-colors">
-                Роздрібним покупцям
+                {t('menu5')}{' '}
               </Link>
             </li>
             <li>
               <Link href="#footer" className="hover:text-red-500 transition-colors">
-                Контакти
+                {t('menu6')}{' '}
               </Link>
             </li>
           </ul>
@@ -55,15 +58,13 @@ export default function Footer() {
 
         {/* Правая колонка */}
         <div className="text-sm">
-          <p className="mb-2 font-semibold font-inter">Адреса:</p>
+          <p className="mb-2 font-semibold font-inter"> {t('address')} </p>
           <p className="mb-3 font-inter font-regular">
-            Україна, м. Київ, вул. Лугова
-            <br />
-            ПН-ПТ: з 10:00 - 18:00
-            <br />
-            СБ-НД: з 10:00 - 14:00
+            {t('street')} <br />
+            {t('everyday')} <br />
+            {t('weekend')}{' '}
           </p>
-          <p className="my-3 font-semibold font-inter">Тел:</p>
+          <p className="my-3 font-semibold font-inter"> {t('telephone')}</p>
           <a
             href="tel:+380445852108"
             className="text-blue-600 hover:underline font-inter font-regular"

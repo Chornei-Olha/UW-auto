@@ -4,6 +4,7 @@ import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const products = [
   { title: 'SENSO BLANCO – AUTO + 80°C', image: '/images/product1.webp', link: '/blanco' },
@@ -18,6 +19,8 @@ const products = [
 ];
 
 export default function ProductSlider() {
+  const t = useTranslations('ProductSlider');
+
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<any>(null);
@@ -73,7 +76,7 @@ export default function ProductSlider() {
                   href={product.link}
                   className="mt-2 text-lg text-gray-500 hover:text-gray-700 text-left font-montserrat font-extralight"
                 >
-                  Детальніше
+                  {t('text')}{' '}
                 </Link>
               </div>
             </SwiperSlide>
