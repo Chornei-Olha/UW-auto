@@ -138,7 +138,13 @@ export default function ContactForm() {
             <div className="flex justify-center sm:justify-end">
               <button
                 type="submit"
-                className="bg-white hover:bg-red-600 text-[#C52233] hover:text-white px-6 py-2 rounded-full shadow-md font-inter font-bold"
+                disabled={!formData.agreeProcessing || !formData.agreePolicy}
+                className={`px-6 py-2 rounded-full shadow-md font-inter font-bold
+    ${
+      !formData.agreeProcessing || !formData.agreePolicy
+        ? 'bg-gray-400 text-white cursor-not-allowed'
+        : 'bg-white hover:bg-red-600 text-[#C52233] hover:text-white'
+    }`}
               >
                 {t('button')}
               </button>
