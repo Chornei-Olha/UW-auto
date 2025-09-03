@@ -1,6 +1,7 @@
 import { section } from 'framer-motion/client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
   const t = useTranslations('ContactForm');
@@ -23,7 +24,31 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+
+    emailjs
+      .send(
+        'service_mu7lkll', // из EmailJS
+        'template_50n80zm', // из EmailJS
+        formData, // данные из state
+        'ECFxdEwW_r86BmFTd' // из EmailJS
+      )
+      .then(
+        (result) => {
+          console.log('Email sent successfully:', result.text);
+          alert('Сообщение отправлено!');
+          setFormData({
+            name: '',
+            email: '',
+            comment: '',
+            agreeProcessing: false,
+            agreePolicy: true,
+          });
+        },
+        (error) => {
+          console.error('Error:', error.text);
+          alert('Ошибка при отправке. Попробуйте снова.');
+        }
+      );
   };
 
   return (
