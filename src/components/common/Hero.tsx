@@ -1,54 +1,70 @@
 'use client';
-import { useTranslations } from 'next-intl';
+
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const t = useTranslations('Hero');
+
   return (
-    <section>
-      <div className="py-10 md:py-16">
-        {/* Верхняя часть: текст + маленькое изображение */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          {/* Текст */}
-          <div className="md:max-w-5xl">
-            <h1 className="text-3xl md:text-4xl text-gray-900 leading-snug font-montserrat font-medium">
-              {t('title')}{' '}
-            </h1>
-            <p className="mt-4 text-gray-600 leading-relaxed font-montserrat font-light">
-              {t('mainText')}
-            </p>
-          </div>
+    <section className="relative w-full h-[90vh] flex items-center justify-center text-white overflow-hidden">
+      {/* 🔸 Фоновое изображение */}
+      <Image
+        src="/images/backgroundHero.webp"
+        alt="Background car"
+        fill
+        className="object-cover brightness-[0.55]"
+        priority
+      />
 
-          {/* Маленькое фото */}
-          <div className="flex-shrink-0 relative">
-            <Image
-              src="/images/logo-bg.png"
-              alt="Senso Small Banner"
-              width={1244}
-              height={495}
-              className="object-cover w-full sm:w-[350px] h-auto"
-              priority
-            />
-            <span className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
-              NEW
-            </span>
-          </div>
-        </div>
+      {/* 🔸 Лёгкий градиент для контраста */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-[1]" />
 
-        {/* Большое фото */}
-        <div className="mt-8 relative">
-          <Image
-            src="/images/bg.png"
-            alt="Senso Tape Rolls"
-            width={5568}
-            height={2096}
-            className="w-full h-auto object-cover"
-            priority
-          />
-          <span className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
-            NEW
-          </span>
-        </div>
+      {/* 🔸 Полупрозрачная надпись UW 20 7K */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.9 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-6 left-4 md:left-10 text-[22vw] md:text-[12vw] font-extrabold tracking-tight pointer-events-none select-none text-white/15 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] z-[2] uppercase"
+      >
+        UW 20 7K
+      </motion.p>
+
+      {/* 🔸 Основной контент */}
+      <div className="relative z-[3] max-w-5xl px-6 text-center md:text-left">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl md:text-5xl font-bold uppercase font-inter leading-tight mb-4"
+        >
+          {t('title1')} <br /> {t('title2')}
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-sm md:text-base font-light tracking-wide mb-6 text-gray-200"
+        >
+          {t('subtitle')}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+        >
+          <Link
+            href="/consultation"
+            className="bg-white text-black font-semibold rounded-full px-6 py-3 text-sm uppercase hover:bg-gray-200 transition"
+          >
+            {t('button')}
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

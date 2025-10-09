@@ -1,9 +1,14 @@
 'use client';
 import Header from '@/components/common/Header';
 import Hero from '../components/common/Hero';
-import ProductSlider from '../components/common/ProductSlider';
-import SensoMaskingTape from '../components/common/SensoMaskingTape';
-import BoardSlider from '../components/common/BoardSlider';
+
+import AboutStats from '../components/common/AboutStats';
+import AboutUs from '../components/common/AboutUs';
+import AboutIntro from '../components/common/AboutIntro';
+import ContactForm from '../components/common/ContactForm';
+import AuctionClients from '../components/common/AuctionClients';
+import CompanyOverview from '../components/common/CompanyOverview';
+
 import Footer from '@/components/common/Footer';
 
 const HomePage: React.FC = () => {
@@ -11,9 +16,12 @@ const HomePage: React.FC = () => {
     <div className="container mx-auto px-4 md:px-8 bg-white">
       <Header />
       <Hero />
-      <ProductSlider />
-      <SensoMaskingTape />
-      <BoardSlider />
+      <AboutStats />
+      <AboutUs />
+      <AboutIntro />
+      <ContactForm />
+      <AuctionClients />
+      <CompanyOverview />
       <Footer />
     </div>
   );

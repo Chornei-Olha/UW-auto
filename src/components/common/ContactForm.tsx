@@ -1,5 +1,8 @@
-import { section } from 'framer-motion/client';
-import { useState } from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import emailjs from '@emailjs/browser';
 
@@ -8,149 +11,118 @@ export default function ContactForm() {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    comment: '',
-    agreeProcessing: false,
-    agreePolicy: true,
+    phone: '',
   });
 
+  const [isSending, setIsSending] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
+    setSuccess(false);
 
-    emailjs
-      .send(
-        'service_mu7lkll', // из EmailJS
-        'template_50n80zm', // из EmailJS
-        formData, // данные из state
-        'ECFxdEwW_r86BmFTd' // из EmailJS
-      )
-      .then(
-        (result) => {
-          console.log('Email sent successfully:', result.text);
-          alert('Сообщение отправлено!');
-          setFormData({
-            name: '',
-            email: '',
-            comment: '',
-            agreeProcessing: false,
-            agreePolicy: true,
-          });
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        {
+          name: formData.name,
+          phone: formData.phone,
         },
-        (error) => {
-          console.error('Error:', error.text);
-          alert('Ошибка при отправке. Попробуйте снова.');
-        }
+        'YOUR_PUBLIC_KEY'
       );
+      setSuccess(true);
+      setFormData({ name: '', phone: '' });
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
-    <section className="py-5 sm:py-16">
-      {' '}
-      <div className="mb-6 text-left font-semibold">
-        <h2 className="text-lg md:text-2xl font-bold font-inter mb-6 text-gray-700">
-          {t('title')}{' '}
-        </h2>
-      </div>
-      <div
-        className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden w-full"
-        style={{
-          backgroundImage: "url('/images/form.webp')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* контент */}
-        <form
-          onSubmit={handleSubmit}
-          className="relative z-10 text-white flex flex-col gap-6 p-5 sm:p-5"
+    <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden text-white">
+      {/* 🔸 Основное фоновое изображение */}
+      <Image
+        src="/images/contact-bg.webp"
+        alt="Car driving"
+        fill
+        className="object-cover brightness-[0.65]"
+        priority
+      />
+
+      {/* 🔸 Поверх него накладывается изображение-тінь (shadow layer) */}
+      <Image
+        src="/images/shadow.webp" // 👈 сюда положи файл тіні
+        alt="Dark overlay shadow"
+        fill
+        className="object-cover opacity-90 z-[1] pointer-events-none select-none"
+        priority
+      />
+
+      {/* 🔸 Контент */}
+      <div className="relative z-[3] max-w-6xl w-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* Текст */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="md:w-1/2 text-center md:text-left"
         >
-          {/* Верхняя часть */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-montserrat font-regular">
-            <div>
-              <label className="block mb-1"> {t('title1')}</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={t('text1')}
-                className="w-full p-2 rounded-lg text-white bg-transparent border border-white placeholder-white/50"
-                required
-              />
-            </div>
-            <div className="space-y-4">
-              <div>
-                <label className="block mb-1">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder={t('text2')}
-                  className="w-full p-2 rounded-lg text-white bg-transparent border border-white placeholder-white/50"
-                  required
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block mb-1"> {t('title3')}</label>
-              <textarea
-                name="comment"
-                value={formData.comment}
-                onChange={handleChange}
-                placeholder={t('text3')}
-                className="w-full p-2 rounded-lg text-white h-20 bg-transparent border border-white placeholder-white/50"
-              />
-            </div>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold uppercase mb-6 drop-shadow-lg">
+            {t('title1')} <br /> {t('title2')}
+          </h2>
+          <p className="text-gray-200 text-sm md:text-base leading-relaxed max-w-md mx-auto md:mx-0 drop-shadow-md">
+            {t('subtitle')}
+          </p>
+        </motion.div>
 
-          {/* Нижняя часть */}
-          <div className="flex flex-col sm:flex-row justify-between items-left sm:items-center gap-5 sm:gap-0 font-montserrat font-regular">
-            <div className="items-left space-y-2 text-sm">
-              <label className="flex items-left gap-2">
-                <input
-                  type="checkbox"
-                  name="agreeProcessing"
-                  checked={formData.agreeProcessing}
-                  onChange={handleChange}
-                />
-                {t('consent1')}{' '}
-              </label>
+        {/* Форма */}
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="md:w-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col gap-4 w-full max-w-md mx-auto"
+        >
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder={t('name')}
+            required
+            className="w-full rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
+          />
 
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  name="agreePolicy"
-                  checked={formData.agreePolicy}
-                  onChange={handleChange}
-                />
-                {t('consent2')}{' '}
-              </label>
-            </div>
-            <div className="flex justify-center sm:justify-end">
-              <button
-                type="submit"
-                disabled={!formData.agreeProcessing || !formData.agreePolicy}
-                className={`px-6 py-2 rounded-full shadow-md font-inter font-bold
-    ${
-      !formData.agreeProcessing || !formData.agreePolicy
-        ? 'bg-gray-400 text-white cursor-not-allowed'
-        : 'bg-white hover:bg-red-600 text-[#C52233] hover:text-white'
-    }`}
-              >
-                {t('button')}
-              </button>
-            </div>
-          </div>
-        </form>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="+38 (___) ___-__-__"
+            required
+            className="w-full rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
+          />
+
+          <button
+            type="submit"
+            disabled={isSending}
+            className="bg-white text-black font-semibold rounded-xl py-3 mt-2 hover:bg-gray-200 transition"
+          >
+            {isSending ? t('sending') : t('send')}
+          </button>
+
+          {success && <p className="text-green-400 text-sm mt-2">{t('success')}</p>}
+        </motion.form>
       </div>
     </section>
   );
