@@ -93,20 +93,25 @@
       "text": "Our team is always in touch, ready to answer all your questions and accompany you every step of the way."
     }
   },
+  "Team": {
+    "title": "Our Team"
+  },
   "Footer": {
-    "slogan1": "SENSO: certified quality,",
-    "slogan2": "created for professionals.",
-    "menu": "Menu",
-    "menu1": "Home",
-    "menu2": "Products",
-    "menu3": "For industrial clients",
-    "menu4": "For distributors and dealers",
-    "menu5": "For retail customers",
-    "menu6": "Contacts",
-    "address": "Address:",
-    "telephone": "Tel:",
-    "street": "Lugova Str., Kyiv, Ukraine",
-    "everyday": "MON-TUE 10.00 - 18.00",
-    "weekend": "SAT-SUN 10.00 - 14.00"
+    "contactTitle": "Stay Connected //",
+    "contactText": "Join us to receive updates on innovative design and brand development.",
+    "navTitle": "Navigation //",
+    "navHome": "Home",
+    "navAbout": "About us",
+    "navWholesale": "Wholesale",
+    "navRent": "Warehouse rent",
+    "navContacts": "Contacts",
+    "officeTitle": "Our office",
+    "mediaTitle": "Media //",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "uwTitle": "UW",
+    "uwSubtitle": "UNIVERSAL WAREHOUSE",
+    "copyrightLine": "© 2025 Fortex®. All rights reserved.",
+    "companyStatement": "Fortex® is a company registered in the United Kingdom. All services are delivered directly by Fortex, with no third-party involvement."
   }
 }

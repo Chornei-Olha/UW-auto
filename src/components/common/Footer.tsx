@@ -1,105 +1,141 @@
-import Image from 'next/image';
+'use client';
+
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer id="footer" className="pb-5">
-      <p className="mb-10 text-gray-600 font-montserrat font-light">
-        {t('slogan1')} <br />
-        {t('slogan2')}{' '}
-      </p>
-      {/* Центральная часть футера */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Левая колонка */}
-        <div className="gap-6 text-sm text-center md:text-left md:items-start flex flex-col items-center">
-          <p className="font-semibold font-inter mb-1"> {t('menu')}</p>
-          <ul className="space-y-1 font-inter font-regular">
+    <footer className="w-full bg-black text-white px-6 py-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-3 lg:grid-rows-2">
+        {/* 1 row, col 1 — Contacts */}
+        <div className="space-y-4">
+          <p className="uppercase text-sm text-gray-400">{t('contactTitle')}</p>
+          <p className="text-base text-gray-100 max-w-md">{t('contactText')}</p>
+
+          <div className="mt-4 space-y-3 max-w-md">
+            <div className="flex items-center gap-4 border border-white/10 p-4">
+              <div className="p-2 bg-neutral-900 rounded-sm">
+                <Phone className="w-5 h-5" />
+              </div>
+              <span className="text-sm">+1-800-123-4567</span>
+            </div>
+
+            <div className="flex items-center gap-4 border border-white/10 p-4">
+              <div className="p-2 bg-neutral-900 rounded-sm">
+                <Mail className="w-5 h-5" />
+              </div>
+              <span className="text-sm uppercase">contact@example.com</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 1 row, col 2 — Navigation */}
+        <div>
+          <p className="uppercase text-sm text-gray-400">{t('navTitle')}</p>
+          <ul className="mt-4 space-y-3">
             <li>
-              <Link href="/" className="hover:text-red-500 transition-colors">
-                {t('menu1')}
+              <Link href="/" className="text-lg hover:text-gray-300 transition">
+                {t('navHome')}
               </Link>
             </li>
             <li>
-              <Link href="#slider1" className="hover:text-red-500 transition-colors">
-                {t('menu2')}{' '}
+              <Link href="/about" className="text-lg hover:text-gray-300 transition">
+                {t('navAbout')}
               </Link>
             </li>
             <li>
-              <Link href="/partnersPage" className="hover:text-red-500 transition-colors">
-                {t('menu3')}{' '}
+              <Link href="/wholesale" className="text-lg hover:text-gray-300 transition">
+                {t('navWholesale')}
               </Link>
             </li>
             <li>
-              <Link href="/dealersPage" className="hover:text-red-500 transition-colors">
-                {t('menu4')}{' '}
+              <Link href="/rent" className="text-lg hover:text-gray-300 transition">
+                {t('navRent')}
               </Link>
             </li>
             <li>
-              <Link href="/buyersPage" className="hover:text-red-500 transition-colors">
-                {t('menu5')}{' '}
-              </Link>
-            </li>
-            <li>
-              <Link href="#footer" className="hover:text-red-500 transition-colors">
-                {t('menu6')}{' '}
+              <Link href="/contacts" className="text-lg hover:text-gray-300 transition">
+                {t('navContacts')}
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Центр */}
-        <div className="flex flex-col items-center">
-          <Image src="/images/logo.webp" alt="Senso logo" width={267} height={112} priority />
+        {/* 1 row, col 3 — Office (map) */}
+        <div>
+          <p className="uppercase text-sm text-gray-400">{t('officeTitle')}</p>
+          <div className="relative w-full h-40 mt-4 rounded-sm overflow-hidden border border-white/5">
+            <Image src="/images/map.webp" alt="Map" fill className="object-cover" priority />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
         </div>
 
-        {/* Правая колонка */}
-        <div className="text-sm">
-          <p className="mb-2 font-semibold font-inter"> {t('address')} </p>
-          <p className="mb-3 font-inter font-regular">
-            {t('street')} <br />
-            {t('everyday')} <br />
-            {t('weekend')}{' '}
-          </p>
-          <p className="my-3 font-semibold font-inter"> {t('telephone')}</p>
-          <a
-            href="tel:+380445852108"
-            className="text-blue-600 hover:underline font-inter font-regular"
-          >
-            +38 (044) 585 21 08
-          </a>
-          <br />
-          <a
-            href="tel:+380993413857"
-            className="text-blue-600 hover:underline font-inter font-regular"
-          >
-            +38 (099) 341 38 57
-          </a>
+        {/* 2 row, col 1-2 (объединены) */}
+        <div className="lg:col-span-2 flex flex-col lg:min-h-[220px]">
+          {/* Верхняя часть — UW (2/3) */}
+          <div className="flex-[2] flex items-end lg:items-center">
+            <div>
+              <div className="text-7xl md:text-8xl lg:text-[160px] font-extrabold leading-none tracking-tight">
+                {t('uwTitle')}
+              </div>
+              <div className="mt-2 text-sm md:text-base text-gray-400 tracking-wider">
+                {t('uwSubtitle')}
+              </div>
+            </div>
+          </div>
 
-          <p className="my-3 font-semibold font-inter">E-mail:</p>
-          <a
-            href="mailto:info@senso-tape.com"
-            className="text-blue-600 hover:underline font-inter font-regular"
-          >
-            info@senso-tape.com
-          </a>
+          {/* Нижняя треть — разделена на 2 колонки */}
+          <div className="flex-[1] mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2 items-start">
+            {/* левый — Privacy / Terms / copyright */}
+            <div className="space-y-2 text-sm text-gray-400">
+              <div className="flex items-center gap-3">
+                <Link href="/privacy" className="hover:text-white">
+                  {t('privacy')}
+                </Link>
+                <span className="text-white/30">•</span>
+                <Link href="/terms" className="hover:text-white">
+                  {t('terms')}
+                </Link>
+              </div>
+
+              <div className="text-xs text-gray-500">{t('copyrightLine')}</div>
+            </div>
+
+            {/* правый — company statement */}
+            <div className="text-sm text-gray-400">{t('companyStatement')}</div>
+          </div>
+        </div>
+
+        {/* 2 row, col 3 — Media */}
+        <div>
+          <p className="uppercase text-sm text-gray-400">{t('mediaTitle')}</p>
+          <ul className="mt-4 space-y-3">
+            {[
+              { label: 'LinkedIn', href: '#' },
+              { label: 'Instagram', href: '#' },
+              { label: 'YouTube', href: '#' },
+              { label: 'Twitter', href: '#' },
+              { label: 'Email', href: '#' },
+            ].map((item, i) => (
+              <li key={i}>
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  className="flex items-center gap-2 hover:text-gray-300 transition text-lg"
+                >
+                  {item.label}
+                  <span className="text-sm opacity-60">↗</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <p className="text-xs mt-6 font-inter font-light">©2025</p>
-      <p className="text-xs font-inter font-light">
-        Created by{' '}
-        <a
-          href="https://impuls-studio.com.ua/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-600 hover:underline font-inter font-light"
-        >
-          Impuls Studio
-        </a>
-      </p>
     </footer>
   );
 }
