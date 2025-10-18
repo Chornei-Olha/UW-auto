@@ -14,7 +14,7 @@ import Footer from '@/components/common/Footer';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 md:px-8 bg-white">
+    <div className="bg-white">
       <Header />
       <Hero />
       <AboutStats />

@@ -34,7 +34,7 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="bg-black text-white py-3 px-6 my-5 mx-5 flex items-center justify-between font-inter relative rounded-[12px]">
+    <header className="container my-3 py-4 px-5 bg-black text-white flex items-center justify-between relative rounded-[12px]">
       {/* ===== ЛОГО ===== */}
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
@@ -44,7 +44,7 @@ export default function Header() {
       </div>
 
       {/* ===== НАВИГАЦИЯ (Desktop) ===== */}
-      <nav className="hidden md:flex space-x-6 text-sm uppercase tracking-wide font-chakraPetch">
+      <nav className="hidden md:flex space-x-6 text-sm uppercase tracking-wide font-chakraPetch font-semibold">
         <Link href="/" className="hover:text-gray-400 transition">
           {t('menu1')}
         </Link>
@@ -63,7 +63,7 @@ export default function Header() {
       </nav>
 
       {/* ===== ЯЗЫКИ + КНОПКА (Desktop) ===== */}
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="hidden md:flex items-center space-x-4 font-chakraPetch font-semibold">
         {/* Переключатели языков */}
         <div className="flex space-x-2 text-xs">
           <button
@@ -84,7 +84,7 @@ export default function Header() {
         {/* Кнопка консультации */}
         <Link
           href="/consultation"
-          className="bg-white text-black rounded-[12px] px-4 py-4 text-sm font-semibold hover:bg-gray-200 transition"
+          className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
         >
           {t('button')}
         </Link>
@@ -101,7 +101,7 @@ export default function Header() {
 
       {/* ===== МОБИЛЬНОЕ МЕНЮ ===== */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-black flex flex-col items-center py-5 space-y-4 text-sm uppercase tracking-wide md:hidden z-50 border-t border-gray-800">
+        <div className="absolute top-full left-0 w-full bg-black flex flex-col items-center py-5 space-y-4 text-sm uppercase tracking-wide md:hidden z-50 border-t border-gray-800 font-chakraPetch font-semibold">
           <Link href="/" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu1')}
           </Link>
@@ -119,7 +119,7 @@ export default function Header() {
           </Link>
 
           {/* Языки (мобильная версия) */}
-          <div className="flex space-x-2 text-xs mt-4">
+          <div className="flex space-x-2 text-xs mt-4 font-chakraPetch font-semibold">
             <button
               onClick={() => changeLocale('ua')}
               className={`transition ${locale === 'ua' ? 'text-gray-300' : 'hover:text-gray-400'}`}
@@ -138,7 +138,7 @@ export default function Header() {
           <Link
             href="/consultation"
             onClick={closeMenu}
-            className="bg-white text-black rounded-full px-5 py-2 text-sm font-semibold hover:bg-gray-200 transition mt-3"
+            className="bg-white text-black rounded-full px-5 py-2 text-sm hover:bg-gray-200 transition mt-3 font-montserrat font-semibold"
           >
             {t('button')}
           </Link>

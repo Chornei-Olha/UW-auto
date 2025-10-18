@@ -23,8 +23,8 @@ export default function AboutStats() {
   ];
 
   return (
-    <section className="py-20 bg-white text-center">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
+    <section className="container mx-auto px-4 md:px-8 py-10 md:py-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {stats.map((item, index) => (
           <motion.div
             key={index}
@@ -32,18 +32,18 @@ export default function AboutStats() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center"
+            className="flex flex-col items-left text-left"
           >
             {/* Красная линия + заголовок */}
             <div className="flex items-center space-x-2 mb-3">
               <div className="w-1 h-4 bg-red-500"></div>
-              <p className="text-xs uppercase tracking-wide text-gray-800 font-semibold">
+              <p className="text-xs md:text-base uppercase tracking-wide text-gray-800 font-chakraPetch font-normal">
                 {item.title}
               </p>
             </div>
 
             {/* Текст */}
-            <p className="text-gray-600 text-sm md:text-base font-light leading-relaxed max-w-sm">
+            <p className="text-gray-600 text-base md:text-xl leading-relaxed max-w-sm font-mulish font-light">
               {item.text}
             </p>
           </motion.div>
