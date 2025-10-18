@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import emailjs from '@emailjs/browser';
 
 export default function ContactForm2() {
-  const t = useTranslations('ContactForm');
+  const t = useTranslations('ContactForm2');
 
   const [formData, setFormData] = useState({
     name: '',

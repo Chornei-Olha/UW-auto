@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { Phone, Mail } from 'lucide-react';
+import { Building2, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -20,16 +20,35 @@ export default function Footer() {
           <div className="mt-4 space-y-3 max-w-md">
             <div className="flex items-center gap-4 border border-white/10 p-4">
               <div className="p-2 bg-neutral-900 rounded-sm">
-                <Phone className="w-5 h-5" />
+                <Building2 className="w-5 h-5" />
               </div>
-              <span className="text-sm">+1-800-123-4567</span>
+              <span className="text-sm">{t('address')}</span>
             </div>
 
-            <div className="flex items-center gap-4 border border-white/10 p-4">
-              <div className="p-2 bg-neutral-900 rounded-sm">
-                <Mail className="w-5 h-5" />
-              </div>
-              <span className="text-sm uppercase">contact@example.com</span>
+            <div className="flex flex-col gap-4">
+              {/* Телефон */}
+              <a
+                href="tel:+380685495498"
+                className="flex items-center gap-4 border border-white/10 p-4 hover:border-white/30 transition"
+              >
+                <div className="p-2 bg-neutral-900 rounded-sm">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <span className="text-sm hover:underline">+38 (068) 549 54 98</span>
+              </a>
+
+              {/* Почта */}
+              <a
+                href="mailto:global.investment.ua@gmail.com"
+                className="flex items-center gap-4 border border-white/10 p-4 hover:border-white/30 transition"
+              >
+                <div className="p-2 bg-neutral-900 rounded-sm">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <span className="text-sm uppercase hover:underline">
+                  global.investment.ua@gmail.com
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -80,7 +99,7 @@ export default function Footer() {
           {/* Верхняя часть — UW (2/3) */}
           <div className="flex-[2] flex items-end lg:items-center">
             <div>
-              <div className="text-7xl md:text-8xl lg:text-[160px] font-extrabold leading-none tracking-tight">
+              <div className="text-7xl md:text-8xl lg:text-[160px] font-chakraPetch font-bold leading-none tracking-tight">
                 {t('uwTitle')}
               </div>
               <div className="mt-2 text-sm md:text-base text-gray-400 tracking-wider">
@@ -112,7 +131,7 @@ export default function Footer() {
         </div>
 
         {/* 2 row, col 3 — Media */}
-        <div>
+        {/* <div>
           <p className="uppercase text-sm text-gray-400">{t('mediaTitle')}</p>
           <ul className="mt-4 space-y-3">
             {[
@@ -134,7 +153,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

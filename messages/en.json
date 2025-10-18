@@ -9,34 +9,47 @@
     "button": "Request a consultation"
   },
   "Hero": {
-    "title1": "Car delivery from Europe, China and the USA —",
-    "title2": "turnkey",
+    "title1": "DELIVERY OF CARS FROM THE USA — TURNKEY SOLUTION",
     "subtitle": "Selection, inspection, purchase, delivery and customs clearance — all in one place",
     "button": "Request a consultation"
+  },
+  "AboutStats": {
+    "item1": {
+      "title": "UNIVERSAL WAREHOUSE",
+      "text": " A reliable partner in the world of cars from the USA."
+    },
+    "item2": {
+      "title": "> 10 years of experience",
+      "text": "Our many years of experience partnering with leading auctions make us your reliable guide in the world of cars from America. "
+    },
+    "item3": {
+      "title": "Satisfied customers",
+      "text": "We are proud that our customers come back to us and recommend our services to their friends and partners. "
+    }
   },
   "AboutUs": {
     "title": "OUR ADVANTAGES",
     "honestyTitle": "HONESTY AND TRANSPARENCY",
-    "honestyText": "We build cooperation based on trust. No hidden fees or fine print — you know all the terms before signing the contract.",
+    "honestyText": "We put transparency and trust first: no hidden fees or unexpected conditions. You know all the details before signing the contract.",
     "trustTitle": "LEGALITY AND RELIABILITY",
-    "trustText": "We conclude official agreements according to Ukrainian law. Payment is transparent, in local currency, with full supporting documentation.",
-    "legalityTitle": "OVER 20 YEARS OF EXPERIENCE",
-    "legalityText": "Our journey in the automotive auction field began two decades ago. During this time, we’ve perfected the processes of selection, inspection, and delivery from anywhere in the world.",
+    "trustText": "We operate exclusively within the legal framework: official agreements, transparent payment, and a full set of supporting documents.",
+    "legalityTitle": "OVER 10 YEARS OF EXPERIENCE",
+    "legalityText": "Thanks to our many years of experience, we know how to make the process of selecting, checking, and delivering a car as convenient and reliable as possible for our customers.",
     "experienceTitle": "FIXED PRICE WITH NO SURPRISES",
-    "experienceText": "We clearly specify the final car price in the contract. For you, this means confidence: no additional payments will appear later.",
+    "experienceText": "We clearly agree on the final cost of the car. For you, this means confidence: no additional payments will appear during the process.",
     "fixedPriceTitle": "CLEAR TERMS",
     "fixedPriceText": "No hidden costs or unexpected charges. We guarantee fair deals without unpleasant surprises.",
     "confidenceTitle": "RELIABLE PARTNERS",
     "confidenceText": "We work only with trusted logistics companies and auctions so you get your car safely and without risks."
   },
   "AboutIntro": {
-    "aboutIntroTitle": "Про нас",
-    "aboutIntroText": "Universal Warehouse — це ваш надійний провідник у світ автомобілів із США, Європи та Китаю. Ми вже понад 20 років працюємо у цій сфері, тому досконало розуміємо автомобільні ринки, страхові аукціони та всі нюанси безпечної доставки.\nМи відкриваємо доступ до величезного вибору авто з Америки, Європи й Азії, а наші експерти допомагають обрати саме ту машину, яка стане вашою гордістю."
+    "aboutIntroTitle": "ABOUT US",
+    "aboutIntroText": "Universal Warehouse is your reliable partner in the world of US cars.\nWe know all the ins and outs of working with American auctions and markets and provide a transparent and secure delivery process. Thanks to the experience of our experts, you get access to a wide selection of cars and support in choosing a vehicle that will be a profitable investment and a real pleasure for you."
   },
   "ContactForm": {
-    "title1": "GET THE BEST",
-    "title2": "CAR DEALS",
-    "subtitle": "Our car expert will contact you shortly to clarify all details and help you choose the best option.",
+    "title1": "GET ADVICE FROM",
+    "title2": "OUR EXPERT",
+    "subtitle": " Our auto expert will contact you shortly to clarify important points, advise you, and help you make your choice.",
     "name": "Name",
     "send": "Send",
     "sending": "Sending...",
@@ -44,59 +57,65 @@
   },
   "AuctionClients": {
     "subtitle": "YOUR VEHICLE'S SERVICE ADVENTURE",
-    "title": "CARS FROM AUCTIONS FOR WHOLESALE CLIENTS",
+    "title": "CARS FROM US AUCTIONS",
     "step1": {
-      "title": "COOPERATING WITH LEADING AMERICAN AUCTIONS",
-      "text": "Our company works with top US auctions like Copart, IAAI, and Manheim..."
+      "title": "COOPERATING WITH LEADING AMERICAN AUCTIONS — Copart, IAAI, and Manheim",
+      "text": "This gives our customers access to a huge range of cars: from affordable budget options to premium models. We thoroughly understand the rules and specifics of each platform, so we help you avoid unexpected costs and hidden risks."
     },
     "step2": {
-      "title": "CONVENIENT TOOLS FOR SELECTION AND INSPECTION",
-      "text": "We provide modern tools for easy and quick vehicle search..."
+      "title": "CONVENIENT TOOLS FOR SELECTING AND CHECKING VEHICLES",
+      "text": "Thanks to our innovative tools, you can quickly find the right vehicle and get a complete picture of its history and technical condition. Detailed reports before purchase guarantee confidence in your choice and help you find the right car for you — one that suits your lifestyle and budget."
     },
     "step3": {
-      "title": "FULL LOGISTICS AND PAPERWORK SUPPORT",
-      "text": "We take care of all logistics — from US transport to final delivery..."
+      "title": "ORGANIZATION OF DELIVERY AND TURNKEY DOCUMENTATION",
+      "text": " We take care of the entire logistics cycle: from transporting the car from the US to a Ukrainian port, customs clearance and preparation of the necessary documents, to final delivery to the customer. The customer receives a ready-to-drive car without unnecessary bureaucracy and wasted time."
     },
     "step4": {
-      "title": "CAR CERTIFICATION IN UKRAINE",
-      "text": "Upon arrival, the car passes all necessary certification procedures..."
-    },
-    "step5": {
       "title": "CONSULTATIONS AND SUPPORT",
-      "text": "Our team is always ready to help with car selection and paperwork..."
+      "text": "We take care of the entire logistics cycle: from transporting the car from the US to a Ukrainian port, customs clearance and preparation of the necessary documents, to final delivery to the customer. The customer receives a ready-to-drive car without unnecessary bureaucracy and wasted time. "
     }
   },
   "CompanyOverview": {
     "title": "ABOUT US",
     "experience": {
       "title": "EXPERIENCE AND EXPERTISE",
-      "text": "We have been working in the automotive market for over 10 years across the USA and Europe. Our team knows all the nuances of auctions, logistics, and customs clearance."
+      "text": "We have been working in the US car market for over 10 years. Our team knows all the ins and outs of auctions, logistics, and customs clearance."
     },
     "partners": {
       "title": "RELIABLE PARTNERS",
-      "text": "We cooperate exclusively with verified auction platforms — Copart, IAAI, and Manheim. This ensures honesty, transparency, and high-quality deals."
+      "text": "We work exclusively with trusted auctions — Copart, IAAI, Manheim. This guarantees honesty, transparency, and quality transactions."
     },
     "services": {
       "title": "FULL SERVICE CYCLE",
-      "text": "From car selection to certification and registration in Ukraine — we take care of the entire process. All you have to do is get behind the wheel."
+      "text": "We take care of the entire process: from selecting a car and checking its history to delivery and all the formalities that ensure the car is ready for use. All you have to do is get behind the wheel and enjoy the ride."
     },
     "transparency": {
       "title": "TRANSPARENCY AND CONTROL",
-      "text": "Our clients receive full access to reports: repair history, mileage, insurance cases. You always know exactly what you are buying."
+      "text": "Our customers get full access to reports: repair history, mileage, insurance claims. You always know what you are buying."
     },
     "wholesale": {
       "title": "WHOLESALE TERMS",
-      "text": "We create profitable solutions for businesses and wholesale clients. A flexible cooperation system helps you save even more."
+      "text": "We create profitable solutions for businesses and wholesale customers. A flexible cooperation system helps you save even more."
     },
     "support": {
       "title": "24/7 SUPPORT",
-      "text": "Our team is always in touch, ready to answer all your questions and accompany you every step of the way."
+      "text": "Our team is always available, ready to answer all your questions and accompany you every step of the way."
     }
   },
   "Team": {
     "title": "Our Team"
   },
+  "ContactForm2": {
+    "title1": "GET GREAT",
+    "title2": "CAR OPTIONS",
+    "subtitle": "Our auto expert will contact you shortly",
+    "name": "Name",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Thank you! We'll contact you soon."
+  },
   "Footer": {
+    "address": "01135, Kyiv, 5-B Beresteyskyi Avenue, room 516",
     "contactTitle": "Stay Connected //",
     "contactText": "Join us to receive updates on innovative design and brand development.",
     "navTitle": "Navigation //",

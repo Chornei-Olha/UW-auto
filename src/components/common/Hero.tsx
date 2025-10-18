@@ -39,16 +39,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-bold uppercase font-inter leading-tight mb-4"
+          className="text-3xl md:text-5xl font-angry font-normal uppercase leading-tight mb-4"
         >
-          {t('title1')} <br /> {t('title2')}
+          {t('title1')}
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-sm md:text-base font-light tracking-wide mb-6 text-gray-200"
+          className="text-sm md:text-base font-montserrat font-light tracking-wide mb-6 text-gray-200 uppercase"
         >
           {t('subtitle')}
         </motion.p>
@@ -60,7 +60,7 @@ export default function Hero() {
         >
           <Link
             href="/consultation"
-            className="bg-white text-black font-semibold rounded-full px-6 py-3 text-sm uppercase hover:bg-gray-200 transition"
+            className="bg-white text-black font-montserrat font-semibold rounded-full px-6 py-3 text-sm uppercase hover:bg-gray-200 transition"
           >
             {t('button')}
           </Link>

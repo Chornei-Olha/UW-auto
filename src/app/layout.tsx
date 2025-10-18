@@ -19,13 +19,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     },
   };
 }
-// export const metadata = {
-//   title: 'Senso',
-//   description: 'Ihre vertrauenswürdige Reinigungsfirma mit System, Plan und VerantwortungS',
-//   icons: {
-//     icon: [{ url: '/favicon.png', type: 'image/x-icon' }],
-//   },
-// };
 
 export default async function RootLayout({
   children,

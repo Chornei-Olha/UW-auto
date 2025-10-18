@@ -55,9 +55,12 @@ module.exports = {
           'feature-bg': '#4d8fa756',
         },
       },
+
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        mulish: ['"Mulish"', 'sans-serif'],
+        montserrat: ['"Montserrat"', 'sans-serif'],
+        chakraPetch: ['"Chakra Petch"', 'sans-serif'],
+        angry: ['"Angry"', 'sans-serif'],
       },
       fontSize: {
         360: '360px',
