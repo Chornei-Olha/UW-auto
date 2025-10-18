@@ -132,5 +132,26 @@
     "uwSubtitle": "UNIVERSAL WAREHOUSE",
     "copyrightLine": "© 2025 Fortex®. All rights reserved.",
     "companyStatement": "Fortex® is a company registered in the United Kingdom. All services are delivered directly by Fortex, with no third-party involvement."
+  },
+
+  "WarehouseRent": {
+    "subtitle": "WE OFFER A MODERN LOGISTICS COMPLEX  WITH OFFICE SPACE - Class A warehouse",
+    "title": "Warehouse Rental",
+    "advantagesSubtitle": "OUR ADVANTAGES",
+    "advantagesTitle": "ADVANTAGES OF \"UNIVERSAL WAREHOUSE\"",
+    "advantagesList": [
+      "Convenient location",
+      "Parking for cars and large vehicles (including guest parking)",
+      "Offices and utility rooms — 1183 m²",
+      "Own bomb shelter",
+      "Permitted power — 400 kW",
+      "Natural lighting in all areas of the warehouse"
+    ],
+    "locationSubtitle": "LOCATION",
+    "locationTitle": "Convenient location relative to the main highways of the Kyiv region.",
+    "locationText": "7 km to the large ring road.",
+    "rampsSubtitle": "AVAILABLE",
+    "rampsTitle": "Availability of ramps for light trucks",
+    "rampsText": "The warehouses are equipped with ramps for light-duty vehicles, allowing for quick and safe loading and unloading."
   }
 }
