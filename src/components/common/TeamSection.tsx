@@ -35,9 +35,9 @@ export default function TeamSection() {
   const t = useTranslations('Team');
 
   return (
-    <section className="w-full bg-black text-white py-16 px-4 relative overflow-hidden">
+    <section className="container mx-auto p-2 md:p-4 my-10 md:my-16 bg-black text-white relative overflow-hidden">
       {/* 🔸 Заголовок секции */}
-      <div className="max-w-7xl mx-auto mb-12 flex items-center gap-3">
+      {/* <div className="max-w-7xl mx-auto mb-12 flex items-center gap-3">
         <Users size={36} className="text-white" />
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -47,7 +47,7 @@ export default function TeamSection() {
         >
           {t('title')}
         </motion.h2>
-      </div>
+      </div> */}
 
       {/* 🔸 Слайдер */}
       <Swiper
@@ -72,10 +72,10 @@ export default function TeamSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="relative bg-black/70 rounded-lg overflow-hidden group"
+              className="relative bg-black/70 overflow-hidden group"
             >
               {/* 📸 Фото */}
-              <div className="relative w-full h-[400px]">
+              <div className="relative w-full h-[400px] p-4">
                 <Image
                   src={person.image}
                   alt={person.name}
@@ -99,8 +99,12 @@ export default function TeamSection() {
 
               {/* 📄 Текстовый блок */}
               <div className="absolute bottom-0 left-0 w-full p-4 bg-black/60 backdrop-blur-sm flex flex-col">
-                <h3 className="text-lg md:text-xl font-semibold uppercase">{person.name}</h3>
-                <p className="text-gray-400 text-sm uppercase">{person.profession}</p>
+                <h3 className="text-lg md:text-xl font-chakraPetch font-semibold uppercase">
+                  {person.name}
+                </h3>
+                <p className="text-base md:text-sm font-chakraPetch font-normal uppercase">
+                  {person.profession}
+                </p>
               </div>
             </motion.div>
           </SwiperSlide>

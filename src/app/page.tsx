@@ -11,6 +11,7 @@ import CompanyOverview from '../components/common/CompanyOverview';
 import TeamSection from '../components/common/TeamSection';
 import ContactForm2 from '../components/common/ContactForm2';
 import Footer from '@/components/common/Footer';
+import WarehouseRent from '../components/common/WarehouseRent';
 
 const HomePage: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
       <AboutUs />
       <AboutIntro />
       <ContactForm />
+      <WarehouseRent />
       <AuctionClients />
       <CompanyOverview />
       <TeamSection />

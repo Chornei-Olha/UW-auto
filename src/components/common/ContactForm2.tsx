@@ -49,7 +49,7 @@ export default function ContactForm2() {
   };
 
   return (
-    <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden text-white">
+    <section className="container mx-auto px-4 md:px-8 py-10 md:py-16 my-4 md:my-8 relative h-[736px] flex items-center justify-center overflow-hidden text-white rounded-xl">
       {/* 🔸 Основное фоновое изображение */}
       <Image
         src="/images/CTA-Banner.webp"
@@ -77,10 +77,10 @@ export default function ContactForm2() {
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-center md:text-left"
         >
-          <h2 className="text-3xl md:text-5xl font-bold uppercase mb-6 drop-shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-angry font-normal uppercase mb-6 drop-shadow-lg">
             {t('title1')} <br /> {t('title2')}
           </h2>
-          <p className="text-gray-200 text-sm md:text-base leading-relaxed max-w-md mx-auto md:mx-0 drop-shadow-md">
+          <p className="text-sm md:text-base font-mulish font-light leading-relaxed max-w-md mx-auto md:mx-0 drop-shadow-md">
             {t('subtitle')}
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export default function ContactForm2() {
           <button
             type="submit"
             disabled={isSending}
-            className="bg-white text-black font-semibold rounded-xl py-3 mt-2 hover:bg-gray-200 transition"
+            className="bg-white text-black font-mulish font-normal rounded-xl py-3 mt-2 hover:bg-gray-200 transition"
           >
             {isSending ? t('sending') : t('send')}
           </button>

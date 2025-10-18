@@ -30,10 +30,9 @@ const CompanyOverview: FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-extrabold text-black uppercase mb-12 md:mb-20 relative inline-block"
+          className="text-left text-3xl md:text-4xl font-angry font-normal uppercase  mb-12"
         >
           {t('title')}
-          <span className="absolute left-0 bottom-0 w-full h-[2px] bg-blue-500"></span>
         </motion.h2>
 
         {/* 🔹 Карточки */}
@@ -47,10 +46,12 @@ const CompanyOverview: FC = () => {
               viewport={{ once: true }}
               className="bg-black text-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <h3 className="text-lg md:text-xl font-semibold mb-3 relative pl-4 before:content-['|'] before:absolute before:left-0 before:top-0 before:text-blue-400">
+              <h3 className="text-lg md:text-xl font-chakraPetch font-semibold mb-3 relative pl-4 before:content-['|'] before:absolute before:left-0 before:top-0 before:text-[#B4B4B4]">
                 {item.title}
               </h3>
-              <p className="text-white/80 text-sm md:text-base leading-relaxed">{item.text}</p>
+              <p className="text-white text-sm md:text-base font-mulish font-light leading-relaxed">
+                {item.text}
+              </p>
             </motion.div>
           ))}
         </div>

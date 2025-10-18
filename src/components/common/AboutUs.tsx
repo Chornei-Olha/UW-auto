@@ -20,14 +20,14 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="container mx-auto relative w-full bg-white py-16">
+    <section className="container mx-auto px-4 md:px-8 pt-10 md:pt-16 pb-4 md:pb-8 relative">
       {/* 🔹 Заголовок */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center text-3xl md:text-5xl font-bold uppercase font-inter mb-12"
+        className="text-left text-3xl md:text-4xl font-angry font-normal uppercase  mb-12"
       >
         {t('title')} <span className="text-black">UNIVERSAL WAREHOUSE</span>
       </motion.h2>
@@ -52,7 +52,7 @@ export default function AboutUs() {
                 priority={idx < 2}
               />
             ) : (
-              <div className="absolute inset-0 bg-black flex flex-col justify-center p-6 md:p-8 text-white">
+              <div className="absolute inset-0 bg-black flex flex-col justify-top p-3 md:p-5 text-white">
                 {/* полупрозрачная иконка */}
                 <Image
                   src="/images/aboutUs-icon.svg"
@@ -62,11 +62,11 @@ export default function AboutUs() {
                 />
 
                 {/* текстовый контент */}
-                <div className="relative z-[2] max-w-[90%]">
-                  <h3 className="text-lg md:text-xl font-semibold uppercase mb-3 leading-tight">
+                <div className="relative z-[4] max-w-[95%]">
+                  <h3 className="text-lg md:text-xl font-normal font-angry uppercase mb-4 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
+                  <p className="text-sm md:text-base font-light font-mulish leading-relaxed">
                     {item.text}
                   </p>
                 </div>
