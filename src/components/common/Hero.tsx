@@ -26,7 +26,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.9 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-[-100px] mx-auto text-[70px] sm:text-[150px] md:text-[250px] font-chakraPetch font-bold tracking-tight pointer-events-none select-none text-white/15 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] z-[2] uppercase"
+        className="absolute bottom-[-100px] mx-auto text-[60px] sm:text-[150px] md:text-[250px] font-chakraPetch font-bold tracking-tight pointer-events-none select-none text-white/15 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] z-[2] uppercase"
       >
         UW 20.7K
       </motion.p>
