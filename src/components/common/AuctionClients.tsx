@@ -88,7 +88,7 @@ export default function AuctionClients() {
               <Image src={step.image} alt={`Step ${step.id}`} fill className="object-cover" />
 
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-[#111111]/55 z-[1]" />
+              <div className="absolute inset-0 bg-[#111111]/75 z-[1]" />
 
               {/* Text content */}
               <div className="relative z-[2] p-6 flex flex-col justify-center h-full">
