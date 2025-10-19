@@ -10,7 +10,7 @@ export default function Hero() {
   const t = useTranslations('Hero');
 
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
+    <section className="relative w-full min-h-[80vh] flex items-center justify-center text-white overflow-hidden">
       {/* 🔸 Фоновое изображение */}
       <Image
         src="/images/backgroundHero.webp"
@@ -26,18 +26,18 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.9 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-[-100px] mx-auto text-[60px] sm:text-[150px] md:text-[250px] font-chakraPetch font-bold tracking-tight pointer-events-none select-none text-white/15 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] z-[2] uppercase"
+        className="absolute bottom-[-30px] sm:bottom-[-100px] mx-auto text-[80px] sm:text-[150px] md:text-[250px] font-chakraPetch font-bold tracking-tight pointer-events-none select-none text-white/15 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] z-[2] uppercase"
       >
         UW 20.7K
       </motion.p>
-      <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-16">
+      <div className="container mx-auto px-4 md:px-8">
         {/* 🔸 Основной контент */}
-        <div className="relative z-[3] max-w-5xl text-center md:text-left">
+        <div className="relative z-[3] max-w-4xl text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-angry font-normal uppercase leading-tight mb-6"
+            className="text-3xl md:text-5xl font-angry font-normal uppercase leading-normal mb-6"
           >
             {t('title1')}
           </motion.h1>

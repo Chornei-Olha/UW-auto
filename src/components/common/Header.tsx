@@ -101,7 +101,7 @@ export default function Header() {
 
       {/* ===== МОБИЛЬНОЕ МЕНЮ ===== */}
       {menuOpen && (
-        <div className="absolute top-full h-screen left-0 w-full bg-black flex flex-col items-center py-5 space-y-6 text-sm uppercase tracking-wide md:hidden z-50 border-t border-gray-800 font-chakraPetch font-semibold">
+        <div className="absolute top-full h-screen left-0 w-full bg-black flex flex-col items-center py-5 space-y-10 text-sm uppercase tracking-wide md:hidden z-50 border-t border-gray-800 font-chakraPetch font-semibold">
           <Link href="/" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu1')}
           </Link>
@@ -138,7 +138,7 @@ export default function Header() {
           <Link
             href="#consultation2"
             onClick={closeMenu}
-            className="bg-white text-black rounded-full px-5 py-2 text-sm hover:bg-gray-200 transition mt-3 font-montserrat font-semibold"
+            className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
           >
             {t('button')}
           </Link>

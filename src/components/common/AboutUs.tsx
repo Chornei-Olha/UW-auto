@@ -65,7 +65,7 @@ export default function AboutUs() {
                 />
 
                 {/* текстовый контент */}
-                <div className="relative z-[4] max-w-[95%]">
+                <div className="relative p-5 max-w-full flex flex-col items-start justify-center sm:justify-start">
                   <h3 className="text-lg md:text-xl font-normal font-angry uppercase mb-4 leading-tight">
                     {item.title}
                   </h3>

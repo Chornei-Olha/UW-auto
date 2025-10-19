@@ -68,7 +68,7 @@ export default function AuctionClients() {
           <p className="text-sm uppercase tracking-wider text-black mb-2 border-l-2 border-[#FF4D00] pl-2">
             {t('subtitle')}
           </p>
-          <h2 className="text-left text-3xl md:text-4xl font-angry font-normal uppercase  mb-12">
+          <h2 className="text-left text-3xl md:text-4xl font-angry font-normal uppercase  mb-3">
             {t('title')}
           </h2>
         </motion.div>
