@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer id="contacts" className="bg-black text-white">
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 gap-16 lg:grid-cols-3 lg:grid-rows-2">
+      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2">
         {/* 1 row, col 1 — Contacts */}
         <div className="space-y-4">
           <p className="uppercase text-sm text-gray-400">{t('contactTitle')}</p>
@@ -55,6 +55,31 @@ export default function Footer() {
 
         {/* 1 row, col 2 — Navigation */}
         <div>
+          <p className="uppercase text-sm text-black">{t('mediaTitle')}</p>
+          {/* <ul className="mt-4 space-y-3">
+            {[
+              { label: 'LinkedIn', href: '#' },
+              { label: 'Instagram', href: '#' },
+              { label: 'YouTube', href: '#' },
+              { label: 'Twitter', href: '#' },
+              { label: 'Email', href: '#' },
+            ].map((item, i) => (
+              <li key={i}>
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  className="flex items-center gap-2 hover:text-gray-300 transition text-lg"
+                >
+                  {item.label}
+                  <span className="text-sm opacity-60">↗</span>
+                </Link>
+              </li>
+            ))}
+          </ul> */}
+        </div>
+
+        {/* 1 row, col 3 — Navigation */}
+        <div>
           <p className="uppercase text-sm text-gray-400">{t('navTitle')}</p>
           <ul className="mt-4 space-y-3">
             <li>
@@ -85,31 +110,23 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* 1 row, col 3 — Office (map) */}
-        <div>
-          <p className="uppercase text-sm text-gray-400">{t('officeTitle')}</p>
-          <div className="relative w-full h-40 mt-4 rounded-sm overflow-hidden border border-white/5">
-            <Image src="/images/map.webp" alt="Map" fill className="object-cover" priority />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        </div>
-
         {/* 2 row, col 1-2 (объединены) */}
-        <div className="lg:col-span-2 flex flex-col lg:min-h-[220px]">
+        {/* Левая большая секция UW */}
+        <div className="lg:col-span-2 flex flex-col lg:min-h-[220px] order-2 lg:order-1">
           {/* Верхняя часть — UW (2/3) */}
           <div className="flex-[2] flex items-end lg:items-center">
             <div>
-              <div className="text-7xl md:text-8xl lg:text-[160px] font-chakraPetch font-bold leading-none tracking-tight">
+              <div className="text-[100px] md:text-[200px] lg:text-[320px] font-chakraPetch font-bold leading-none tracking-tight">
                 {t('uwTitle')}
               </div>
-              <div className="mt-2 text-sm md:text-base text-gray-400 tracking-wider">
+              <div className="mt-2 text-[30px] md:text-[64px] font-chakraPetch font-light text-[#A5A5A5] tracking-wider">
                 {t('uwSubtitle')}
               </div>
             </div>
           </div>
 
           {/* Нижняя треть — разделена на 2 колонки */}
-          <div className="flex-[1] mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2 items-start">
+          <div className="flex-[1] grid grid-cols-1 gap-4 lg:grid-cols-2 items-start">
             {/* левый — Privacy / Terms / copyright */}
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-3">
@@ -130,30 +147,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 2 row, col 3 — Media */}
-        {/* <div>
-          <p className="uppercase text-sm text-gray-400">{t('mediaTitle')}</p>
-          <ul className="mt-4 space-y-3">
-            {[
-              { label: 'LinkedIn', href: '#' },
-              { label: 'Instagram', href: '#' },
-              { label: 'YouTube', href: '#' },
-              { label: 'Twitter', href: '#' },
-              { label: 'Email', href: '#' },
-            ].map((item, i) => (
-              <li key={i}>
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  className="flex items-center gap-2 hover:text-gray-300 transition text-lg"
-                >
-                  {item.label}
-                  <span className="text-sm opacity-60">↗</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div> */}
+        {/* Правая секция — Map */}
+        <div className="order-1 lg:order-2">
+          <p className="uppercase text-sm text-gray-400">{t('officeTitle')}</p>
+          <div className="relative w-full h-40 mt-4 rounded-sm overflow-hidden border border-white/5">
+            <Image src="/images/map.webp" alt="Map" fill className="object-cover" priority />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        </div>
       </div>
     </footer>
   );

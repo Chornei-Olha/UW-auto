@@ -38,7 +38,7 @@ export default function AuctionClients() {
   return (
     <section
       id="clients"
-      className="container mx-auto px-4 md:px-8 py-10 md:py-16 relative w-full bg-white overflow-hidden"
+      className="container mx-auto px-4 md:px-8 py-10 md:py-16 relative overflow-hidden"
     >
       {/* 🔸 Background Icon */}
       <Image
@@ -48,7 +48,7 @@ export default function AuctionClients() {
         className="object-contain opacity-10 pointer-events-none select-none"
       />
 
-      <div className="relative z-[2] px-6 md:px-10 grid md:grid-cols-2 gap-10">
+      <div className="relative z-[2] grid md:grid-cols-2 gap-10">
         {/* 🔸 Left text block */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

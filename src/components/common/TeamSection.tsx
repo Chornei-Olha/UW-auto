@@ -35,7 +35,7 @@ export default function TeamSection() {
   const t = useTranslations('Team');
 
   return (
-    <section className="container mx-auto p-2 md:p-4 my-10 md:my-16 bg-black text-white relative overflow-hidden">
+    <section className="container mx-auto px-4 md:px-8 py-10 md:py-16 bg-black text-white relative overflow-hidden">
       {/* 🔸 Заголовок секции */}
       {/* <div className="max-w-7xl mx-auto mb-12 flex items-center gap-3">
         <Users size={36} className="text-white" />
