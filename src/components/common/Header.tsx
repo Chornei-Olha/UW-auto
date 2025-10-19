@@ -48,16 +48,16 @@ export default function Header() {
         <Link href="/" className="hover:text-gray-400 transition">
           {t('menu1')}
         </Link>
-        <Link href="/about" className="hover:text-gray-400 transition">
+        <Link href="#about" className="hover:text-gray-400 transition">
           {t('menu2')}
         </Link>
-        <Link href="/clients" className="hover:text-gray-400 transition">
+        <Link href="#clients" className="hover:text-gray-400 transition">
           {t('menu3')}
         </Link>
-        <Link href="/warehouse" className="hover:text-gray-400 transition">
+        <Link href="/rent" className="hover:text-gray-400 transition">
           {t('menu4')}
         </Link>
-        <Link href="/contacts" className="hover:text-gray-400 transition">
+        <Link href="#contacts" className="hover:text-gray-400 transition">
           {t('menu5')}
         </Link>
       </nav>
@@ -105,16 +105,16 @@ export default function Header() {
           <Link href="/" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu1')}
           </Link>
-          <Link href="/about" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="#about" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu2')}
           </Link>
-          <Link href="/clients" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="#clients" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu3')}
           </Link>
-          <Link href="/warehouse" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="/rent" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu4')}
           </Link>
-          <Link href="/contacts" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="#contacts" onClick={closeMenu} className="hover:text-gray-400 transition">
             {t('menu5')}
           </Link>
 

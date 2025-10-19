@@ -10,8 +10,8 @@ export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer className="w-full bg-black text-white px-6 py-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-3 lg:grid-rows-2">
+    <footer id="contacts" className="bg-black text-white">
+      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 gap-16 lg:grid-cols-3 lg:grid-rows-2">
         {/* 1 row, col 1 — Contacts */}
         <div className="space-y-4">
           <p className="uppercase text-sm text-gray-400">{t('contactTitle')}</p>
@@ -63,12 +63,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-lg hover:text-gray-300 transition">
+              <Link href="#about" className="text-lg hover:text-gray-300 transition">
                 {t('navAbout')}
               </Link>
             </li>
             <li>
-              <Link href="/wholesale" className="text-lg hover:text-gray-300 transition">
+              <Link href="#clients" className="text-lg hover:text-gray-300 transition">
                 {t('navWholesale')}
               </Link>
             </li>
@@ -78,7 +78,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/contacts" className="text-lg hover:text-gray-300 transition">
+              <Link href="#contacts" className="text-lg hover:text-gray-300 transition">
                 {t('navContacts')}
               </Link>
             </li>

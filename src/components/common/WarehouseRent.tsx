@@ -42,7 +42,7 @@ export default function WarehouseRent() {
             {/* Правая часть с преимуществами */}{' '}
             <div className="bg-neutral-900 text-white rounded-lg p-8 flex flex-col justify-center">
               <div className="w-1 h-4 bg-gray-300"></div>
-              <p className="uppercase text-sm mb-2 font-chakraPetch font-light">
+              <p className="uppercase text-sm mb-2 font-chakraPetch font-light ">
                 {t('advantagesSubtitle')}
               </p>
               <h3 className="text-2xl md:text-3xl font-chakraPetch font-semibold mb-4 leading-tight">
@@ -63,7 +63,7 @@ export default function WarehouseRent() {
             {/* Нижняя левая карточка */}
             <div className="bg-neutral-900 text-white rounded-lg p-8">
               <p className="uppercase text-sm mb-2 font-chakraPetch font-light">
-                {t('locationSubtitle')}
+                | {t('locationSubtitle')}
               </p>
               <h4 className="text-lg md:text-xl font-chakraPetch font-semibold mb-3 leading-snug uppercase">
                 {t('locationTitle')}
@@ -74,7 +74,7 @@ export default function WarehouseRent() {
             {/* Нижняя правая карточка */}
             <div className="bg-white text-black rounded-lg p-8 border border-gray-200">
               <p className="uppercase text-sm mb-2 font-chakraPetch font-light ">
-                {t('rampsSubtitle')}
+                | {t('rampsSubtitle')}
               </p>
               <h4 className="text-lg md:text-xl font-chakraPetch font-semibold mb-3 leading-snug uppercase">
                 {t('rampsTitle')}
