@@ -36,20 +36,28 @@ export default function AuctionClients() {
   ];
 
   return (
-    <section
-      id="clients"
-      className="container mx-auto px-4 md:px-8 py-10 md:py-16 relative overflow-hidden"
-    >
-      {/* 🔸 Background Icon */}
+    <section id="clients" className="relative w-full py-10 md:py-16 overflow-hidden">
+      {/* 🔸 Фоновое изображение */}
       <Image
-        src="/images/decorativeLogo.svg"
-        alt="Background pattern"
+        src="/images/decorImage.svg"
+        alt="Background car"
         fill
-        className="object-contain opacity-10 pointer-events-none select-none"
+        className="object-contain brightness-[0.2]"
+        priority
       />
+      {/* <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/decorImage.png"
+          alt="Background car"
+          fill
+          className="hidden sm:block object-contain opacity-90 right-0 top-0"
+          priority
+        />
+      </div> */}
 
-      <div className="relative z-[2] grid md:grid-cols-2 gap-10">
-        {/* 🔸 Left text block */}
+      {/* Контент */}
+      <div className="relative z-[10] container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10">
+        {/* Left text block */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +73,7 @@ export default function AuctionClients() {
           </h2>
         </motion.div>
 
-        {/* 🔸 Right cards */}
+        {/* Right cards */}
         <div className="flex flex-col gap-6">
           {steps.map((step, index) => (
             <motion.div
@@ -80,7 +88,7 @@ export default function AuctionClients() {
               <Image src={step.image} alt={`Step ${step.id}`} fill className="object-cover" />
 
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-[#111111]/75 z-[1]" />
+              <div className="absolute inset-0 bg-[#111111]/55 z-[1]" />
 
               {/* Text content */}
               <div className="relative z-[2] p-6 flex flex-col justify-center h-full">

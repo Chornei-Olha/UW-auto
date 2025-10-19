@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
+import ContactForm from '../../components/common/ContactForm2';
 
 export default function WarehouseRent() {
   const t = useTranslations('WarehouseRent');
@@ -25,7 +26,7 @@ export default function WarehouseRent() {
             <p className="text-sm uppercase tracking-wider text-black mb-2 border-l-2 border-[#FF4D00] pl-2">
               {t('subtitle')}
             </p>
-            <h2 className="text-left text-3xl md:text-4xl font-angry font-normal uppercase  mb-12">
+            <h2 className="text-left text-3xl md:text-4xl font-angry font-normal uppercase mb-12">
               {t('title')}
             </h2>
           </motion.div>
@@ -112,6 +113,7 @@ export default function WarehouseRent() {
           </div>
         </div>
       </section>
+      <ContactForm />
       <Footer />
     </>
   );

@@ -10,7 +10,15 @@ export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer id="contacts" className="bg-black text-white">
+    <footer id="contacts" className="bg-[#121212] text-white relative">
+      <Image
+        src="/images/decorImage.png"
+        alt="Background car"
+        width={600} // 👈 регулируешь здесь размер
+        height={700}
+        className="hidden sm:block object-cover brightness-[1] absolute sm:right-[50px] h-full"
+        priority
+      />
       <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2">
         {/* 1 row, col 1 — Contacts */}
         <div className="space-y-4">
@@ -149,7 +157,9 @@ export default function Footer() {
 
         {/* Правая секция — Map */}
         <div className="order-1 lg:order-2">
-          <p className="uppercase text-sm text-gray-400">{t('officeTitle')}</p>
+          <p className="uppercase text-sm font-chakraPetch font-semibold text-[20px] md:text-[34px] mt-16 md:mt-0 text-gray-400">
+            {t('officeTitle')}
+          </p>
           <div className="relative w-full h-40 mt-4 rounded-sm overflow-hidden border border-white/5">
             <Image src="/images/map.webp" alt="Map" fill className="object-cover" priority />
             <div className="absolute inset-0 bg-black/30" />

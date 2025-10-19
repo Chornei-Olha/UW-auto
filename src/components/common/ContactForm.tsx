@@ -10,39 +10,23 @@ import { CheckCircle } from 'lucide-react';
 export default function ContactForm() {
   const t = useTranslations('ContactForm');
 
+  // 🌍 Список стран
+  const countries = [
+    { code: '+380', name: 'Україна', flag: '/images/flag_ua.png' },
+    // { code: '+48', name: 'Polska', flag: '/images/flag_pl.png' },
+    // { code: '+49', name: 'Deutschland', flag: '/images/flag_de.png' },
+  ];
+
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [formData, setFormData] = useState({
     name: '',
-    phone: '+', // по умолчанию всегда начинается с "+"
+    phone: '',
   });
-
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // ✅ Обработчик ввода
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    if (name === 'name') {
-      if (value.length > 50) return; // ограничение
-      setFormData({ ...formData, name: value });
-    }
-
-    if (name === 'phone') {
-      // всегда начинается с "+"
-      let newValue = value.startsWith('+') ? value : '+' + value.replace(/\D/g, '');
-
-      // разрешаем только цифры после "+"
-      newValue = '+' + newValue.slice(1).replace(/\D/g, '');
-
-      // ограничение длины
-      if (newValue.length > 13) return;
-
-      setFormData({ ...formData, phone: newValue });
-    }
-  };
-
-  // ✅ Отправка формы
-  const handleSubmit = async (e) => {
+  // 📤 Отправка формы
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     setSuccess(false);
@@ -53,17 +37,45 @@ export default function ContactForm() {
         'template_n4h055v',
         {
           name: formData.name,
-          phone: formData.phone,
+          phone: `${selectedCountry.code} ${formData.phone}`,
         },
         'TDwuaevxJHj0syPLP'
       );
 
       setSuccess(true);
-      setFormData({ name: '', phone: '+' });
+      setFormData({ name: '', phone: '' });
+      setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       console.error('EmailJS Error:', err);
     } finally {
       setIsSending(false);
+    }
+  };
+
+  // 🔢 Форматирование номера
+  const formatPhoneNumber = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 9);
+    let formatted = '';
+
+    if (digits.length > 0) formatted = '(' + digits.slice(0, 2);
+    if (digits.length >= 2) formatted += ') ' + digits.slice(2, 5);
+    if (digits.length >= 5) formatted += '-' + digits.slice(5, 7);
+    if (digits.length >= 7) formatted += '-' + digits.slice(7, 9);
+
+    return formatted;
+  };
+
+  // 📞 Обработчик ввода
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    if (name === 'name') {
+      if (value.length > 50) return;
+      setFormData({ ...formData, name: value });
+    }
+
+    if (name === 'phone') {
+      setFormData({ ...formData, phone: formatPhoneNumber(value) });
     }
   };
 
@@ -114,6 +126,7 @@ export default function ContactForm() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="md:w-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col gap-4 w-full max-w-md mx-auto relative"
         >
+          {/* Имя */}
           <input
             type="text"
             name="name"
@@ -124,16 +137,48 @@ export default function ContactForm() {
             className="w-full rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
           />
 
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="+380XXXXXXXXX"
-            required
-            className="w-full rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
-          />
+          {/* Телефон */}
+          <div className="flex items-center gap-2">
+            {/* Селектор страны */}
+            <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-3 py-2">
+              <Image
+                src={selectedCountry.flag}
+                alt={selectedCountry.name}
+                width={20}
+                height={14}
+                className="w-[20px] h-[14px]"
+              />
+              <select
+                value={selectedCountry.code}
+                onChange={(e) => {
+                  const country = countries.find((c) => c.code === e.target.value);
+                  if (country) setSelectedCountry(country);
+                }}
+                className="bg-transparent text-sm text-white focus:outline-none"
+              >
+                {countries.map((c) => (
+                  <option key={c.code} value={c.code} className="text-black">
+                    {c.code}
+                  </option>
+                ))}
+              </select>
+            </div>
 
+            {/* Поле номера */}
+            <input
+              type="tel"
+              name="phone"
+              placeholder="(99) 999-99-99"
+              value={formData.phone}
+              onChange={handleChange}
+              inputMode="numeric"
+              maxLength={15}
+              required
+              className="flex-1 rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-white transition font-mono tracking-wide"
+            />
+          </div>
+
+          {/* Кнопка */}
           <button
             type="submit"
             disabled={isSending}
