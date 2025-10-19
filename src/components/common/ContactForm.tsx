@@ -31,13 +31,13 @@ export default function ContactForm() {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_1q1cf0j',
+        'service_1q1cf0j',
         {
           name: formData.name,
           phone: formData.phone,
         },
-        'YOUR_PUBLIC_KEY'
+        'TDwuaevxJHj0syPLP'
       );
       setSuccess(true);
       setFormData({ name: '', phone: '' });
