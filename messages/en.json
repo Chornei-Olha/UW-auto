@@ -53,7 +53,8 @@
     "name": "Name",
     "send": "Send",
     "sending": "Sending...",
-    "success": "Thank you! We'll contact you soon."
+    "thankYouMessage": "We'll contact you soon.",
+    "thankYouTitle": "Thank you!"
   },
   "AuctionClients": {
     "subtitle": "YOUR VEHICLE'S SERVICE ADVENTURE",
@@ -112,7 +113,8 @@
     "name": "Name",
     "send": "Send",
     "sending": "Sending...",
-    "success": "Thank you! We'll contact you soon."
+    "thankYouMessage": "We'll contact you soon.",
+    "thankYouTitle": "Thank you!"
   },
   "Footer": {
     "address": "01135, Kyiv, 5-B Beresteyskyi Avenue, room 516",

@@ -2,28 +2,46 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import emailjs from '@emailjs/browser';
+import { CheckCircle } from 'lucide-react';
 
 export default function ContactForm() {
   const t = useTranslations('ContactForm');
 
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
+    phone: '+', // по умолчанию всегда начинается с "+"
   });
 
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  // ✅ Обработчик ввода
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    if (name === 'name') {
+      if (value.length > 50) return; // ограничение
+      setFormData({ ...formData, name: value });
+    }
+
+    if (name === 'phone') {
+      // всегда начинается с "+"
+      let newValue = value.startsWith('+') ? value : '+' + value.replace(/\D/g, '');
+
+      // разрешаем только цифры после "+"
+      newValue = '+' + newValue.slice(1).replace(/\D/g, '');
+
+      // ограничение длины
+      if (newValue.length > 13) return;
+
+      setFormData({ ...formData, phone: newValue });
+    }
   };
 
+  // ✅ Отправка формы
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -32,15 +50,16 @@ export default function ContactForm() {
     try {
       await emailjs.send(
         'service_1q1cf0j',
-        'service_1q1cf0j',
+        'template_n4h055v',
         {
           name: formData.name,
           phone: formData.phone,
         },
         'TDwuaevxJHj0syPLP'
       );
+
       setSuccess(true);
-      setFormData({ name: '', phone: '' });
+      setFormData({ name: '', phone: '+' });
     } catch (err) {
       console.error('EmailJS Error:', err);
     } finally {
@@ -53,7 +72,7 @@ export default function ContactForm() {
       id="consultation"
       className="container mx-auto px-4 md:px-8 py-10 md:py-16 my-4 md:my-8 relative h-[736px] flex items-center justify-center overflow-hidden text-white rounded-xl"
     >
-      {/* 🔸 Основное фоновое изображение */}
+      {/* Фон */}
       <Image
         src="/images/contact-bg.webp"
         alt="Car driving"
@@ -62,16 +81,15 @@ export default function ContactForm() {
         priority
       />
 
-      {/* 🔸 Поверх него накладывается изображение-тінь (shadow layer) */}
       <Image
-        src="/images/shadow.webp" // 👈 сюда положи файл тіні
+        src="/images/shadow.webp"
         alt="Dark overlay shadow"
         fill
         className="object-cover opacity-90 z-[1] pointer-events-none select-none"
         priority
       />
 
-      {/* 🔸 Контент */}
+      {/* Контент */}
       <div className="relative z-[3] max-w-6xl w-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Текст */}
         <motion.div
@@ -80,7 +98,7 @@ export default function ContactForm() {
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-center md:text-left"
         >
-          <h2 className="text-3xl md:text-4xl font-angry font-normal uppercase mb-6 drop-shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-angry uppercase mb-6 drop-shadow-lg">
             {t('title1')} <br /> {t('title2')}
           </h2>
           <p className="text-sm md:text-base font-mulish font-light leading-relaxed max-w-md mx-auto md:mx-0 drop-shadow-md">
@@ -94,7 +112,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="md:w-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col gap-4 w-full max-w-md mx-auto"
+          className="md:w-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col gap-4 w-full max-w-md mx-auto relative"
         >
           <input
             type="text"
@@ -107,11 +125,11 @@ export default function ContactForm() {
           />
 
           <input
-            type="tel"
+            type="text"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+38 (___) ___-__-__"
+            placeholder="+380XXXXXXXXX"
             required
             className="w-full rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
           />
@@ -119,14 +137,46 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSending}
-            className="bg-white text-black font-mulish font-normal rounded-xl py-3 mt-2 hover:bg-gray-200 transition"
+            className="bg-white text-black font-mulish font-normal rounded-xl py-3 mt-2 hover:bg-gray-200 transition disabled:opacity-60"
           >
             {isSending ? t('sending') : t('send')}
           </button>
-
-          {success && <p className="text-green-400 text-sm mt-2">{t('success')}</p>}
         </motion.form>
       </div>
+
+      {/* 🌟 Модалка благодарности */}
+      <AnimatePresence>
+        {success && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="bg-gradient-to-br from-green-600/80 to-green-400/90 text-white rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-center text-center max-w-sm w-[90%]"
+            >
+              <CheckCircle size={60} className="text-white mb-4 drop-shadow-lg" />
+              <h3 className="text-2xl font-angry mb-2">{t('thankYouTitle') || 'Дякуємо!'}</h3>
+              <p className="font-mulish text-sm mb-6">
+                {t('thankYouMessage') ||
+                  'Ваш запит успішно надіслано. Ми зв’яжемося з вами найближчим часом.'}
+              </p>
+              <button
+                onClick={() => setSuccess(false)}
+                className="bg-white text-green-600 font-semibold rounded-xl px-6 py-2 hover:bg-gray-100 transition"
+              >
+                OK
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
