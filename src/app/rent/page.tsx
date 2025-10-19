@@ -14,7 +14,7 @@ export default function WarehouseRent() {
   return (
     <>
       <Header />
-      <section className="container mx-auto px-4 md:px-8 py-10 md:py-16 text-black">
+      <section className="container mx-auto md:px-8 py-10 md:py-16 text-black">
         <div className="max-w-7xl mx-auto px-6">
           {/* Верхний заголовок */}
           <motion.div
@@ -36,7 +36,7 @@ export default function WarehouseRent() {
             <div className="flex flex-col md:flex-row justify-between">
               {' '}
               {/* Левая большая картинка */}
-              <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
+              <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
                 <Image
                   src="/images/rent1.webp"
                   alt="Warehouse building"
@@ -69,7 +69,7 @@ export default function WarehouseRent() {
             </div>
             <div className="flex flex-col md:flex-row justify-between gap-4 items-stretch">
               {/* Нижняя левая карточка */}
-              <div className="w-full md:w-1/3 bg-neutral-900 text-white p-8 flex flex-col justify-between h-[220px] md:h-[320px]">
+              <div className="w-full md:w-1/3 bg-neutral-900 text-white p-8 flex flex-col justify-between h-[270px] md:h-[320px]">
                 <div>
                   <div className="flex flex-row gap-6 mb-4">
                     <div className="w-1 h-4 bg-gray-300"></div>
@@ -85,7 +85,7 @@ export default function WarehouseRent() {
               </div>
 
               {/* Нижняя средняя карточка */}
-              <div className="w-full md:w-1/3 bg-white text-black p-8 border border-gray-200 flex flex-col justify-between h-[220px] md:h-[320px]">
+              <div className="w-full md:w-1/3 bg-white text-black p-8 border border-gray-200 flex flex-col justify-between h-[270px] md:h-[320px]">
                 <div>
                   <div className="flex flex-row gap-6 mb-4">
                     <div className="w-1 h-4 bg-gray-300"></div>
