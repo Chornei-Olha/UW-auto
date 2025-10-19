@@ -49,7 +49,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="container mx-auto px-4 md:px-8 py-10 md:py-16 my-4 md:my-8 relative h-[736px] flex items-center justify-center overflow-hidden text-white rounded-xl">
+    <section
+      id="consultation"
+      className="container mx-auto px-4 md:px-8 py-10 md:py-16 my-4 md:my-8 relative h-[736px] flex items-center justify-center overflow-hidden text-white rounded-xl"
+    >
       {/* 🔸 Основное фоновое изображение */}
       <Image
         src="/images/contact-bg.webp"

@@ -83,7 +83,7 @@ export default function Header() {
 
         {/* Кнопка консультации */}
         <Link
-          href="/consultation"
+          href="#consultation"
           className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
         >
           {t('button')}
@@ -136,7 +136,7 @@ export default function Header() {
           </div>
 
           <Link
-            href="/consultation"
+            href="#consultation"
             onClick={closeMenu}
             className="bg-white text-black rounded-full px-5 py-2 text-sm hover:bg-gray-200 transition mt-3 font-montserrat font-semibold"
           >

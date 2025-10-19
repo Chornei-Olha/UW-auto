@@ -58,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 1.2 }}
           >
             <Link
-              href="/consultation"
+              href="#consultation"
               className="bg-white text-black font-montserrat font-semibold rounded-[12px] px-4 py-4 text-sm uppercase hover:bg-gray-200 transition"
             >
               {t('button')}
