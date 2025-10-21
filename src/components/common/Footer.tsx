@@ -30,7 +30,15 @@ export default function Footer() {
               <div className="p-2 bg-neutral-900 rounded-sm">
                 <Building2 className="w-5 h-5" />
               </div>
-              <span className="text-sm">{t('address')}</span>
+
+              <a
+                href="https://www.google.com/maps/place/%D0%BF%D1%80%D0%BE%D1%81%D0%BF.+%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B,+5%D0%92,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4466199,30.4837022,17.18z/data=!4m6!3m5!1s0x40d4ce8c0e64e7f3:0x70b35789c906d19!8m2!3d50.446501!4d30.4863646!16s%2Fg%2F11l76vznk_?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white hover:text-red-500 transition underline"
+              >
+                {t('address')}
+              </a>
             </div>
 
             <div className="flex flex-col gap-4">

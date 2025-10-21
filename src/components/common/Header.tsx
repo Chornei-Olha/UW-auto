@@ -34,8 +34,8 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="container mx-auto my-3 py-4 px-5 bg-black text-white rounded-[12px]">
-      <div className="mx-3 sm:mx-5 flex items-center justify-between relative">
+    <header className="mx-3 sm:mx-5 my-3 py-4 px-5 bg-black text-white rounded-[12px]">
+      <div className="container  flex items-center justify-between relative">
         {/* ===== ЛОГО ===== */}
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
@@ -85,7 +85,7 @@ export default function Header() {
           {/* Кнопка консультации */}
           <Link
             href="#consultation2"
-            className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
+            className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold uppercase"
           >
             {t('button')}
           </Link>
@@ -139,7 +139,7 @@ export default function Header() {
             <Link
               href="#consultation2"
               onClick={closeMenu}
-              className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
+              className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold uppercase"
             >
               {t('button')}
             </Link>

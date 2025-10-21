@@ -37,7 +37,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-angry font-normal uppercase leading-normal mb-6"
+            className="text-3xl md:text-5xl font-angry font-normal uppercase leading-relaxed mb-6"
           >
             {t('title1')}
           </motion.h1>
