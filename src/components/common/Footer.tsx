@@ -19,7 +19,7 @@ export default function Footer() {
         className="hidden sm:block object-cover brightness-[1] absolute sm:right-[50px] h-full"
         priority
       />
-      <div className="container mx-auto px-3 md:px-5 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-16">
+      <div className="container mx-auto px-3 md:px-5 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 md:gap-16">
         {/* 1 row, col 1 — Contacts */}
         <div className="space-y-4">
           <p className="uppercase text-sm text-gray-400">{t('contactTitle')}</p>
@@ -96,7 +96,7 @@ export default function Footer() {
         <div>
           {' '}
           <div className="order-1 lg:order-2">
-            <p className="uppercase text-sm font-chakraPetch font-semibold text-[20px] md:text-[34px] mt-16 md:mt-0 text-gray-400">
+            <p className="uppercase text-sm font-chakraPetch font-semibold text-[20px] md:text-[34px] mt-5 md:mt-0 text-gray-400">
               {t('officeTitle')}
             </p>
             <div className="relative w-full h-[300px] mt-4 rounded-sm overflow-hidden border border-white/5">

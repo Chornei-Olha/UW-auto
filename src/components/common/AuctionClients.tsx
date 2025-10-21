@@ -39,24 +39,16 @@ export default function AuctionClients() {
     <section id="clients" className="relative w-full py-10 md:py-16 overflow-hidden">
       {/* 🔸 Фоновое изображение */}
       <Image
-        src="/images/decorImage.svg"
+        src="/images/decorImage.png"
         alt="Background car"
-        fill
-        className="object-contain brightness-[0.2]"
+        width={600}
+        height={700}
+        className="hidden sm:block object-cover  absolute sm:left-[150px] h-full"
         priority
       />
-      {/* <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/images/decorImage.png"
-          alt="Background car"
-          fill
-          className="hidden sm:block object-contain opacity-90 right-0 top-0"
-          priority
-        />
-      </div> */}
 
       {/* Контент */}
-      <div className="relative z-[10] container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10">
+      <div className="relative z-[10] container mx-auto px-3 md:px-5 grid md:grid-cols-2 gap-10">
         {/* Left text block */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
