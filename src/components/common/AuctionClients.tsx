@@ -82,7 +82,7 @@ export default function AuctionClients() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="relative w-full rounded-[10px] overflow-hidden min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px]"
+              className="relative w-full rounded-[10px] overflow-hidden min-h-[150px] sm:min-h-[200px] md:min-h-[250px] lg:min-h-[300px]"
             >
               {/* Background image for each card */}
               <Image src={step.image} alt={`Step ${step.id}`} fill className="object-cover" />
@@ -91,16 +91,16 @@ export default function AuctionClients() {
               <div className="absolute inset-0 bg-[#111111]/75 z-[1]" />
 
               {/* Text content */}
-              <div className="relative z-[2] p-6 flex flex-col justify-center h-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="flex items-center justify-center min-w-9 min-h-9 p-2 bg-white rounded-full border border-white/40 text-black text-lg font-light font-chakraPetch">
+              <div className="relative z-[2] p-6 flex flex-col justify-top h-full">
+                <div className="flex items-center gap-6 pb-5 border-0 border-b border-white/30">
+                  <span className="flex items-center justify-center w-12 h-12 p-4 bg-white rounded-full border border-white/40 text-black text-lg font-light font-chakraPetch">
                     {step.id}
                   </span>
                   <h3 className="text-white text-lg md:text-xl font-semibold font-chakraPetch uppercase leading-tight">
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-[#A5A5A5] text-sm md:text-base font-light font-mulish leading-relaxed">
+                <p className="text-[#A5A5A5] text-sm md:text-base font-light font-mulish leading-relaxed pt-5">
                   {step.text}
                 </p>
               </div>

@@ -14,12 +14,12 @@ export default function Footer() {
       <Image
         src="/images/decorImage.png"
         alt="Background car"
-        width={600} // 👈 регулируешь здесь размер
+        width={600}
         height={700}
         className="hidden sm:block object-cover brightness-[1] absolute sm:right-[50px] h-full"
         priority
       />
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2">
+      <div className="container mx-auto px-3 md:px-5 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-16">
         {/* 1 row, col 1 — Contacts */}
         <div className="space-y-4">
           <p className="uppercase text-sm text-gray-400">{t('contactTitle')}</p>
@@ -63,33 +63,8 @@ export default function Footer() {
 
         {/* 1 row, col 2 — Navigation */}
         <div>
-          <p className="uppercase text-sm text-black">{t('mediaTitle')}</p>
-          {/* <ul className="mt-4 space-y-3">
-            {[
-              { label: 'LinkedIn', href: '#' },
-              { label: 'Instagram', href: '#' },
-              { label: 'YouTube', href: '#' },
-              { label: 'Twitter', href: '#' },
-              { label: 'Email', href: '#' },
-            ].map((item, i) => (
-              <li key={i}>
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  className="flex items-center gap-2 hover:text-gray-300 transition text-lg"
-                >
-                  {item.label}
-                  <span className="text-sm opacity-60">↗</span>
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-        </div>
-
-        {/* 1 row, col 3 — Navigation */}
-        <div>
           <p className="uppercase text-sm text-gray-400">{t('navTitle')}</p>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-4 space-y-3 text-lg md:text-xl lg:text-2xl">
             <li>
               <Link href="/" className="text-lg hover:text-gray-300 transition">
                 {t('navHome')}
@@ -117,26 +92,18 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-
-        {/* 2 row, col 1-2 (объединены) */}
-        {/* Левая большая секция UW */}
-        <div className="lg:col-span-2 flex flex-col lg:min-h-[220px] order-2 lg:order-1">
-          {/* Верхняя часть — UW (2/3) */}
-          <div className="flex-[2] flex items-end lg:items-center">
-            <div>
-              <div className="text-[100px] md:text-[200px] lg:text-[320px] font-chakraPetch font-bold leading-none tracking-tight">
-                {t('uwTitle')}
-              </div>
-              <div className="mt-2 text-[30px] md:text-[64px] font-chakraPetch font-light text-[#A5A5A5] tracking-wider">
-                {t('uwSubtitle')}
-              </div>
+        {/* П1 row, col 3 — Map */}
+        <div>
+          {' '}
+          <div className="order-1 lg:order-2">
+            <p className="uppercase text-sm font-chakraPetch font-semibold text-[20px] md:text-[34px] mt-16 md:mt-0 text-gray-400">
+              {t('officeTitle')}
+            </p>
+            <div className="relative w-full h-[300px] mt-4 rounded-sm overflow-hidden border border-white/5">
+              <Image src="/images/map.webp" alt="Map" fill className="object-cover" priority />
+              <div className="absolute inset-0 bg-black/30" />
             </div>
-          </div>
-
-          {/* Нижняя треть — разделена на 2 колонки */}
-          <div className="flex-[1] grid grid-cols-1 gap-4 lg:grid-cols-2 items-start">
-            {/* левый — Privacy / Terms / copyright */}
-            <div className="space-y-2 text-sm text-gray-400">
+            <div className="pt-8 space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-3">
                 <Link href="/privacy" className="hover:text-white">
                   {t('privacy')}
@@ -146,23 +113,23 @@ export default function Footer() {
                   {t('terms')}
                 </Link>
               </div>
-
-              <div className="text-xs text-gray-500">{t('copyrightLine')}</div>
             </div>
-
-            {/* правый — company statement */}
-            <div className="text-sm text-gray-400">{t('companyStatement')}</div>
           </div>
         </div>
 
-        {/* Правая секция — Map */}
-        <div className="order-1 lg:order-2">
-          <p className="uppercase text-sm font-chakraPetch font-semibold text-[20px] md:text-[34px] mt-16 md:mt-0 text-gray-400">
-            {t('officeTitle')}
-          </p>
-          <div className="relative w-full h-40 mt-4 rounded-sm overflow-hidden border border-white/5">
-            <Image src="/images/map.webp" alt="Map" fill className="object-cover" priority />
-            <div className="absolute inset-0 bg-black/30" />
+        {/* 2 row, col 1-2 (объединены) */}
+        {/* Левая большая секция UW */}
+        <div className="lg:col-span-2 flex flex-col lg:min-h-[220px] order-2 lg:order-1">
+          {/* Верхняя часть — UW (2/3) */}
+          <div className="flex-[2] flex items-end lg:items-center">
+            <div>
+              <div className="text-[130px] sm:text-[180px] md:text-[230px] lg:text-[280px] font-chakraPetch font-bold leading-none tracking-tight">
+                {t('uwTitle')}
+              </div>
+              <div className="text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] font-chakraPetch font-light text-[#A5A5A5] tracking-wider">
+                {t('uwSubtitle')}
+              </div>
+            </div>
           </div>
         </div>
       </div>
