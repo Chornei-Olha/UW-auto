@@ -34,92 +34,39 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="container my-3 py-4 px-5 bg-black text-white flex items-center justify-between relative rounded-[12px]">
-      {/* ===== ЛОГО ===== */}
-      <div className="flex items-center space-x-2">
-        <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
-          <Image src="/images/logo.svg" alt="UW logo" width={110} height={50} />
-          <Image src="/images/decorativeLogo.svg" alt="UW decor logo" width={47} height={53} />
-        </Link>
-      </div>
-
-      {/* ===== НАВИГАЦИЯ (Desktop) ===== */}
-      <nav className="hidden md:flex space-x-6 text-sm uppercase tracking-wide font-chakraPetch font-semibold">
-        <Link href="/" className="hover:text-gray-400 transition">
-          {t('menu1')}
-        </Link>
-        <Link href="#about" className="hover:text-gray-400 transition">
-          {t('menu2')}
-        </Link>
-        <Link href="#clients" className="hover:text-gray-400 transition">
-          {t('menu3')}
-        </Link>
-        <Link href="/rent" className="hover:text-gray-400 transition">
-          {t('menu4')}
-        </Link>
-        <Link href="#contacts" className="hover:text-gray-400 transition">
-          {t('menu5')}
-        </Link>
-      </nav>
-
-      {/* ===== ЯЗЫКИ + КНОПКА (Desktop) ===== */}
-      <div className="hidden md:flex items-center space-x-4 font-chakraPetch font-semibold">
-        {/* Переключатели языков */}
-        <div className="flex space-x-2 text-xs">
-          <button
-            onClick={() => changeLocale('ua')}
-            className={`transition ${locale === 'ua' ? 'text-gray-300' : 'hover:text-gray-400'}`}
-          >
-            UA
-          </button>
-          <span>|</span>
-          <button
-            onClick={() => changeLocale('en')}
-            className={`transition ${locale === 'en' ? 'text-gray-300' : 'hover:text-gray-400'}`}
-          >
-            ENG
-          </button>
+    <header className="container mx-auto my-3 py-4 px-5 bg-black text-white rounded-[12px]">
+      <div className="mx-3 sm:mx-5 flex items-center justify-between relative">
+        {/* ===== ЛОГО ===== */}
+        <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
+            <Image src="/images/logo.svg" alt="UW logo" width={110} height={50} />
+            <Image src="/images/decorativeLogo.svg" alt="UW decor logo" width={47} height={53} />
+          </Link>
         </div>
 
-        {/* Кнопка консультации */}
-        <Link
-          href="#consultation2"
-          className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
-        >
-          {t('button')}
-        </Link>
-      </div>
-
-      {/* ===== БУРГЕР КНОПКА ===== */}
-      <button
-        className="md:hidden focus:outline-none"
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
-        {menuOpen ? <X size={28} /> : <Menu size={28} />}
-      </button>
-
-      {/* ===== МОБИЛЬНОЕ МЕНЮ ===== */}
-      {menuOpen && (
-        <div className="absolute top-full h-screen left-0 w-full bg-black flex flex-col items-center py-5 space-y-10 text-sm uppercase tracking-wide md:hidden z-50 border-t border-gray-800 font-chakraPetch font-semibold">
-          <Link href="/" onClick={closeMenu} className="hover:text-gray-400 transition">
+        {/* ===== НАВИГАЦИЯ (Desktop) ===== */}
+        <nav className="hidden md:flex space-x-6 text-sm uppercase tracking-wide font-chakraPetch font-semibold">
+          <Link href="/" className="hover:text-gray-400 transition">
             {t('menu1')}
           </Link>
-          <Link href="#about" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="#about" className="hover:text-gray-400 transition">
             {t('menu2')}
           </Link>
-          <Link href="#clients" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="#clients" className="hover:text-gray-400 transition">
             {t('menu3')}
           </Link>
-          <Link href="/rent" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="/rent" className="hover:text-gray-400 transition">
             {t('menu4')}
           </Link>
-          <Link href="#contacts" onClick={closeMenu} className="hover:text-gray-400 transition">
+          <Link href="#contacts" className="hover:text-gray-400 transition">
             {t('menu5')}
           </Link>
+        </nav>
 
-          {/* Языки (мобильная версия) */}
-          <div className="flex space-x-2 text-xs mt-4 font-chakraPetch font-semibold">
+        {/* ===== ЯЗЫКИ + КНОПКА (Desktop) ===== */}
+        <div className="hidden md:flex items-center space-x-4 font-chakraPetch font-semibold">
+          {/* Переключатели языков */}
+          <div className="flex space-x-2 text-xs">
             <button
               onClick={() => changeLocale('ua')}
               className={`transition ${locale === 'ua' ? 'text-gray-300' : 'hover:text-gray-400'}`}
@@ -135,15 +82,70 @@ export default function Header() {
             </button>
           </div>
 
+          {/* Кнопка консультации */}
           <Link
             href="#consultation2"
-            onClick={closeMenu}
             className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
           >
             {t('button')}
           </Link>
         </div>
-      )}
+
+        {/* ===== БУРГЕР КНОПКА ===== */}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {/* ===== МОБИЛЬНОЕ МЕНЮ ===== */}
+        {menuOpen && (
+          <div className="absolute top-full h-screen left-0 w-full bg-black flex flex-col items-center py-5 space-y-10 text-sm uppercase tracking-wide md:hidden z-50 border-t border-gray-800 font-chakraPetch font-semibold">
+            <Link href="/" onClick={closeMenu} className="hover:text-gray-400 transition">
+              {t('menu1')}
+            </Link>
+            <Link href="#about" onClick={closeMenu} className="hover:text-gray-400 transition">
+              {t('menu2')}
+            </Link>
+            <Link href="#clients" onClick={closeMenu} className="hover:text-gray-400 transition">
+              {t('menu3')}
+            </Link>
+            <Link href="/rent" onClick={closeMenu} className="hover:text-gray-400 transition">
+              {t('menu4')}
+            </Link>
+            <Link href="#contacts" onClick={closeMenu} className="hover:text-gray-400 transition">
+              {t('menu5')}
+            </Link>
+
+            {/* Языки (мобильная версия) */}
+            <div className="flex space-x-2 text-xs mt-4 font-chakraPetch font-semibold">
+              <button
+                onClick={() => changeLocale('ua')}
+                className={`transition ${locale === 'ua' ? 'text-gray-300' : 'hover:text-gray-400'}`}
+              >
+                UA
+              </button>
+              <span>|</span>
+              <button
+                onClick={() => changeLocale('en')}
+                className={`transition ${locale === 'en' ? 'text-gray-300' : 'hover:text-gray-400'}`}
+              >
+                ENG
+              </button>
+            </div>
+
+            <Link
+              href="#consultation2"
+              onClick={closeMenu}
+              className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold"
+            >
+              {t('button')}
+            </Link>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

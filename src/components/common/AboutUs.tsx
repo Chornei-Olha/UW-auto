@@ -22,7 +22,7 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="container mx-auto px-4 md:px-8 pt-10 md:pt-16 pb-4 md:pb-8 relative"
+      className="container mx-auto px-3 md:px-5 pt-10 md:pt-16 pb-2 md:pb-4 relative"
     >
       {/* 🔹 Заголовок */}
       <motion.h2

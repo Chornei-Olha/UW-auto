@@ -82,9 +82,10 @@ export default function ContactForm() {
   return (
     <section
       id="consultation"
-      className=" relative h-[736px] flex items-center justify-center overflow-hidden text-white"
+      className="container my-2 md:my-4 relative h-[736px] flex items-center justify-center text-white"
     >
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 my-4 md:my-8">
+      {/* Обертка для фона с overflow-hidden */}
+      <div className="relative w-full h-full rounded-xl overflow-hidden mx-3 md:mx-5 my-2 md:my-4">
         {/* Фон */}
         <Image
           src="/images/contact-bg.webp"
@@ -94,6 +95,7 @@ export default function ContactForm() {
           priority
         />
 
+        {/* Тень */}
         <Image
           src="/images/shadow.webp"
           alt="Dark overlay shadow"
@@ -103,7 +105,10 @@ export default function ContactForm() {
         />
 
         {/* Контент */}
-        <div className="relative z-[3] max-w-6xl w-full  flex flex-col md:flex-row items-center justify-between gap-10">
+        <div
+          className="relative z-[3] max-w-6xl w-full mx-auto flex-col md:flex-row gap-10 p-6 h-full flex items-center justify-center
+"
+        >
           {/* Текст */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -139,9 +144,9 @@ export default function ContactForm() {
             />
 
             {/* Телефон */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full">
               {/* Селектор страны */}
-              <div className="flex items-center gap-1 bg-white/10 border border-white/20 rounded-xl px-3 py-3">
+              <div className="flex items-center gap-1 bg-white/10 border border-white/20 rounded-xl px-3 py-3 shrink-0">
                 <Image
                   src={selectedCountry.flag}
                   alt={selectedCountry.name}
@@ -175,7 +180,7 @@ export default function ContactForm() {
                 inputMode="numeric"
                 maxLength={15}
                 required
-                className="flex-1 rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-white transition font-mono tracking-wide"
+                className="flex-1 min-w-0 rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-white transition font-mono tracking-wide"
               />
             </div>
 

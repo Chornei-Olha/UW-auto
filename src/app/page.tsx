@@ -8,7 +8,7 @@ import AboutIntro from '../components/common/AboutIntro';
 import ContactForm from '../components/common/ContactForm';
 import AuctionClients from '../components/common/AuctionClients';
 import CompanyOverview from '../components/common/CompanyOverview';
-import TeamSection from '../components/common/TeamSection';
+// import TeamSection from '../components/common/TeamSection';
 import ContactForm2 from '../components/common/ContactForm2';
 import Footer from '@/components/common/Footer';
 
@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
       <ContactForm />
       <AuctionClients />
       <CompanyOverview />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <ContactForm2 />
       <Footer />
     </div>

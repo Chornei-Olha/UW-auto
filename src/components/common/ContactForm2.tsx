@@ -7,10 +7,10 @@ import { useTranslations } from 'next-intl';
 import emailjs from '@emailjs/browser';
 import { CheckCircle } from 'lucide-react';
 
-export default function ContactForm() {
+export default function ContactForm2() {
   const t = useTranslations('ContactForm2');
 
-  // 🌍 Страны
+  // 🌍 Список стран
   const countries = [
     { code: '+380', name: 'Україна', flag: '/images/flag_ua.png' },
     // { code: '+48', name: 'Polska', flag: '/images/flag_pl.png' },
@@ -22,7 +22,6 @@ export default function ContactForm() {
     name: '',
     phone: '',
   });
-
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -45,8 +44,6 @@ export default function ContactForm() {
 
       setSuccess(true);
       setFormData({ name: '', phone: '' });
-
-      // Закрыть модалку через 3 секунды
       setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       console.error('EmailJS Error:', err);
@@ -55,7 +52,20 @@ export default function ContactForm() {
     }
   };
 
-  // 🔹 Обработчик изменений
+  // 🔢 Форматирование номера
+  const formatPhoneNumber = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 9);
+    let formatted = '';
+
+    if (digits.length > 0) formatted = '(' + digits.slice(0, 2);
+    if (digits.length >= 2) formatted += ') ' + digits.slice(2, 5);
+    if (digits.length >= 5) formatted += '-' + digits.slice(5, 7);
+    if (digits.length >= 7) formatted += '-' + digits.slice(7, 9);
+
+    return formatted;
+  };
+
+  // 📞 Обработчик ввода
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -65,43 +75,45 @@ export default function ContactForm() {
     }
 
     if (name === 'phone') {
-      const digits = value.replace(/\D/g, '').slice(0, 9);
-      setFormData({ ...formData, phone: digits });
+      setFormData({ ...formData, phone: formatPhoneNumber(value) });
     }
   };
 
   return (
     <section
       id="consultation2"
-      className=" relative h-[736px] flex items-center justify-center overflow-hidden text-white mt-4 md:mt-8"
+      className="container my-2 md:my-4 relative h-[736px] flex items-center justify-center text-white"
     >
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 my-4 md:my-8">
+      {/* Обертка для фона */}
+      <div className="relative w-full h-full rounded-xl overflow-hidden mx-3 md:mx-5 my-2 md:my-4">
         {/* Фон */}
         <Image
           src="/images/CTA-Banner.webp"
-          alt="Car driving"
+          alt="Car background"
           fill
           className="object-cover brightness-[0.65]"
           priority
         />
+
+        {/* Градиент */}
         <Image
           src="/images/form-gradient.png"
-          alt="Dark overlay shadow"
+          alt="Overlay gradient"
           fill
           className="object-cover opacity-90 z-[1] pointer-events-none select-none"
           priority
         />
 
         {/* Контент */}
-        <div className="relative z-[3] max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* Левая часть */}
+        <div className="relative z-[3] max-w-6xl w-full mx-auto flex-col md:flex-row gap-10 p-6 h-full flex items-center justify-center">
+          {/* Текст */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="md:w-1/2 text-center md:text-left"
           >
-            <h2 className="text-3xl md:text-4xl font-angry font-normal uppercase mb-6 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-angry uppercase mb-6 drop-shadow-lg">
               {t('title1')} <br /> {t('title2')}
             </h2>
             <p className="text-sm md:text-base font-mulish font-light leading-relaxed max-w-md mx-auto md:mx-0 drop-shadow-md">
@@ -109,7 +121,7 @@ export default function ContactForm() {
             </p>
           </motion.div>
 
-          {/* Правая часть — форма */}
+          {/* Форма */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 30 }}
@@ -125,51 +137,48 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder={t('name')}
               required
-              className="w-full rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
+              className="w-full rounded-xl bg-transparent border border-white/30 px-3 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-white transition"
             />
 
             {/* Телефон */}
-            <div>
-              {/* <label className="block text-sm text-gray-300 mb-2">{t('phoneLabel') || 'phone'}</label> */}
-              <div className="flex items-center gap-2">
-                {/* Селектор страны */}
-                <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-3 py-3">
-                  <Image
-                    src={selectedCountry.flag}
-                    alt={selectedCountry.name}
-                    width={20}
-                    height={14}
-                    className="w-[20px] h-[14px]"
-                  />
-                  <select
-                    value={selectedCountry.code}
-                    onChange={(e) => {
-                      const country = countries.find((c) => c.code === e.target.value);
-                      if (country) setSelectedCountry(country);
-                    }}
-                    className="bg-transparent text-sm text-white focus:outline-none"
-                  >
-                    {countries.map((c) => (
-                      <option key={c.code} value={c.code} className="text-black">
-                        {c.code}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Поле номера */}
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="(99) 999-99-99"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  inputMode="numeric"
-                  maxLength={9}
-                  required
-                  className="flex-1 rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-white transition font-mono tracking-wide"
+            <div className="flex items-center gap-2 w-full">
+              {/* Селектор страны */}
+              <div className="flex items-center gap-1 bg-white/10 border border-white/20 rounded-xl px-3 py-3 shrink-0">
+                <Image
+                  src={selectedCountry.flag}
+                  alt={selectedCountry.name}
+                  width={20}
+                  height={14}
+                  className="w-[20px] h-[14px]"
                 />
+                <select
+                  value={selectedCountry.code}
+                  onChange={(e) => {
+                    const country = countries.find((c) => c.code === e.target.value);
+                    if (country) setSelectedCountry(country);
+                  }}
+                  className="bg-transparent text-sm text-white focus:outline-none"
+                >
+                  {countries.map((c) => (
+                    <option key={c.code} value={c.code} className="text-black">
+                      {c.code}
+                    </option>
+                  ))}
+                </select>
               </div>
+
+              {/* Поле номера */}
+              <input
+                type="tel"
+                name="phone"
+                placeholder="(99) 999-99-99"
+                value={formData.phone}
+                onChange={handleChange}
+                inputMode="numeric"
+                maxLength={15}
+                required
+                className="flex-1 min-w-0 rounded-xl bg-transparent border border-white/30 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-white transition font-mono tracking-wide"
+              />
             </div>
 
             {/* Кнопка */}

@@ -7,8 +7,8 @@ export default function AboutIntro() {
   const t = useTranslations('AboutIntro');
 
   return (
-    <section className="container mx-auto px-4 md:px-8 py-4">
-      <div className="px-4 md:px-8 py-10 md:py-16 bg-black text-white rounded-xl">
+    <section className="container mx-auto px-3 md:px-5 py-2 md:py-4">
+      <div className="px-3 md:px-5 py-10 md:py-16 bg-black text-white rounded-xl">
         {' '}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -22,8 +22,8 @@ const CompanyOverview: FC = () => {
   ];
 
   return (
-    <section className="relative w-full bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section className="relative w-full bg-white">
+      <div className="container mx-auto px-3 md:px-5 py-2 md:py-4">
         {/* 🔹 Заголовок */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -36,7 +36,7 @@ const CompanyOverview: FC = () => {
         </motion.h2>
 
         {/* 🔹 Карточки */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -49,7 +49,7 @@ const CompanyOverview: FC = () => {
               <h3 className="text-lg md:text-xl font-chakraPetch font-semibold mb-3 relative pl-4 before:content-['|'] before:absolute before:left-0 before:top-0 before:text-[#B4B4B4]">
                 {item.title}
               </h3>
-              <p className="text-white text-sm md:text-base font-mulish font-light leading-relaxed">
+              <p className="text-white text-sm md:text-base font-chakraPetch font-light leading-relaxed">
                 {item.text}
               </p>
             </motion.div>

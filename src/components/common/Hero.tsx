@@ -28,9 +28,9 @@ export default function Hero() {
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-[-30px] sm:bottom-[-100px] mx-auto text-[80px] sm:text-[150px] md:text-[250px] font-chakraPetch font-bold tracking-tight pointer-events-none select-none text-white/15 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] z-[2] uppercase"
       >
-        UW 20.7K
+        UW 20 7K
       </motion.p>
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-3 md:px-5">
         {/* 🔸 Основной контент */}
         <div className="relative z-[3] max-w-4xl text-left">
           <motion.h1
