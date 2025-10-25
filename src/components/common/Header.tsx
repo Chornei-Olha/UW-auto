@@ -84,7 +84,7 @@ export default function Header() {
 
           {/* Кнопка консультации */}
           <Link
-            href="/#consultation2"
+            href="#consultation2"
             className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold uppercase"
           >
             {t('button')}
