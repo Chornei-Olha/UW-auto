@@ -33,7 +33,7 @@ export default function WarehouseRent() {
 
           {/* Сетка */}
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col md:flex-row justify-between">
+            <div className="flex flex-col md:flex-row justify-between gap-4">
               {' '}
               {/* Левая большая картинка */}
               <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
