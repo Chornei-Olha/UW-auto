@@ -36,7 +36,7 @@ export default function AboutUs() {
       </motion.h2>
 
       {/* 🔹 Сетка 4×2 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 w-full bg-black">
         {items.map((item, idx) => (
           <motion.div
             key={idx}

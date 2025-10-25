@@ -49,10 +49,10 @@ export default function Header() {
           <Link href="/" className="hover:text-gray-400 transition">
             {t('menu1')}
           </Link>
-          <Link href="#about" className="hover:text-gray-400 transition">
+          <Link href="/#about" className="hover:text-gray-400 transition">
             {t('menu2')}
           </Link>
-          <Link href="#clients" className="hover:text-gray-400 transition">
+          <Link href="/#clients" className="hover:text-gray-400 transition">
             {t('menu3')}
           </Link>
           <Link href="/rent" className="hover:text-gray-400 transition">
@@ -84,7 +84,7 @@ export default function Header() {
 
           {/* Кнопка консультации */}
           <Link
-            href="#consultation2"
+            href="/#consultation2"
             className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold uppercase"
           >
             {t('button')}
@@ -106,10 +106,10 @@ export default function Header() {
             <Link href="/" onClick={closeMenu} className="hover:text-gray-400 transition">
               {t('menu1')}
             </Link>
-            <Link href="#about" onClick={closeMenu} className="hover:text-gray-400 transition">
+            <Link href="/#about" onClick={closeMenu} className="hover:text-gray-400 transition">
               {t('menu2')}
             </Link>
-            <Link href="#clients" onClick={closeMenu} className="hover:text-gray-400 transition">
+            <Link href="/#clients" onClick={closeMenu} className="hover:text-gray-400 transition">
               {t('menu3')}
             </Link>
             <Link href="/rent" onClick={closeMenu} className="hover:text-gray-400 transition">
@@ -137,7 +137,7 @@ export default function Header() {
             </div>
 
             <Link
-              href="#consultation2"
+              href="/#consultation2"
               onClick={closeMenu}
               className="bg-white text-black rounded-[12px] px-4 py-4 text-sm hover:bg-gray-200 transition font-montserrat font-semibold uppercase"
             >
