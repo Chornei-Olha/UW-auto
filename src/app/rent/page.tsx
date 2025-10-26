@@ -15,7 +15,7 @@ export default function WarehouseRent() {
     <>
       <Header />
       <section className="container mx-auto px-3 md:px-5 py-10 md:py-16 text-black">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="mx-auto px-6">
           {/* Верхний заголовок */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
